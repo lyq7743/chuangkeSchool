@@ -1,16 +1,25 @@
 <template>
   <div>
 
-    <router-view/>
+    <router-view />
+    <tabbar></tabbar>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+  import tabbar from './components/tabbar.vue'
+  export default {
+      components:{
+        tabbar
+      }
+  }
 </script>
 
-<style scoped>
-
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+  }
 </style>

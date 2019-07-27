@@ -1,10 +1,13 @@
 <template>
   <div @click="fn">
-    <slot class='imgTop' name="imgTop"></slot>
-    <span v-show='showImg'>
-      <slot class='imgbottom' name="imgbottom"></slot>
+    <span v-show='!flag'>
+      <slot class='imgTop' name="imgTop"></slot>
     </span>
-    <p>{{title}}</p>
+
+    <span v-show='flag'>
+      <slot class='imgTop' name="imgbottom"></slot>
+    </span>
+    <p :class="{title:flag}">{{title}}</p>
   </div>
 </template>
 
@@ -13,18 +16,29 @@
 
     data() {
       return {
-        showImg:false,
+        showImg: false,
       }
     },
-    props: ['title'],
+    props: ['title', 'curr', 'mark'],
+    computed: {
+      flag() {
+        if (this.mark == this.curr) {
+          return true;
+        }
+        return false;
+      }
+    },
     methods: {
       fn() {
-
+        this.$emit('change', this.mark)
+        this.$router.push({path:'/'+this.mark})
       }
     }
   }
 </script>
 
 <style scoped lang="less">
-
+  .title {
+    color: #69a5db;
+  }
 </style>
