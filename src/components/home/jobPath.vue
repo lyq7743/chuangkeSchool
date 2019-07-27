@@ -1,6 +1,6 @@
 <template>
   <div>
-    职业路径
+
   </div>
 </template>
 

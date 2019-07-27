@@ -1,6 +1,6 @@
 <template>
   <div>
-    免费课程
+
   </div>
 </template>
 
