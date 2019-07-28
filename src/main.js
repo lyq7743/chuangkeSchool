@@ -3,14 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
 import 'lib-flexible'
-
-import Mint from 'mint-ui';
-Vue.use(Mint);
-
+import MintUI from 'mint-ui'
+import Axios from 'axios'
+import 'mint-ui/lib/style.css'
 Vue.config.productionTip = false
 
+Vue.prototype.$axios = Axios
+
+Vue.use(MintUI)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

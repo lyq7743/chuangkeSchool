@@ -1,7 +1,7 @@
 <template>
   <div>
     <homehead>
-      <img src="../../static/img/ic_home_title_left.png" alt=""  class='imgleft img' slot='imgleft'>
+      <img src="../../static/img/ic_home_title_left.png" alt="" class='imgleft img' slot='imgleft'>
       <img src="../../static/img/ic_home_title_right.png" alt="" class='imgright img' slot='imgright'>
     </homehead>
 
@@ -17,7 +17,8 @@
   export default {
     components: {
       homehead
-    }
+    },
+
   }
 </script>
 
