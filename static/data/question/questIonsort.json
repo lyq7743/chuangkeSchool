@@ -1,24 +1,33 @@
 {
-	"code": "分类",
+	"code": "推荐",
 	"toast": "",
 	"new_recommend_count_str": "",
-	"group": [
-				{
-					"title": "学前测试，定制专属辅导方案",
-					"main": "独家测评系统，快速分析诊断，找到问题所在，因材施教，为每位学生定制专属嵌入式辅导方案",
-					"imgsrc":"../../static/img/a1.png"
-				}, {
-					"title": "分层教学，1v1教学答疑",
-					"main": "设计相应分层策略，项目作业提交后 教学团队1v1答疑，快速提升能力",
-					"imgsrc":"../../static/img/a2.png"
-				}, {
-					"title": "提供配套教辅及源码下载",
-					"main": "拓展知识点写成教辅放在课程中，供参考 课程中的代码、PPT、部分工具会全部提供",
-					"imgsrc":"../../static/img/a3.png"
-				}, {
-					"title": "综合考核评估",
-					"main": "通过系统性的专业辅导和考核，提供毕业证书 帮助学生成功入职企业",
-					"imgsrc":"../../static/img/a4.png"
-				}
+	"group": [{
+			"title": "MAKER",
+			"imgsrc": "../../static/img/mipmap/image_user.png",
+			"from": "学科 嵌入式",
+			"biaoti": "安装的时候提示说要进入超级用户权限，怎么才能进入啊老师",
+			"sort": "Linux",
+			"huifu": "YOLO",
+			"huifumain": "su   然后输入密码"
+		},
+		{
+			"title": "房东的猫",
+			"imgsrc": "../../static/img/mipmap/user_image.png",
+			"from": "学科 嵌入式",
+			"biaoti": "puts是不是只能输出字符，不能输出数字",
+			"sort": "c语言",
+			"huifu": "丁彪",
+			"huifumain": "是的"
+		},
+		{
+			"title": "嵌入式",
+			"imgsrc": "../../static/img/mipmap/user_img_a05.png",
+			"from": "学科 嵌入式",
+			"biaoti": "镜像文件包有什么用",
+			"sort": "数据库",
+			"huifu": "凌宇",
+			"huifumain": "里面的许多工具都是搭配好的，省去了许多配置的麻烦"
+		}
 	]
 }

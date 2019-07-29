@@ -1,6 +1,4 @@
 <template>
-
-
 	<div>
 		<header>
 			<div class="title">
@@ -21,16 +19,16 @@
 				</div>
 				<div class="fenlei-bottom">
 					<ul>
-						<li>
+						<li v-for="(item,index) in arr2">
 							<div>
-								<img src="../../static/img/mipmap/icon_inter.png" />
+								<img :src="item.imgsrc" />
 							</div>
 							<div>
-								<p>C语言</p>
-								<p>4339人关注</p>
+								<p>{{item.title}}</p>
+								<p>{{item.main}}</p>
 							</div>
 						</li>
-						<li>
+						<!-- <li>
 							<div>
 								<img src="../../static/img/mipmap/sign_icon_weixin01.png" />
 							</div>
@@ -56,34 +54,8 @@
 								<p>C语言</p>
 								<p>4339人关注</p>
 							</div>
-						</li>
-						<li>
-							<div>
-								<img src="../../static/img/mipmap/icon_inter.png" />
-							</div>
-							<div>
-								<p>C语言</p>
-								<p>4339人关注</p>
-							</div>
-						</li>
-						<li>
-							<div>
-								<img src="../../static/img/mipmap/icon_inter.png" />
-							</div>
-							<div>
-								<p>C语言</p>
-								<p>4339人关注</p>
-							</div>
-						</li>
-						<li>
-							<div>
-								<img src="../../static/img/mipmap/icon_inter.png" />
-							</div>
-							<div>
-								<p>C语言</p>
-								<p>4339人关注</p>
-							</div>
-						</li>
+						</li> -->
+						
 					</ul>
 				</div>
 			</div>
@@ -107,93 +79,17 @@
 				</div>
 
 				<div class="content-tuijian">
-					<div class="content-talk">
+					<div class="content-talk" v-for="(item,index) in arr">
 						<div class="content-talk-left">
-							<p><img src="../../static/img/mipmap/image_user.png" alt="" /></p>
-							<p>CarIXsdfjsdf</p>
+							<p><img :src="item.imgsrc" alt="" /></p>
+							<p>{{item.title}}</p>
 						</div>
 						<div class="content-talk-right">
-							<p>来自学科嵌入式&nbsp;&nbsp;&nbsp;&nbsp;<span>1个回答</span></p>
-							<p>呦呦皮特老师你的语速好快哦</p>
-							<p><button>数据结构</button></p>
-							<p><span>二莹子</span>&nbsp;&nbsp;回复</p>
-							<p>哈哈</p>
-						</div>
-					</div>
-
-					<div class="content-talk">
-						<div class="content-talk-left">
-							<p><img src="../../static/img/mipmap/avatar_default.png" alt="" /></p>
-							<p>CarIXsdfjsdf</p>
-						</div>
-						<div class="content-talk-right">
-							<p>来自学科嵌入式&nbsp;&nbsp;&nbsp;&nbsp;<span>2个回答</span></p>
-							<p>跟老师的结果不一样</p>
-							<p><button>数据结构</button></p>
-							<p><span>二莹子</span>&nbsp;&nbsp;回复</p>
-							<p>变量是可以改变的量，常量是不可以改变的量</p>
-						</div>
-					</div>
-
-					<div class="content-talk">
-						<div class="content-talk-left">
-							<p><img src="../../static/img/mipmap/avatar_default.png" alt="" /></p>
-							<p>CarIXsdfjsdf</p>
-						</div>
-						<div class="content-talk-right">
-							<p>来自学科嵌入式&nbsp;&nbsp;&nbsp;&nbsp;<span>2个回答</span></p>
-							<p>跟老师的结果不一样</p>
-							<p><button>数据结构</button></p>
-							<p><span>二莹子</span>&nbsp;&nbsp;回复</p>
-							<p>变量是可以改变的量，常量是不可以改变的量</p>
-						</div>
-					</div>
-
-					<div class="content-talk">
-						<div class="content-talk-left">
-							<p><img src="../../static/img/mipmap/avatar_default.png" alt="" /></p>
-							<p>CarIXsdfjsdf</p>
-						</div>
-						<div class="content-talk-right">
-							<p>来自学科嵌入式&nbsp;&nbsp;&nbsp;&nbsp;<span>2个回答</span></p>
-							<p>跟老师的结果不一样</p>
-							<p><button>数据结构</button></p>
-							<p><span>二莹子</span>&nbsp;&nbsp;回复</p>
-							<p>变量是可以改变的量，常量是不可以改变的量</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="content-jinghua">
-
-					<div class="content-talk">
-						<div class="content-talk-left">
-							<p><img src="../../static/img/mipmap/avatar_default.png" alt="" /></p>
-							<p>CarIXsdfjsdf</p>
-						</div>
-						<div class="content-talk-right">
-							<p>来自学科嵌入式&nbsp;&nbsp;&nbsp;&nbsp;<span>2个回答</span></p>
-							<p>跟老师的结果不一样</p>
-							<p><button>数据结构</button></p>
-							<p><span>二莹子</span>&nbsp;&nbsp;回复</p>
-							<p>变量是可以改变的量，常量是不可以改变的量111</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="content-wait">
-
-					<div class="content-talk">
-						<div class="content-talk-left">
-							<p><img src="../../static/img/mipmap/avatar_default.png" alt="" /></p>
-							<p>CarIXsdfjsdf</p>
-						</div>
-						<div class="content-talk-right">
-							<p>来自学科嵌入式&nbsp;&nbsp;&nbsp;&nbsp;<span>2个回答</span></p>
-							<p>跟老师的结果不一样</p>
-							<!-- <p><button>数据结构</button></p> -->
-							<p><span>二莹子</span>&nbsp;&nbsp;回复</p>
-							<p>变量是可以改变的量，常量是不可以改变的量222</p>
+							<p>来自{{item.from}}&nbsp;&nbsp;&nbsp;&nbsp;<span>1个回答</span></p>
+							<p>{{item.biaoti}}</p>
+							<p><button>{{item.sort}}</button></p>
+							<p><span>{{item.huifu}}</span>&nbsp;&nbsp;回复</p>
+							<p>{{item.huifumain}}</p>
 						</div>
 					</div>
 				</div>
@@ -206,13 +102,32 @@
 </template>
 
 <script>
-
 	import Header from '../components/question/Header.vue'
 	export default {
 		components: {
 			Header
 		},
-    }
+		data: function() {
+			return {
+				arr: [],
+				arr2:[]
+			}
+		},
+		mounted() {
+			this.$axios.get('../../static/data/question/questIonsort.json')
+				.then(res => {
+					console.log(res.data.group);
+					// console.log(res.data.group[0].group_list[0].img_url);
+					this.arr = res.data.group;
+			}),
+			this.$axios.get('../../static/data/question/question.json')
+				.then(res => {
+					console.log(res.data.group);
+					// console.log(res.data.group[0].group_list[0].img_url);
+					this.arr2 = res.data.group;
+			})
+		}
+	}
 </script>
 
 <style scoped lang="less">
@@ -224,11 +139,11 @@
 	}
 
 	.swiper-slide {
-		width: 300/75rem!important;
+		width: 300/75rem !important;
 	}
 
 	.swiper-wrapper {
-		width: 300/75rem!important;
+		width: 300/75rem !important;
 	}
 
 	body {
@@ -244,8 +159,10 @@
 		height: 168/75rem;
 		background: #fefefe;
 		margin-bottom: 20/75rem;
+
 		.title {
 			position: relative;
+
 			&>p {
 				padding-top: 66/75rem;
 				font-size: 56/75rem;
@@ -253,6 +170,7 @@
 				font-weight: 700;
 				opacity: 0.7;
 			}
+
 			.date {
 				border-radius: 2px;
 				width: 70/75rem;
@@ -262,6 +180,7 @@
 				text-align: center;
 				right: 56/75rem;
 				box-shadow: 2px 2px 10px lightblue;
+
 				.month {
 					color: white;
 					width: 100%;
@@ -272,6 +191,7 @@
 					border-top-left-radius: 5/75rem;
 					font-size: 16/75rem
 				}
+
 				.day {
 					font-size: 16/75rem;
 					background: #ffffff;
@@ -291,17 +211,21 @@
 		.fenlei {
 			background: white;
 			height: 240/75rem;
+
 			.fenlei-top {
 				padding-top: 44/75rem;
 				margin-left: 36/75rem;
+
 				p {
 					color: black;
 					float: left;
 				}
+
 				&>p:first-child {
 					font-size: 28/75rem;
 					font-weight: 700;
 				}
+
 				&>p:last-child {
 					a {
 						color: black;
@@ -314,27 +238,32 @@
 							background-position: center;
 						}
 					}
+
 					float: right;
 					margin-right: 44/75rem;
 				}
+
 				&:after {
 					content: "";
 					display: block;
 					clear: both;
 				}
 			}
+
 			.fenlei-bottom {
 				ul {
 					display: flex;
 					flex-wrap: nowrap;
 					overflow: scroll;
 					width: 750/75rem;
+
 					&::after {
 						content: "";
 						display: block;
 						clear: both;
 					}
 				}
+
 				li {
 					float: left;
 					margin: 40/75rem 10/75rem;
@@ -345,63 +274,85 @@
 					border-radius: 10/75rem;
 					display: flex;
 					flex-wrap: nowrap;
+
 					&::after {
 						content: "";
 						display: block;
 						clear: both;
 					}
+
 					img {
 						margin-left: 10/75rem;
 						margin-top: 35/75rem;
 						width: 40/75rem;
 						height: 40/75rem;
 					}
+
 					&>div:last-child {
 						width: 130/75rem;
 						margin-left: 20/75rem;
 						margin-top: 25/75rem;
+
 						p {
 							line-height: 30/75rem;
 						}
 					}
 				}
+
 				li:nth-of-type(1) {
 					background: #3ac3c8;
 				}
+
 				li:nth-of-type(2) {
 					background: #4eb119;
 				}
+
 				li:nth-of-type(3) {
 					background: #2dabb0;
 				}
+
 				li:nth-of-type(4) {
-					background: #3ac3c8;
+					background: #616ab7;
+				}
+				
+				li:nth-of-type(5) {
+					background: #5fc7ec;
+				}
+				
+				li:nth-of-type(6) {
+					background: #f4583f;
 				}
 			}
 		}
+
 		.content {
 			.content-title {
 				text-align: center;
 				height: 120/75rem;
+
 				ul {
 					display: flex;
+
 					li {
 						overflow: hidden;
 						height: 100%;
 						padding-top: 66/75rem;
 						flex: 1;
 						position: relative;
+
 						a {
 							display: block;
 							width: 100%;
 							height: 40/75rem;
 							font-size: 24/75rem;
 							color: black;
+
 							&:hover {
 								font-weight: 700;
 								color: blue;
 							}
 						}
+
 						p {
 							position: absolute;
 							left: 50%;
@@ -413,15 +364,18 @@
 							background: royalblue;
 							display: none;
 						}
+
 						&:hover {
 							color: royalblue;
 						}
+
 						&:hover p {
-							display: block!important;
+							display: block !important;
 						}
 					}
 				}
 			}
+
 			.content-tuijian,
 			.content-jinghua,
 			.content-wait {
@@ -429,6 +383,7 @@
 					display: flex;
 					border-top: 1px solid #ccc;
 					padding: 40/75rem 0 40/75rem 34/75rem;
+
 					.content-talk-left {
 						p {
 							img {
@@ -436,6 +391,7 @@
 								width: 58/75rem;
 								border-radius: 50%;
 							}
+
 							&:last-child {
 								width: 60/75rem;
 								overflow: hidden;
@@ -444,31 +400,39 @@
 							}
 						}
 					}
+
 					.content-talk-right {
 						padding-left: 20/75rem;
+
 						p:nth-of-type(1) {
 							color: #ccc;
 							font-size: 22/75rem;
 							padding-bottom: 15/75rem;
 						}
+
 						p:nth-of-type(2) {
 							font-size: 30/75rem;
 							padding-bottom: 5/75rem;
 						}
+
 						p:nth-of-type(3) {
 							color: darkgray;
 							padding-bottom: 10/75rem;
+
 							button {
 								border-color: darkgray;
 							}
 						}
+
 						p:nth-of-type(4) {
 							font-size: 22/75rem;
 							padding-bottom: 16/75rem;
+
 							span {
 								color: royalblue;
 							}
 						}
+
 						button {
 							font-size: 22/75rem;
 							background: #ffffff;

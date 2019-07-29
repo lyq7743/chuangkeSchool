@@ -11,7 +11,11 @@ import freeClass from '../components/home/freeClass.vue'
 import recommended from '../components/home/recommended.vue'
 import livebroadcastClass from '../components/home/livebroadcastClass.vue'
 import jobPath from '../components/home/jobPath.vue'
- 
+
+import all from '../components/home/all.vue'
+import not from '../components/home/not.vue'
+import end from '../components/home/end.vue'
+
 import login from '../components/my/login.vue'
 
 Vue.use(Router)
@@ -41,6 +45,22 @@ export default new Router({
           path: 'livebroadcastclass',
           name: 'livebroadcastClass',
           component: livebroadcastClass,
+          children:[
+            {
+              path: 'all',
+              name: 'all',
+              component: all,
+            },
+            {
+              path: 'not',
+              name: 'not',
+              component: not,
+            },
+            {
+              path: 'end',
+              name: 'end',
+              component: end,
+            }],redirect:'/home/livebroadcastclass/all'
         },
         {
           path: 'jobpath',

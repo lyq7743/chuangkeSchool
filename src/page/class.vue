@@ -103,7 +103,7 @@
 		mounted() {
 			this.$axios.get('../../static/data/classData/class.json')
 				.then(res => {
-					console.log(res.data.group);
+					// console.log(res.data.group);
 					// console.log(res.data.group[0].group_list[0].img_url);
 					this.arr = res.data.group;
 				})
