@@ -1,0 +1,12 @@
+{
+	"data":[
+		{"CareerName":"嵌入式攻城狮","CareerLevel":36,"bounty":1260,"class":418,"learning":"3380人在学","img":"../../static/img/未标题-2.jpg"},
+		{"CareerName":"物联网攻城狮","CareerLevel":47,"bounty":1300,"class":528,"learning":"2992人在学","img":"../../static/img/未标题-1.jpg"},
+		{"CareerName":"JavaEE攻城狮","CareerLevel":20,"bounty":1600,"class":204,"learning":"1841人在学","img":"../../static/img/未标题-3.jpg"},
+		{"CareerName":"WEB全栈攻城狮","CareerLevel":33,"bounty":1750,"class":356,"learning":"1616人在学","img":"../../static/img/未标题-4.jpg"},
+		{"CareerName":"VR/AR攻城狮","CareerLevel":14,"bounty":1400,"class":68,"learning":"1484人在学","img":"../../static/img/未标题-6.jpg"},
+		{"CareerName":"Android攻城狮","CareerLevel":15,"bounty":1300,"class":160,"learning":"1435人在学","img":"../../static/img/未标题-6.jpg"},
+		{"CareerName":"iOS攻城狮","CareerLevel":16,"bounty":1300,"class":109,"learning":"1034人在学","img":"../../static/img/未标题-7.jpg"},
+		{"CareerName":"UI/UE攻城狮","CareerLevel":10,"bounty":750,"class":48,"learning":"1141人在学","img":"../../static/img/未标题-8.jpg"}
+	]
+}

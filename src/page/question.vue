@@ -1,4 +1,6 @@
 <template>
+		
+
 	<div>
 		<header>
 			<div class="title">
@@ -199,13 +201,17 @@
 			</div>
 
 		</article>
+
 	</div>
 </template>
 
 <script>
-	export default {
 
-	}
+	import Header from '../components/question/Header.vue'
+	export default {
+		components: {
+			Header
+		}
 </script>
 
 <style scoped lang="less">

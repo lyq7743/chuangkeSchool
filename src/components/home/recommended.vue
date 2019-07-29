@@ -23,12 +23,18 @@
       </div>
       <div class="livebroadcastClass-content">
         <mt-swipe :auto="0">
+<<<<<<< HEAD
+          <mt-swipe-item v-for="(item,index) in livebroadcastClassData" :key="index">
+            <p>item.class</p>
+
+=======
           <mt-swipe-item v-for="item in livebroadcastClassData" :key = "item.id">
 			<div class="livebroadcastClass-content-child">
 				<p class="className">{{item.class_name}}</p>
 				<p class="classTime">{{item.class_time}}</p>
 				<img :src="item.class_img"/>
 			</div>
+>>>>>>> 65533a857234fc6ba73f88e8a10cac52b2218129
 
           </mt-swipe-item>
         </mt-swipe>
