@@ -1,0 +1,24 @@
+{
+	"code": "classData",
+	"toast": "",
+	"new_recommend_count_str": "",
+	"group": [
+				{
+					"title": "学前测试，定制专属辅导方案",
+					"main": "独家测评系统，快速分析诊断，找到问题所在，因材施教，为每位学生定制专属嵌入式辅导方案",
+					"imgsrc":"../../static/img/a1.png"
+				}, {
+					"title": "分层教学，1v1教学答疑",
+					"main": "设计相应分层策略，项目作业提交后 教学团队1v1答疑，快速提升能力",
+					"imgsrc":"../../static/img/a2.png"
+				}, {
+					"title": "提供配套教辅及源码下载",
+					"main": "拓展知识点写成教辅放在课程中，供参考 课程中的代码、PPT、部分工具会全部提供",
+					"imgsrc":"../../static/img/a3.png"
+				}, {
+					"title": "综合考核评估",
+					"main": "通过系统性的专业辅导和考核，提供毕业证书 帮助学生成功入职企业",
+					"imgsrc":"../../static/img/a4.png"
+				}
+	]
+}
