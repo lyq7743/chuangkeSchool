@@ -11,6 +11,8 @@ import freeClass from '../components/home/freeClass.vue'
 import recommended from '../components/home/recommended.vue'
 import livebroadcastClass from '../components/home/livebroadcastClass.vue'
 import jobPath from '../components/home/jobPath.vue'
+ 
+import login from '../components/my/login.vue'
 
 Vue.use(Router)
 
@@ -46,6 +48,11 @@ export default new Router({
           component: jobPath,
         },
       ]
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login,
     },
     {
       path: '/className',
