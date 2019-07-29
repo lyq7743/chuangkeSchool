@@ -5,7 +5,7 @@
 					<p><slot name='imgleft'></slot><router-link to='/login'>成就更好未来</router-link></p>
 					<router-link to='/login'><slot name='imgright'></slot></router-link>
 				</div>
-				 
+
 				<div class="topbar">
 					<div class="item">
 						<img src="../../../static/img/ic_my_class.png" alt="">
@@ -21,7 +21,7 @@
 					</div>
 					<div class="item">
 						<router-link to='/login'><img src="../../../static/img/ic_my_wechat.png"alt=""></router-link>
-						<p><router-link to='/login'>微信</router-link></p> 
+						<p><router-link to='/login'>微信</router-link></p>
 					</div>
 				</div>
 				<div class="bg"></div>
@@ -33,7 +33,7 @@
 					</li>
 				</ul>
 			</div>
-				
+
   </div>
 </template>
 
@@ -43,14 +43,14 @@
   }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 *{
 margin: 0;
 padding: 0;
 }
 .login {
    margin: 50/64rem 30/64rem;
-   
+
 }
  .topbar {
   position: relative;

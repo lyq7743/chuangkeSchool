@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content">
     <homehead>
       <img src="../../static/img/ic_home_title_left.png" alt="" class='imgleft img' slot='imgleft'>
       <img src="../../static/img/ic_home_title_right.png" alt="" class='imgright img' slot='imgright'>
@@ -23,5 +23,7 @@
 </script>
 
 <style scoped lang="less">
-
+  .content{
+    margin-bottom: 105/75rem;
+  }
 </style>

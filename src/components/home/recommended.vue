@@ -23,41 +23,51 @@
       </div>
       <div class="livebroadcastClass-content">
         <mt-swipe :auto="0">
-
-
-            <mt-swipe-item v-for="item in livebroadcastClassData" :key="item.id">
-              <div class="livebroadcastClass-content-child">
-                <p class="className">{{item.class_name}}</p>
-                <p class="classTime">{{item.class_time}}</p>
-                <img :src="item.class_img" />
-              </div>
-
-
-            </mt-swipe-item>
+          <mt-swipe-item v-for="item in livebroadcastClassData" :key="item.id">
+            <div class="livebroadcastClass-content-child">
+              <p class="className">{{item.class_name}}</p>
+              <p class="classTime">{{item.class_time}}</p>
+              <img :src="item.class_img" />
+            </div>
+          </mt-swipe-item>
         </mt-swipe>
       </div>
     </div>
+    <recommended-class v-for="item in classData" :key='item.id' :className = "item.class_name" :list = "item.list" :newlist = "item.newlist" :olist = 'item.olist'>
 
+    </recommended-class>
 
 
   </div>
 </template>
 <script>
+  import recommendedClass from './recommendedClass.vue'
   // import 'mint-ui/lib/style.css'
   export default {
 
 
     data: function() {
       return {
-        livebroadcastClassData: []
+        livebroadcastClassData: [],
+        classData:[],
       }
     },
     mounted() {
       this.$axios.get("../../../static/data/recommededData/recommededData.json")
         .then((shuju) => {
-          // console.log(shuju.data.class);
-          this.livebroadcastClassData = shuju.data.class
+          // console.log(shuju);
+          this.livebroadcastClassData = shuju.data.class;
+        }),
+        this.$axios.get('../../../static/data/recommededData/recommededData1.json')
+        .then((shuju)=>{
+          // console.log(shuju.data.class_list);
+
+
+           this.classData = shuju.data.class_list;
         })
+    },
+    components: {
+      recommendedClass
     }
   }
 </script>
@@ -108,14 +118,46 @@
 
     .livebroadcastClass-content {
       width: 696/75rem;
-      height: 232/75rem;
+      height: 300/75rem;
 
       .livebroadcastClass-content-child {
-        width: 100%;
-        height: 75%;
+        width: 95%;
+        height: 230/75rem;
+        // text-align: center;
         border-radius: 15/75rem;
-        box-shadow: 4px 5px 10px #ccc;
+        box-shadow: 0px 2px 5px 5px #f2f2f2;
+        position: relative;
+        left: 50%;
+        top: 10/75rem;
+        transform: translateX(-50%);
 
+        // top: 50%;
+        // transform: translate(-50%,-50%);
+        img {
+          position: absolute;
+          top: 44/75rem;
+          right: 56/75rem;
+          width: 140/75rem;
+          height: 140/75rem;
+          border-radius: 50%;
+        }
+
+        .className {
+          font-size: 22/75rem;
+          font-weight: bold;
+          position: absolute;
+          top: 75/75rem;
+          left: 28/75rem;
+          width: 20em;
+        }
+
+        .classTime {
+          position: absolute;
+          bottom: 50/75rem;
+          left: 28/75rem;
+          font-size: 16/75rem;
+          font-weight: bold;
+        }
       }
     }
   }

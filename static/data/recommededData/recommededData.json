@@ -1,16 +1,19 @@
 {
-  "class": [{
+  "class": [
+    {
       "class_name": "备战秋招：完美简历该如何打造",
       "class_time": "0729日 19:20",
-	  "class_img":"http://static.makeru.com.cn/upload/mavendemo/teacher/20190428/1556444557995146637.png"
+      "class_img": "http://static.makeru.com.cn/upload/mavendemo/teacher/20190428/1556444557995146637.png"
     },
     {
-      "className": "python机器学习实战：泰坦尼克号乘客生存预测",
-      "class_time": "07月30日 19:20"
+      "class_name": "python机器学习实战：泰坦尼克号乘客生存预测",
+      "class_time": "07月30日 19:20",
+      "class_img": "http://static.makeru.com.cn/upload/mavendemo/teacher/20190325/1553504694750723964.jpg"
     },
     {
-      "className": "一堂值得你学习的项目管理课程",
-      "class_time": "07月31日 19:20"
+      "class_name": "一堂值得你学习的项目管理课程",
+      "class_time": "07月31日 19:20",
+      "class_img": "http://static.makeru.com.cn/upload/mavendemo/teacher/20190318/1552880000359248230.png"
     }
 
 
