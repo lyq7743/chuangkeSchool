@@ -23,7 +23,7 @@
       </div>
       <div class="livebroadcastClass-content">
         <mt-swipe :auto="0">
-          <mt-swipe-item v-for="item in livebroadcastClassData">
+          <mt-swipe-item v-for="item in livebroadcastClassData" :key= 'item.id'>
             <p>item.class</p>
 
 
