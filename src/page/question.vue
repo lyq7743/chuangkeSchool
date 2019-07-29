@@ -1,5 +1,5 @@
 <template>
-		
+
 
 	<div>
 		<header>
@@ -211,7 +211,8 @@
 	export default {
 		components: {
 			Header
-		}
+		},
+    }
 </script>
 
 <style scoped lang="less">
@@ -221,24 +222,24 @@
 		list-style: none;
 		text-decoration: none;
 	}
-	
+
 	.swiper-slide {
 		width: 300/75rem!important;
 	}
-	
+
 	.swiper-wrapper {
 		width: 300/75rem!important;
 	}
-	
+
 	body {
 		background: #f6f7f7;
 		font-size: 12px;
 	}
-	
+
 	article {
 		margin-bottom: 114/75rem;
 	}
-	
+
 	header {
 		height: 168/75rem;
 		background: #fefefe;
@@ -285,7 +286,7 @@
 			}
 		}
 	}
-	
+
 	article {
 		.fenlei {
 			background: white;

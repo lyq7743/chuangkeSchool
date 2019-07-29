@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div class="content">
     <div class="container">
       <mt-swipe :auto='2000'>
@@ -23,20 +23,17 @@
       </div>
       <div class="livebroadcastClass-content">
         <mt-swipe :auto="0">
-<<<<<<< HEAD
-          <mt-swipe-item v-for="(item,index) in livebroadcastClassData" :key="index">
-            <p>item.class</p>
 
-=======
-          <mt-swipe-item v-for="item in livebroadcastClassData" :key = "item.id">
-			<div class="livebroadcastClass-content-child">
-				<p class="className">{{item.class_name}}</p>
-				<p class="classTime">{{item.class_time}}</p>
-				<img :src="item.class_img"/>
-			</div>
->>>>>>> 65533a857234fc6ba73f88e8a10cac52b2218129
 
-          </mt-swipe-item>
+            <mt-swipe-item v-for="item in livebroadcastClassData" :key="item.id">
+              <div class="livebroadcastClass-content-child">
+                <p class="className">{{item.class_name}}</p>
+                <p class="classTime">{{item.class_time}}</p>
+                <img :src="item.class_img" />
+              </div>
+
+
+            </mt-swipe-item>
         </mt-swipe>
       </div>
     </div>
@@ -50,17 +47,17 @@
   export default {
 
 
-    data:function (){
-      return{
-        livebroadcastClassData:[]
+    data: function() {
+      return {
+        livebroadcastClassData: []
       }
     },
     mounted() {
       this.$axios.get("../../../static/data/recommededData/recommededData.json")
-      .then((shuju)=>{
+        .then((shuju) => {
           // console.log(shuju.data.class);
-          this.livebroadcastClassData=shuju.data.class
-      })
+          this.livebroadcastClassData = shuju.data.class
+        })
     }
   }
 </script>
@@ -112,14 +109,14 @@
     .livebroadcastClass-content {
       width: 696/75rem;
       height: 232/75rem;
-      
-	  .livebroadcastClass-content-child{
-		  width:100%;
-		  height:75%;	
-		  border-radius: 15/75rem;
-		  box-shadow: 4px 5px 10px #ccc;
-		 
-	  }
+
+      .livebroadcastClass-content-child {
+        width: 100%;
+        height: 75%;
+        border-radius: 15/75rem;
+        box-shadow: 4px 5px 10px #ccc;
+
+      }
     }
   }
 </style>
