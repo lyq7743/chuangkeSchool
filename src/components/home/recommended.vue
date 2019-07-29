@@ -23,13 +23,13 @@
       </div>
       <div class="livebroadcastClass-content">
         <mt-swipe :auto="0">
-          <mt-swipe-item v-for="item in livebroadcastClassData">
-            <p>item.class</p>
-
-
+          <mt-swipe-item v-for="item in livebroadcastClassData" :key = "item.id">
+			<div class="livebroadcastClass-content-child">
+				<p class="className">{{item.class_name}}</p>
+				<p class="classTime">{{item.class_time}}</p>
+				<img :src="item.class_img"/>
+			</div>
           </mt-swipe-item>
-          <mt-swipe-item>2</mt-swipe-item>
-          <mt-swipe-item>3</mt-swipe-item>
         </mt-swipe>
       </div>
     </div>
@@ -45,14 +45,14 @@
 
     data:function (){
       return{
-        livebroadcastClassData:[],
+        livebroadcastClassData:[]
       }
     },
     mounted() {
       this.$axios.get("../../../static/data/recommededData/recommededData.json")
-      .then(function(shuju){
-          console.log(shuju.data);
-          this.livebroadcastClassData=shuju.data
+      .then((shuju)=>{
+          // console.log(shuju.data.class);
+          this.livebroadcastClassData=shuju.data.class
       })
     }
   }
@@ -105,8 +105,14 @@
     .livebroadcastClass-content {
       width: 696/75rem;
       height: 232/75rem;
-      border-radius: 15/75rem;
-      box-shadow: 4px 5px 10px #ccc;
+      
+	  .livebroadcastClass-content-child{
+		  width:100%;
+		  height:75%;	
+		  border-radius: 15/75rem;
+		  box-shadow: 4px 5px 10px #ccc;
+		 
+	  }
     }
   }
 </style>
