@@ -35,9 +35,10 @@
 </script>
 
 <style scoped lang="less">
-.homeHeader{
+  .homeHeader {
     height: 160/75rem;
-}
+  }
+
   .homgHeader-top {
     padding-top: 20/75rem;
     display: flex;
@@ -88,6 +89,5 @@
         }
       }
     }
-
   }
 </style>
