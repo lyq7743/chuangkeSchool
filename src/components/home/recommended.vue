@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="content">
     <div class="container">
       <mt-swipe :auto='2000'>
@@ -23,19 +23,13 @@
       </div>
       <div class="livebroadcastClass-content">
         <mt-swipe :auto="0">
-<<<<<<< HEAD
-          <mt-swipe-item v-for="item in livebroadcastClassData" :key= 'item.id'>
-            <p>item.class</p>
-
-
-=======
           <mt-swipe-item v-for="item in livebroadcastClassData" :key = "item.id">
 			<div class="livebroadcastClass-content-child">
 				<p class="className">{{item.class_name}}</p>
 				<p class="classTime">{{item.class_time}}</p>
 				<img :src="item.class_img"/>
 			</div>
->>>>>>> b37287bd436ad657c24f56803e5558c7c92682fa
+
           </mt-swipe-item>
         </mt-swipe>
       </div>
