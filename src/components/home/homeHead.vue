@@ -37,6 +37,7 @@
 <style scoped lang="less">
   .homeHeader {
     height: 160/75rem;
+    box-shadow: 4/75rem 4/75rem 10/75rem #f5f5f5;
   }
 
   .homgHeader-top {

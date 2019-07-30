@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="class-content-body">
-        <mt-swipe  :auto="0">
+        <mt-swipe  :auto="0" :continuous=false :showIndicators=true>
           <mt-swipe-item>
             <div v-for="item in classData" :key='item.id' class="class-content-body-centent">
               <img :src="item.img_src" alt="">

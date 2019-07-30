@@ -22,7 +22,7 @@
         <p>更多<img src="../../../static/img/image/rectangle.png" alt=""></p>
       </div>
       <div class="livebroadcastClass-content">
-        <mt-swipe :auto="0">
+        <mt-swipe :auto="0" >
           <mt-swipe-item v-for="item in livebroadcastClassData" :key="item.id">
             <div class="livebroadcastClass-content-child">
               <p class="className">{{item.class_name}}</p>

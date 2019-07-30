@@ -16,6 +16,12 @@ import all from '../components/home/all.vue'
 import not from '../components/home/not.vue'
 import end from '../components/home/end.vue'
 
+import allClass from '../components/home/freeClass/allClass.vue'
+import javaEE from '../components/home/freeClass/javaEE.vue'
+import qianrushi from '../components/home/freeClass/qianrushi.vue'
+import web from '../components/home/freeClass/web.vue'
+import wulianwang from '../components/home/freeClass/wulianwang.vue'
+
 import login from '../components/my/login.vue'
 
 Vue.use(Router)
@@ -35,6 +41,33 @@ export default new Router({
           path: 'freeclass',
           name: 'freeClass',
           component: freeClass,
+          children:[
+            {
+              path:'allClass',
+              name:'allClass',
+              component:allClass
+            },
+            {
+              path:'javaEE',
+              name:'javaEE',
+              component:javaEE
+            },
+            {
+              path:'qianrushi',
+              name:'qianrushi',
+              component:qianrushi
+            },
+             {
+              path:'web',
+              name:'web',
+              component:web
+            },
+             {
+              path:'wulianwang',
+              name:'wulianwang',
+              component:wulianwang
+            }
+          ]
         },
         {
           path: 'recommended',
