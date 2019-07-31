@@ -30,6 +30,7 @@
       this.$router.push({
         path: '/home/recommended'
       })
+
     }
   }
 </script>

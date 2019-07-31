@@ -36,9 +36,9 @@
     },
     methods: {
       fn() {
-				console.log("uuuuuuuuu",this.$router.path )
+
         if(this.$router.path != '/home/freeclass/allClas') {
-					console.log(1)
+
           this.check =false;
         }else{
           this.check =true;

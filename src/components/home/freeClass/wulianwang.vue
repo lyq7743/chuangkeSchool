@@ -1,6 +1,6 @@
 <template>
   <div>
-    <other-class v-for="(item,index) in shuju[1].list" :key = 'index' :people='item.people' :classprice="item.price"
+    <other-class v-for="(item,index) in shuju" :key = 'index' :people='item.people' :classprice="item.price"
      :classSrc = 'item.img_src'  :className="item.class_title" :classlevel='item.class_level'>
     </other-class>
 
@@ -21,10 +21,10 @@
       otherClass
     },
     created() {
-      this.$axios.get('../../../../static/data/freeClass/freeClass.json')
+      this.$axios.get('https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/freeClass')
         .then(res => {
-          console.log(res.data.class_list);
-          this.shuju = res.data.class_list
+          // console.log(res.data.class_list);
+          this.shuju = res.data.class_list[1].list
         })
     }
   }

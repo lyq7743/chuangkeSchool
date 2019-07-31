@@ -53,12 +53,12 @@
       }
     },
     mounted() {
-      this.$axios.get("../../../static/data/recommededData/recommededData.json")
+      this.$axios.get(" https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/recommededData")
         .then((shuju) => {
           // console.log(shuju);
           this.livebroadcastClassData = shuju.data.class;
         }),
-        this.$axios.get('../../../static/data/recommededData/recommededData1.json')
+        this.$axios.get('https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/recommededData1')
         .then((shuju)=>{
           // console.log(shuju.data.class_list);
 

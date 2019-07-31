@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="img-content">
-      <img :src="classSrc" alt="">
+      <img v-lazy="classSrc" alt="">
       <div>
         <p>免费</p>
       </div>
