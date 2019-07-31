@@ -16,6 +16,11 @@ Vue.config.productionTip = false
 Vue.prototype.$axios = Axios
 
 Vue.use(MintUI)
+
+import VueResource from 'vue-resource'
+
+Vue.use(VueResource)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

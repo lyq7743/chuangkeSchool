@@ -8,7 +8,7 @@
       <div class="class-content-top">
         <div v-for="item in newClassData" :key="item.id" class="class-content-top-header">
           <!-- 放置槽口的url -->
-          <img :src="item.img_src" alt="">
+          <img v-lazy="item.img_src" alt="">
           <div class="class-Introduction">
             <p class="class-name">
               {{item.class_title}}
@@ -23,7 +23,7 @@
         <mt-swipe  :auto="0" :continuous=false :showIndicators=true>
           <mt-swipe-item>
             <div v-for="item in classData" :key='item.id' class="class-content-body-centent">
-              <img :src="item.img_src" alt="">
+              <img v-lazy="item.img_src" alt="">
               <div>
                 <p class="class-content-body-name">{{item.class_title}}</p>
                 <p class="class-content-body-level">{{item.class_level}}&nbsp;&nbsp;&nbsp;&nbsp;{{item.people|setPeople}}</p>
@@ -33,7 +33,7 @@
           </mt-swipe-item>
           <mt-swipe-item>
             <div v-for="item in oclassData" :key='item.id' class="class-content-body-centent">
-              <img :src="item.img_src" alt="">
+              <img v-lazy="item.img_src" alt="">
               <div>
                 <p class="class-content-body-name">{{item.class_title}}</p>
                 <p class="class-content-body-level">{{item.class_level}}&nbsp;&nbsp;&nbsp;&nbsp;{{item.people|setPeople}}</p>
@@ -59,9 +59,9 @@
     props: ['className', 'classUrl', 'newlist', 'list', "olist"],
     mounted() {
       this.classData = this.list,
-        console.log(1, this.classData);
+        // console.log(1, this.classData);
       this.newClassData = this.newlist;
-      console.log(1, this.newClassData);
+      // console.log(1, this.newClassData);
       this.oclassData = this.olist
     },
     filters:{
