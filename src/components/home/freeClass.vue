@@ -2,20 +2,20 @@
   <div>
     <div class="header">
       <ul>
-        <li>
-          <router-link :class="{click:check}" to='/home/freeclass/allClass' @click='fn'>全部</router-link>
+        <li @click='fn'>
+          <router-link :class="{click:check}" to='/home/freeclass/allClass'>全部</router-link>
         </li>
-        <li>
-          <router-link to='/home/freeclass/qianrushi' @click='fn'>嵌入式</router-link>
+        <li @click='fn'>
+          <router-link to='/home/freeclass/qianrushi' >嵌入式</router-link>
         </li>
-        <li>
-          <router-link to='/home/freeclass/wulianwang' @click='fn'>物联网</router-link>
+        <li @click='fn'>
+          <router-link to='/home/freeclass/wulianwang'>物联网</router-link>
         </li>
-        <li>
-          <router-link to='/home/freeclass/javaEE' @click='fn'>JavaEE</router-link>
+        <li @click='fn'>
+          <router-link to='/home/freeclass/javaEE'>JavaEE</router-link>
         </li>
-        <li>
-          <router-link to='/home/freeclass/web' @click='fn'>WEB全栈</router-link>
+        <li @click='fn'>
+          <router-link to='/home/freeclass/web'>WEB全栈</router-link>
         </li>
         <li><img src="../../../static/img/ic_fillter.png" alt=""></li>
       </ul>
@@ -31,12 +31,14 @@
   export default {
     data() {
       return {
-        check: null,
+        check: true,
       }
     },
     methods: {
       fn() {
+				console.log("uuuuuuuuu",this.$router.path )
         if(this.$router.path != '/home/freeclass/allClas') {
+					console.log(1)
           this.check =false;
         }else{
           this.check =true;

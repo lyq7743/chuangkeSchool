@@ -27,6 +27,8 @@ import cream from '../components/question/cream.vue'
 import wait from '../components/question/wait.vue'
 
 import login from '../components/my/login.vue'
+import register from '../components/my/register.vue'
+import system from '../components/my/system.vue'
 
 Vue.use(Router)
 
@@ -110,6 +112,16 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: login,
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: register,
+    },
+    {
+      path: '/system',
+      name: 'system',
+      component: system,
     },
     {
       path: '/className',

@@ -20,7 +20,7 @@
     components: {
       otherClass
     },
-    mounted() {
+    created() {
       this.$axios.get('../../../../static/data/freeClass/freeClass.json')
         .then(res => {
           console.log(res.data.class_list);
