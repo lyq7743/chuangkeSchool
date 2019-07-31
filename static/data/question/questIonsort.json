@@ -2,32 +2,94 @@
 	"code": "推荐",
 	"toast": "",
 	"new_recommend_count_str": "",
-	"group": [{
-			"title": "MAKER",
-			"imgsrc": "../../static/img/mipmap/image_user.png",
-			"from": "学科 嵌入式",
-			"biaoti": "安装的时候提示说要进入超级用户权限，怎么才能进入啊老师",
-			"sort": "Linux",
-			"huifu": "YOLO",
-			"huifumain": "su   然后输入密码"
-		},
+	"group": [
 		{
-			"title": "房东的猫",
-			"imgsrc": "../../static/img/mipmap/user_image.png",
-			"from": "学科 嵌入式",
-			"biaoti": "puts是不是只能输出字符，不能输出数字",
-			"sort": "c语言",
-			"huifu": "丁彪",
-			"huifumain": "是的"
-		},
-		{
-			"title": "嵌入式",
-			"imgsrc": "../../static/img/mipmap/user_img_a05.png",
-			"from": "学科 嵌入式",
-			"biaoti": "镜像文件包有什么用",
-			"sort": "数据库",
-			"huifu": "凌宇",
-			"huifumain": "里面的许多工具都是搭配好的，省去了许多配置的麻烦"
+			"title": "推荐",
+			"recommend_list": [
+				{
+					"title": "MAKER",
+					"imgsrc": "../../static/img/mipmap/image_user.png",
+					"from": "学科 嵌入式",
+					"biaoti": "安装的时候提示说要进入超级用户权限，怎么才能进入啊老师",
+					"sort": "Linux",
+					"huifu": "YOLO",
+					"huifumain": "su   然后输入密码"
+				}, {
+					"title": "房东的猫",
+					"imgsrc": "../../static/img/mipmap/user_image.png",
+					"from": "学科 嵌入式",
+					"biaoti": "puts是不是只能输出字符，不能输出数字",
+					"sort": "c语言",
+					"huifu": "丁彪",
+					"huifumain": "是的"
+				}, {
+					"title": "嵌入式",
+					"imgsrc": "../../static/img/mipmap/user_img_a05.png",
+					"from": "学科 嵌入式",
+					"biaoti": "镜像文件包有什么用",
+					"sort": "数据库",
+					"huifu": "凌宇",
+					"huifumain": "里面的许多工具都是搭配好的，省去了许多配置的麻烦"
+				}
+			]
+		}, {
+			"title": "精华",
+			"cream_list": [
+				{
+					"title": "MAKER",
+					"imgsrc": "../../static/img/mipmap/image_user.png",
+					"from": "学科 嵌入式",
+					"biaoti": "安装的时候提示说要进入超级用户权限，怎么才能进入啊老师",
+					"sort": "Linux",
+					"huifu": "YOLO",
+					"huifumain": "su   然后输入密码"
+				}, {
+					"title": "房东的猫",
+					"imgsrc": "../../static/img/mipmap/user_image.png",
+					"from": "学科 嵌入式",
+					"biaoti": "puts是不是只能输出字符，不能输出数字",
+					"sort": "c语言",
+					"huifu": "丁彪",
+					"huifumain": "是的"
+				}, {
+					"title": "嵌入式",
+					"imgsrc": "../../static/img/mipmap/user_img_a05.png",
+					"from": "学科 嵌入式",
+					"biaoti": "镜像文件包有什么用",
+					"sort": "数据库",
+					"huifu": "凌宇",
+					"huifumain": "里面的许多工具都是搭配好的，省去了许多配置的麻烦"
+				}
+			]
+		}, {
+			"title": "等待回答",
+			"wait_list": [
+				{
+					"title": "MAKER",
+					"imgsrc": "../../static/img/mipmap/image_user.png",
+					"from": "学科 嵌入式",
+					"biaoti": "安装的时候提示说要进入超级用户权限，怎么才能进入啊老师",
+					"sort": "Linux",
+					"huifu": "YOLO",
+					"huifumain": "su   然后输入密码"
+				}, {
+					"title": "房东的猫",
+					"imgsrc": "../../static/img/mipmap/user_image.png",
+					"from": "学科 嵌入式",
+					"biaoti": "puts是不是只能输出字符，不能输出数字",
+					"sort": "c语言",
+					"huifu": "丁彪",
+					"huifumain": "是的"
+				}, {
+					"title": "嵌入式",
+					"imgsrc": "../../static/img/mipmap/user_img_a05.png",
+					"from": "学科 嵌入式",
+					"biaoti": "镜像文件包有什么用",
+					"sort": "数据库",
+					"huifu": "凌宇",
+					"huifumain": "里面的许多工具都是搭配好的，省去了许多配置的麻烦"
+				}
+			]
 		}
 	]
 }

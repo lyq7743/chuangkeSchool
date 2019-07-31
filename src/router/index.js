@@ -22,6 +22,10 @@ import qianrushi from '../components/home/freeClass/qianrushi.vue'
 import web from '../components/home/freeClass/web.vue'
 import wulianwang from '../components/home/freeClass/wulianwang.vue'
 
+import recommend from '../components/question/recommend.vue'
+import cream from '../components/question/cream.vue'
+import wait from '../components/question/wait.vue'
+
 import login from '../components/my/login.vue'
 
 Vue.use(Router)
@@ -120,7 +124,12 @@ export default new Router({
     {
       path: '/question',
       name: 'question',
-      component: question
+      component: question,
+      children:[
+      	{path:'recommend',component:recommend},
+      	{path:'cream',component:cream},
+      	{path:'wait',component:wait}
+      ]
     },
   ]
 })

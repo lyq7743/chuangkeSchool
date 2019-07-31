@@ -1,4 +1,4 @@
-<template>
+ <template>
 	<div>
 		<header>
 			<div class="title">
@@ -28,71 +28,52 @@
 								<p>{{item.main}}</p>
 							</div>
 						</li>
-						<!-- <li>
-							<div>
-								<img src="../../static/img/mipmap/sign_icon_weixin01.png" />
-							</div>
-							<div>
-								<p>微信小程序</p>
-								<p>3182人关注</p>
-							</div>
-						</li>
-						<li>
-							<div>
-								<img src="../../static/img/mipmap/ic_launcher.png" />
-							</div>
-							<div>
-								<p>Android</p>
-								<p>2763人关注</p>
-							</div>
-						</li>
-						<li>
-							<div>
-								<img src="../../static/img/mipmap/icon_inter.png" />
-							</div>
-							<div>
-								<p>C语言</p>
-								<p>4339人关注</p>
-							</div>
-						</li> -->
-						
 					</ul>
 				</div>
 			</div>
-
+			
+			
+			
 			<div class="content">
 				<div class="content-title">
 					<ul>
 						<li class="click">
-							<a href="#">推荐</a>
+							<router-link to="/question/recommend">推荐</router-link>
 							<p></p>
 						</li>
 						<li class="click">
-							<a href="#">精华</a>
+							<!--<a href="#">精华</a>-->
+							<router-link to="/question/cream">精华</router-link>
 							<p></p>
 						</li>
 						<li class="click" i>
-							<a href="#/">等待回答</a>
+							<!--<a href="#/">等待回答</a>-->
+							<router-link to="/question/wait">等待回答</router-link>
 							<p></p>
 						</li>
 					</ul>
 				</div>
-
-				<div class="content-tuijian">
-					<div class="content-talk" v-for="(item,index) in arr">
-						<div class="content-talk-left">
-							<p><img :src="item.imgsrc" alt="" /></p>
-							<p>{{item.title}}</p>
-						</div>
-						<div class="content-talk-right">
-							<p>来自{{item.from}}&nbsp;&nbsp;&nbsp;&nbsp;<span>1个回答</span></p>
-							<p>{{item.biaoti}}</p>
-							<p><button>{{item.sort}}</button></p>
-							<p><span>{{item.huifu}}</span>&nbsp;&nbsp;回复</p>
-							<p>{{item.huifumain}}</p>
+				
+				<div class="navshow">
+				  	<router-view></router-view>
+				  </div>
+				<!--<div class="content-tuijian">
+					<div v-for="(item,index) in arr">
+						<div class="content-talk" v-for="(item,index) in item.recommend_list">
+							<div class="content-talk-left">
+								<p><img :src="item.imgsrc" alt="" /></p>
+								<p>{{item.title}}</p>
+							</div>
+							<div class="content-talk-right">
+								<p>来自{{item.from}}&nbsp;&nbsp;&nbsp;&nbsp;<span>1个回答</span></p>
+								<p>{{item.biaoti}}</p>
+								<p><button>{{item.sort}}</button></p>
+								<p><span>{{item.huifu}}</span>&nbsp;&nbsp;回复</p>
+								<p>{{item.huifumain}}</p>
+							</div>
 						</div>
 					</div>
-				</div>
+				</div>-->
 
 			</div>
 
@@ -113,20 +94,24 @@
 				arr2:[]
 			}
 		},
-		mounted() {
-			this.$axios.get('../../static/data/question/questIonsort.json')
+		mounted:function(){
+			this.$axios.get('https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/questionsort')
 				.then(res => {
-					console.log(res.data.group);
-					// console.log(res.data.group[0].group_list[0].img_url);
 					this.arr = res.data.group;
 			}),
-			this.$axios.get('../../static/data/question/question.json')
+			this.$axios.get(' https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/question')
 				.then(res => {
-					console.log(res.data.group);
-					// console.log(res.data.group[0].group_list[0].img_url);
 					this.arr2 = res.data.group;
 			})
+			setTimeout(()=>{//页面加载时要执行的方法
+				var date=new Date();
+				var day=date.getDate();
+				console.log(day);
+				document.querySelector(".day").innerText=day;
+				//innerhtml会报错
+			},100);
 		}
+		
 	}
 </script>
 
