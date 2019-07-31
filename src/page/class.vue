@@ -19,7 +19,9 @@
 							<img src="../../static/img/ic_class_people_m.png" />
 						</div>
 						<div class="button">
-							<span>试听公开课</span>
+							<router-link to="/home/livebroadcastClass/end">
+								<span @click="tiaozhuan">试听公开课</span>
+							</router-link>
 							<img src="../../static/img/a7.png" />
 						</div>
 					</div>
@@ -72,7 +74,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="title title2">
 					<div>
 						<!-- 背景图片（小圆） -->
@@ -95,18 +97,24 @@
 
 <script>
 	export default {
-		data:function(){
-			return{
-				arr:[]
+		data: function() {
+			return {
+				arr: []
+			}
+		},
+		methods:{
+			tiaozhuan:function(){
+				this.$router.push({
+					path:'/home',
+					query:{status: false}
+				})
 			}
 		},
 		mounted() {
 			this.$axios.get('../../static/data/classData/class.json')
-				.then(res => {
-					// console.log(res.data.group);
-					// console.log(res.data.group[0].group_list[0].img_url);
-					this.arr = res.data.group;
-				})
+			.then(res => {
+				this.arr = res.data.group;
+			})
 		}
 	}
 </script>
@@ -116,14 +124,16 @@
 		margin: 0;
 		padding: 0;
 	}
-	
+
 	.classes-header {
 		width: 100%;
+
 		.top {
 			z-index: 2;
 			width: 100%;
 			position: fixed;
 			background-color: white;
+
 			.main {
 				width: 100%;
 				height: 1rem;
@@ -133,6 +143,7 @@
 				position: relative;
 				font-weight: bold;
 				font-size: 0.35rem;
+
 				span {
 					font-weight: normal;
 					position: absolute;
@@ -140,14 +151,17 @@
 				}
 			}
 		}
+
 		.main {
 			width: 100%;
 			position: relative;
+
 			.banner {
 				img {
 					width: 100%;
 				}
 			}
+
 			.course {
 				position: absolute;
 				left: 50%;
@@ -162,14 +176,17 @@
 				border-radius: 10px;
 				box-sizing: border-box;
 				padding: 0 0.2rem;
+
 				.aa {
 					width: 1px;
 					height: 3rem;
 					border-left: 1px solid black;
 				}
+
 				.button {
 					text-align: center;
 					position: relative;
+
 					span {
 						width: 80%;
 						position: absolute;
@@ -177,15 +194,19 @@
 						font-size: 0.35rem;
 						color: gray;
 					}
+
 					img {
 						width: 80%;
 					}
 				}
+
 				>div {
 					margin-top: 0.5rem;
 					margin-bottom: 0.5rem;
+
 					.icon {
 						text-align: center;
+
 						img {
 							width: 1.3rem;
 						}
@@ -194,47 +215,57 @@
 			}
 		}
 	}
-	
+
 	.classes-section {
 		width: 100%;
+
 		>.main {
 			margin-top: 1.5rem;
+
 			.back {
 				position: absolute;
 				left: 0;
+
 				img {
 					z-index: 1;
 					width: 0.5rem;
 				}
 			}
+
 			.back2 {
 				position: absolute;
 				right: 0;
+
 				img {
 					z-index: 1;
 					width: 0.5rem;
 				}
 			}
+
 			>div {
 				width: 100%;
 				display: flex;
 				justify-content: center;
 				align-items: center;
+
 				.icon {
 					margin-top: 0.45rem;
 					width: 100%;
 					display: flex;
 					justify-content: center;
 					align-items: center;
+
 					img {
 						width: 1.5rem;
 					}
 				}
+
 				.title {
 					margin-top: 0.5rem;
 					font-size: 0.35rem;
 					text-align: center;
 					width: 5.5rem;
+
 					span {
 						text-align: left;
 						margin-top: 0.3rem;
@@ -245,31 +276,38 @@
 					}
 				}
 			}
-			.title{
+
+			.title {
 				font-size: 0.5rem;
+
 				>div {
 					p {
 						width: 100%;
+
 						span {
 							color: #238ffe;
 						}
 					}
 				}
 			}
-			.title2{
+
+			.title2 {
 				position: absolute;
 				top: 23rem;
 			}
-			.title3{
+
+			.title3 {
 				position: absolute;
 				top: 16rem;
 			}
 		}
+
 		.query {
 			margin-top: 1rem;
 			display: flex;
 			justify-content: center;
 			margin-bottom: 2rem;
+
 			a {
 				font-size: 0.3rem;
 				padding: 0.3rem 1.5rem;
@@ -280,17 +318,19 @@
 			}
 		}
 	}
-	
+
 	.classes-footer {
 		width: 100%;
 		height: 2rem;
 		border-top: 1px solid gray;
+
 		.footerul {
 			width: 100%;
 			height: 100%;
 			display: flex;
 			justify-content: space-around;
 			align-items: center;
+
 			li {
 				width: 100%;
 				height: 100%;
@@ -299,17 +339,21 @@
 				align-items: center;
 				text-align: center;
 				list-style: none;
+
 				a {
 					text-decoration: none;
 				}
+
 				img {
 					width: 0.75rem;
 				}
+
 				span {
 					color: gray;
 					font-size: 0.4rem;
 					margin-top: 10px;
 				}
+
 				.xz {
 					color: #448df6;
 				}
