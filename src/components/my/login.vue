@@ -10,8 +10,9 @@
 <div class="beijing"></div>
 <div class="form">
 	<form action="">
-		 <div class="one"><img src="../../../static/img/sign_icon_phone01.png" alt="" class="img"><input type="text" placeholder="用户名/手机号"></div>
-		 <div class="tow"><img src="../../../static/img/sign_icon_lock01.png" alt="" class="img"><input type="text" placeholder="用户名/手机号"> <img src="../../../static/img/sign_icon_eye01.png" alt="" class="kan"></div>
+	 <div class="one"><img src="../../../static/img/sign_icon_phone01.png" alt="" class="img"><input type="text" placeholder="用户名/手机号"></div>
+	 <div class="tow"><img src="../../../static/img/sign_icon_lock01.png" alt="" class="img"><input type="password" placeholder="请输入密码">
+	 <span><img src="../../../static/img/sign_icon_eye01.png" alt="" class="showpass" @click='showpass'></span></div>
      <button>登录</button>	
 	</form>
 	<a href="">忘记密码</a>
@@ -25,8 +26,8 @@
 					<p>微信</p>
 			 </div>
 			   <div>
-			 			  <img src="../../../static/img/qq.png" alt="">
-			 				<p>QQ</p>
+				  <img src="../../../static/img/qq.png" alt="">
+					<p>QQ</p>
 			   </div>
 		</div>
 	</div>
@@ -38,7 +39,15 @@
 
 <script>
   export default{
-
+methods:{
+		showpass:function(){
+			if ($("form>.tow").find("input").attr("type")=="password") {
+				$("form>.tow").find("input").attr("type","text")
+			}else{
+				$("form>.tow").find("input").attr("type","password")
+			}
+		}
+	}
   }
 </script>
 
@@ -101,12 +110,12 @@
          left:25/64rem;
 				 top:25/64rem;
 			 }
-			 .kan{
+			 .showpass{
 				 position: absolute;
 				 width:40/64rem;
-				 height:26/64rem;
+				 height:27/64rem;
 				 right: 30/64rem;
-				 top:50/64rem;
+				 top:45/64rem;
 			 }
 		}
 		button{
@@ -135,7 +144,7 @@
 	}
 	.foot{
 		position: relative;
-		top:200/64rem;
+		top:260/64rem;
 		height:200/64rem;
 		height:250/64rem;
 		background: #fff;
@@ -161,7 +170,7 @@
 			text-align: center;
 			color: #999;
 			 position: relative;
-			 top:30/64rem;
+			 top:25/64rem;
 			 
 		}
 	}

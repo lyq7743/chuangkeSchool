@@ -9,7 +9,8 @@
 		<div class="beijing"></div>
 		<div class="form">
 			<form action="">
-				 <div class="one"><img src="../../../static/img/sign_icon_phone01.png" alt="" class="img"><input type="text" placeholder="请输入注册手机号"><span class="myspan">验证码</span> </div>
+				 <div class="one"><img src="../../../static/img/sign_icon_phone01.png" alt="" class="img"><input type="text" placeholder="请输入注册手机号">
+				 <span class="gainCode" @click='gainCode'>验证码</span></div>
 				 <div class="tow"><img src="../../../static/img/safe42.png" alt="" class="img"><input type="text" placeholder="请输入验证码"></div>
 				 <div class="tow"><img src="../../../static/img/sign_icon_lock01.png" alt="" class="img"><input type="text" placeholder="设置6位以上的密码"></div>
 		     <button>下一步</button>	
@@ -25,6 +26,29 @@
 </template>
 
 <script>
+	  export default{
+	methods:{
+			gainCode:function(){
+				var flag=true
+				var s=60;
+				var time=null;
+				if (flag) {
+					flag=false;
+					clearInterval(time)
+					time=setInterval(function(){
+						s>=10?$(".gainCode").html(s+'s'):$(".gainCode").html('0'+s+'s')
+						s--;
+						if (s<-1) {
+							$(".gainCode").html('重新发送')
+							clearInterval(time)
+							flag=true;
+						}
+					},1000)
+				}
+				
+			}
+		}
+	  }
 </script>
 
 <style lang="less" scoped>
@@ -93,7 +117,7 @@
 					 right: 30/64rem;
 					 top:50/64rem;
 				 }
-				 .myspan{
+				 .gainCode{
 					 display: inline-block;
 					 position: absolute;
 					 top:20/64rem;
@@ -133,7 +157,7 @@
 		}
 		 
 		.form{
-			height: 100%;
+			height:1200px;
 			background:#f2f2f2;
 			 
 			 
