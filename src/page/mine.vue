@@ -13,18 +13,17 @@ import mine from '../components/my/mine.vue'
  components: {
       mine
    },
-   
   }
 </script>
 
 <style lang="less">
 
 	.imgright{
-			width: 120/64rem;
-   	height: 120/64rem;
+		width: 155/64rem;
+   	height: 155/64rem;
    	position: absolute;
- 	  right: 20/64rem;
- 	  top:40/64rem;
+ 	  right: 35/64rem;
+	   top: 90/64rem;
 	}
 	.imgleft{
 			width: 25/64rem;
