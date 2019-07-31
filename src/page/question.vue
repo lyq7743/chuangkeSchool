@@ -1,4 +1,4 @@
- <template>
+<template>
 	<div>
 		<header>
 			<div class="title">
@@ -18,22 +18,22 @@
 					</p>
 				</div>
 				<div class="fenlei-bottom">
-					<ul>
-						<li v-for="(item,index) in arr2">
-							<div>
-								<img :src="item.imgsrc" />
-							</div>
-							<div>
-								<p>{{item.title}}</p>
-								<p>{{item.main}}</p>
-							</div>
-						</li>
-					</ul>
+					<router-link to="../components/question/classify/child.vue">
+						<ul>
+							<li v-for="(item,index) in arr2">
+								<div>
+									<img :src="item.imgsrc" />
+								</div>
+								<div>
+									<p>{{item.title}}</p>
+									<p>{{item.main}}</p>
+								</div>
+							</li>
+						</ul>
+					</router-link>
 				</div>
 			</div>
-			
-			
-			
+
 			<div class="content">
 				<div class="content-title">
 					<ul>
@@ -53,28 +53,10 @@
 						</li>
 					</ul>
 				</div>
-				
-				<div class="navshow">
-				  	<router-view></router-view>
-				  </div>
-				<!--<div class="content-tuijian">
-					<div v-for="(item,index) in arr">
-						<div class="content-talk" v-for="(item,index) in item.recommend_list">
-							<div class="content-talk-left">
-								<p><img :src="item.imgsrc" alt="" /></p>
-								<p>{{item.title}}</p>
-							</div>
-							<div class="content-talk-right">
-								<p>来自{{item.from}}&nbsp;&nbsp;&nbsp;&nbsp;<span>1个回答</span></p>
-								<p>{{item.biaoti}}</p>
-								<p><button>{{item.sort}}</button></p>
-								<p><span>{{item.huifu}}</span>&nbsp;&nbsp;回复</p>
-								<p>{{item.huifumain}}</p>
-							</div>
-						</div>
-					</div>
-				</div>-->
 
+				<div class="navshow">
+					<router-view></router-view>
+				</div>
 			</div>
 
 		</article>
@@ -91,27 +73,31 @@
 		data: function() {
 			return {
 				arr: [],
-				arr2:[]
+				arr2: []
 			}
 		},
-		mounted:function(){
+		mounted: function() {
 			this.$axios.get('https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/questionsort')
 				.then(res => {
 					this.arr = res.data.group;
-			}),
-			this.$axios.get(' https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/question')
+				}),
+				this.$axios.get(' https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/question')
 				.then(res => {
 					this.arr2 = res.data.group;
-			})
-			setTimeout(()=>{//页面加载时要执行的方法
-				var date=new Date();
-				var day=date.getDate();
-				console.log(day);
-				document.querySelector(".day").innerText=day;
+				})
+				this.$router.push({
+					path:'/question/recommend'
+				})
+			setTimeout(() => { //页面加载时要执行的方法
+				var date = new Date();
+				var day = date.getDate();
+				// console.log(day);
+				document.querySelector(".day").innerHTML = day;
 				//innerhtml会报错
-			},100);
+			}, 100);
+			
 		}
-		
+
 	}
 </script>
 
@@ -214,6 +200,7 @@
 				&>p:last-child {
 					a {
 						color: black;
+
 						span {
 							width: 25/75rem;
 							height: 25/75rem;
@@ -299,11 +286,11 @@
 				li:nth-of-type(4) {
 					background: #616ab7;
 				}
-				
+
 				li:nth-of-type(5) {
 					background: #5fc7ec;
 				}
-				
+
 				li:nth-of-type(6) {
 					background: #f4583f;
 				}

@@ -25,6 +25,8 @@ import wulianwang from '../components/home/freeClass/wulianwang.vue'
 import recommend from '../components/question/recommend.vue'
 import cream from '../components/question/cream.vue'
 import wait from '../components/question/wait.vue'
+import questionchilden from '../components/question/classify/child.vue'
+
 
 import login from '../components/my/login.vue'
 import register from '../components/my/register.vue'
@@ -143,5 +145,10 @@ export default new Router({
       	{path:'wait',component:wait}
       ]
     },
+	{
+		path: '/questionchilden',
+		name: 'questionchilden',
+		component: questionchilden
+	}
   ]
 })
