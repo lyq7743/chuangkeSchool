@@ -25,16 +25,6 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-  export default {
-    mounted() {
-      this.$router.push({
-        path: '/home/recommended'
-      })
-
-    }
-  }
-=======
 	export default {
 		data: function() {
 			return {
@@ -55,7 +45,7 @@
 			console.log(this.status);
 		}
 	}
->>>>>>> a80e51b358e6835148ffb957824f104e48118bb1
+
 </script>
 
 <style scoped lang="less">
