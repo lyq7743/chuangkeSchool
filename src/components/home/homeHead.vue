@@ -44,6 +44,10 @@
 			}
 		}
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 68fe2ac9e96f22ae47e6dc644d33c6ffd1150f4f
 </script>
 
 <style scoped lang="less">
