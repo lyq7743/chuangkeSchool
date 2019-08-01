@@ -8,6 +8,7 @@
           "class_level": "初级",
           "people": "242",
           "price": "免费"
+		  
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20181106/1541491969189977682.jpg",
@@ -22,6 +23,7 @@
           "class_level": "中级",
           "people": "500",
           "price": "免费"
+					
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20180507/1525684115834375037.jpg",
