@@ -16,6 +16,8 @@ import all from '../components/home/all.vue'
 import not from '../components/home/not.vue'
 import end from '../components/home/end.vue'
 
+import search from '../page/search.vue'
+
 import allClass from '../components/home/freeClass/allClass.vue'
 import javaEE from '../components/home/freeClass/javaEE.vue'
 import qianrushi from '../components/home/freeClass/qianrushi.vue'
@@ -40,6 +42,11 @@ export default new Router({
       name: 'tabbar',
       component: tabbar
     },
+	{
+	  path: '/search',
+	  name: 'search',
+	  component: search
+	},
     {
       path: '/home',
       name: 'home',

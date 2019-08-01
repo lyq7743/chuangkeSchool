@@ -2,7 +2,9 @@
 	<div class="homeHeader">
 		<div class="homgHeader-top">
 			<slot name='imgleft'></slot>
-			<input type="search" class='search' placeholder="ajax·php·android">
+			<router-link to='../../search'>
+				<input type="search" class='search' placeholder="ajax·php·android">
+			</router-link>
 			<slot name='imgright'></slot>
 		</div>
 		<div class="homgHeader-bottom">
