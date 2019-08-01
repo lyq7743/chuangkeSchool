@@ -32,6 +32,7 @@ import login from '../components/my/login.vue'
 import register from '../components/my/register.vue'
 import system from '../components/my/system.vue'
 
+import detailsClass from '../components/home/detailsClass.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -149,6 +150,11 @@ export default new Router({
 		path: '/questionchilden',
 		name: 'questionchilden',
 		component: questionchilden
+	},
+	{
+		path:'/detailsClass',
+		name:'detailsClass',
+		component:detailsClass
 	}
   ]
 })

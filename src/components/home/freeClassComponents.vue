@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content" @click="toDetailsClass">
     <div class="img-content">
       <img v-lazy="classSrc" alt="">
       <div>
@@ -27,7 +27,12 @@
       setPeople(val){
           return val + '人正在学习'
       }
-    }
+    },
+	methods:{
+		toDetailsClass(){
+			this.$router.push({path:'/detailsClass'})
+		}
+	}
   }
 </script>
 
