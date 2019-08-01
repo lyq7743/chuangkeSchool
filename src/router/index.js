@@ -28,6 +28,9 @@ import recommend from '../components/question/recommend.vue'
 import cream from '../components/question/cream.vue'
 import wait from '../components/question/wait.vue'
 import questionchilden from '../components/question/classify/child.vue'
+import crecommend from '../components/question/classify/crecommend.vue'
+import ccream from '../components/question/classify/ccream.vue'
+import cwait from '../components/question/classify/cwait.vue'
 
 
 import login from '../components/my/login.vue'
@@ -155,7 +158,12 @@ export default new Router({
 	{
 		path: '/questionchilden',
 		name: 'questionchilden',
-		component: questionchilden
+		component: questionchilden,
+		children:[
+				{path:'crecommend',component:crecommend},
+      	{path:'ccream',component:ccream},
+      	{path:'cwait',component:cwait}
+		]
 	}
   ]
 })

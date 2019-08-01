@@ -33,7 +33,7 @@
 				status: true
 			}
 		},
-		mounted() {
+		mounted(){
 			if(this.status){
 				this.$router.push({
 					path: '/home/recommended'
@@ -44,10 +44,8 @@
 				})
 				this.status==true;
 			}
-			console.log(this.status);
 		}
 	}
-
 </script>
 
 <style scoped lang="less">
