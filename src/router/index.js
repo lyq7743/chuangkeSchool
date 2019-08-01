@@ -41,139 +41,152 @@ import detailsClass from '../components/home/detailsClass.vue'
 Vue.use(Router)
 
 export default new Router({
-  routes: [{
-      path: '/',
-      name: 'tabbar',
-      component: tabbar
-    },
-	{
-	  path: '/search',
-	  name: 'search',
-	  component: search
-	},
-    {
-      path: '/home',
-      name: 'home',
-      component: home,
-      children:[
-        {
-          path: 'freeclass',
-          name: 'freeClass',
-          component: freeClass,
-          children:[
-            {
-              path:'allClass',
-              name:'allClass',
-              component:allClass
-            },
-            {
-              path:'javaEE',
-              name:'javaEE',
-              component:javaEE
-            },
-            {
-              path:'qianrushi',
-              name:'qianrushi',
-              component:qianrushi
-            },
-             {
-              path:'web',
-              name:'web',
-              component:web
-            },
-             {
-              path:'wulianwang',
-              name:'wulianwang',
-              component:wulianwang
-            }
-          ]
-        },
-        {
-          path: 'recommended',
-          name: 'recommended',
-          component: recommended,
-        },
-        {
-          path: 'livebroadcastclass',
-          name: 'livebroadcastClass',
-          component: livebroadcastClass,
-          children:[
-            {
-              path: 'all',
-              name: 'all',
-              component: all,
-            },
-            {
-              path: 'not',
-              name: 'not',
-              component: not,
-            },
-            {
-              path: 'end',
-              name: 'end',
-              component: end,
-            }],redirect:'/home/livebroadcastclass/all'
-        },
-        {
-          path: 'jobpath',
-          name: 'jobPath',
-          component: jobPath,
-        },
-      ]
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: login,
-    },
-    {
-      path: '/register',
-      name: 'register',
-      component: register,
-    },
-    {
-      path: '/system',
-      name: 'system',
-      component: system,
-    },
-    {
-      path: '/className',
-      name: 'class1',
-      component: class1
-    },
-    {
-      path: '/mine',
-      name: 'mine',
-      component: mine
-    },
-    {
-      path: '/question',
-      name: 'question',
-      component: question,
-      children:[
-      	{path:'recommend',component:recommend},
-      	{path:'cream',component:cream},
-      	{path:'wait',component:wait}
-      ]
-    },
-	{
-		path: '/questionchilden',
-		name: 'questionchilden',
-<<<<<<< HEAD
-		component: questionchilden
-	},
-	{
-		path:'/detailsClass',
-		name:'detailsClass',
-		component:detailsClass
-=======
-		component: questionchilden,
-		children:[
-				{path:'crecommend',component:crecommend},
-      	{path:'ccream',component:ccream},
-      	{path:'cwait',component:cwait}
-		]
->>>>>>> b24bf358c2a5cc2ba7fdad73e25ae2f8215143a2
+	routes: [{
+			path: '/',
+			name: 'tabbar',
+			component: tabbar
+		},
+		{
+			path: '/search',
+			name: 'search',
+			component: search
+		},
+		{
+			path: '/home',
+			name: 'home',
+			component: home,
+			children: [{
+					path: 'freeclass',
+					name: 'freeClass',
+					component: freeClass,
+					children: [{
+							path: 'allClass',
+							name: 'allClass',
+							component: allClass
+						},
+						{
+							path: 'javaEE',
+							name: 'javaEE',
+							component: javaEE
+						},
+						{
+							path: 'qianrushi',
+							name: 'qianrushi',
+							component: qianrushi
+						},
+						{
+							path: 'web',
+							name: 'web',
+							component: web
+						},
+						{
+							path: 'wulianwang',
+							name: 'wulianwang',
+							component: wulianwang
+						}
+					]
+				},
+				{
+					path: 'recommended',
+					name: 'recommended',
+					component: recommended,
+				},
+				{
+					path: 'livebroadcastclass',
+					name: 'livebroadcastClass',
+					component: livebroadcastClass,
+					children: [{
+							path: 'all',
+							name: 'all',
+							component: all,
+						},
+						{
+							path: 'not',
+							name: 'not',
+							component: not,
+						},
+						{
+							path: 'end',
+							name: 'end',
+							component: end,
+						}
+					],
+					redirect: '/home/livebroadcastclass/all'
+				},
+				{
+					path: 'jobpath',
+					name: 'jobPath',
+					component: jobPath,
+				},
+			]
+		},
+		{
+			path: '/login',
+			name: 'login',
+			component: login,
+		},
+		{
+			path: '/register',
+			name: 'register',
+			component: register,
+		},
+		{
+			path: '/system',
+			name: 'system',
+			component: system,
+		},
+		{
+			path: '/className',
+			name: 'class1',
+			component: class1
+		},
+		{
+			path: '/mine',
+			name: 'mine',
+			component: mine
+		},
+		{
+			path: '/question',
+			name: 'question',
+			component: question,
+			children: [{
+					path: 'recommend',
+					component: recommend
+				},
+				{
+					path: 'cream',
+					component: cream
+				},
+				{
+					path: 'wait',
+					component: wait
+				}
+			]
+		},
+		{
+			path: '/questionchilden',
+			name: 'questionchilden',
+			component: questionchilden,
+			children: [
+				{
+					path: 'crecommend',
+					component: crecommend
+				},
+				{
+					path: 'ccream',
+					component: ccream
+				},
+				{
+					path: 'cwait',
+					component: cwait
+				}
+			]
+		},
+		{
+			path: '/detailsClass',
+			name: 'detailsClass',
+			component: detailsClass
+		
 	}
-  ]
+]
 })
