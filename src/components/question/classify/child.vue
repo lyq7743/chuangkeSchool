@@ -2,48 +2,39 @@
 	<div class="HeaderWarp">
 		<div class="header">
 			<div class="headerleft">
-				左
+				<router-link to="/question">
+					<img class="leftimg" src="../../../../static/img/polyv_btn_back.png" />
+				</router-link>
 			</div>
 			<div class="headertitle">
-				C语言
+				{{title}}
 			</div>
 			<div class="headerright">
-				+关注
+				+ 关注
 			</div>
 		</div>
-		<div class="content-title">
-			<ul>
-				<li class="click">
-					<router-link to="/question/recommend">推荐</router-link>
-					<p></p>
-				</li>
-				<li class="click">
-					<router-link to="/question/cream">精华</router-link>
-					<p></p>
-				</li>
-				<li class="click" i>
-					<router-link to="/question/wait">等待回答</router-link>
-					<p></p>
-				</li>
-			</ul>
-		</div>
-		<div class="content-tuijian">
-			<div v-for="(item,index) in arr">
-				<div class="content-talk" v-for="(item,index) in item.cream_list">
-					<div class="content-talk-left">
-						<p><img :src="item.imgsrc" alt="" /></p>
-						<p>{{item.title}}</p>
-					</div>
-					<div class="content-talk-right">
-						<p>来自{{item.from}}&nbsp;&nbsp;&nbsp;&nbsp;<span>1个回答</span></p>
-						<p>{{item.biaoti}}</p>
-						<p><button>{{item.sort}}</button></p>
-						<p><span>{{item.huifu}}</span>&nbsp;&nbsp;回复</p>
-						<p>{{item.huifumain}}</p>
-					</div>
+		<div class="content">
+				<div class="content-title">
+					<ul>
+						<li class="click">
+							<router-link to="/questionchilden/crecommend">推荐</router-link>
+							<p></p>
+						</li>
+						<li class="click">
+							<router-link to="/questionchilden/ccream">最新</router-link>
+							<p></p>
+						</li>
+						<li class="click" i>
+							<router-link to="/questionchilden/cwait">等待回答</router-link>
+							<p></p>
+						</li>
+					</ul>
+				</div>
+
+				<div class="navshow">
+					<router-view></router-view>
 				</div>
 			</div>
-		</div>
 	</div>
 
 </template>
@@ -52,19 +43,46 @@
 	export default {
 		data: function() {
 			return {
-				arr: []
+				arr: [],
+				title:''
 			}
 		},
 		mounted: function() {
+			this.title=this.$route.query.title
 			this.$axios.get('https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/questionsort')
 				.then(res => {
 					this.arr = res.data.group;
+				})
+				this.$router.push({
+					path:'/questionchilden/crecommend'
 				})
 		}
 	}
 </script>
 
 <style lang="less" scoped>
+	.header {
+		line-height: 1rem;
+		text-align: center;
+		position: relative;
+		.headerleft{
+			position: absolute;
+			left: 0.1rem;
+			top: 0;
+			.leftimg{
+				width: 0.8rem;
+			}
+		}
+		.headertitle{
+			font-size: 16px;
+		}
+		.headerright{
+			position: absolute;
+			right: 0.2rem;
+			top: 0;
+			font-size: 14px;
+		}
+	}
 	.content {
 		.content-title {
 			text-align: center;

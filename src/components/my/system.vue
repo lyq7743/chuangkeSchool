@@ -97,7 +97,7 @@
 					display: inline-block;
 					position: absolute;
 					right:45/64rem;
-					top:30/64rem;
+					top:20/64rem;
 				}
 				 
 			}

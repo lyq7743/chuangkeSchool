@@ -5,7 +5,7 @@
 				<p>技术问答</p>
 				<div class="date">
 					<p class="month">Jul</p>
-					<p class="day">04</p>
+					<p class="day">{{day}}</p>
 				</div>
 			</div>
 		</header>
@@ -18,19 +18,17 @@
 					</p>
 				</div>
 				<div class="fenlei-bottom">
-					<router-link to="../components/question/classify/child.vue">
-						<ul>
-							<li v-for="(item,index) in arr2">
-								<div>
-									<img :src="item.imgsrc" />
-								</div>
-								<div>
-									<p>{{item.title}}</p>
-									<p>{{item.main}}</p>
-								</div>
-							</li>
-						</ul>
-					</router-link>
+					<ul>
+						<li v-for="(item,index) in arr2" @click="tiaozhuan(index)">
+							<div>
+								<img :src="item.imgsrc" />
+							</div>
+							<div>
+								<p>{{item.title}}</p>
+								<p>{{item.main}}</p>
+							</div>
+						</li>
+					</ul>
 				</div>
 			</div>
 
@@ -73,7 +71,19 @@
 		data: function() {
 			return {
 				arr: [],
-				arr2: []
+				arr2: [],
+				day:'',
+				arr2title:''
+			}
+		},
+		methods:{
+			tiaozhuan:function(index){
+				this.arr2title=this.arr2[index].title
+				this.$router.push({
+					path:'/questionchilden',
+					query:{title:this.arr2[index].title}
+				})
+				console.log(this.arr2title);
 			}
 		},
 		mounted: function() {
@@ -92,7 +102,7 @@
 				var date = new Date();
 				var day = date.getDate();
 				// console.log(day);
-				document.querySelector(".day").innerHTML = day;
+				this.day = day;
 				//innerhtml会报错
 			}, 100);
 			
