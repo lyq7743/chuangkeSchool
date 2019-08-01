@@ -17,9 +17,14 @@
         <li @click='fn'>
           <router-link to='/home/freeclass/web'>WEB全栈</router-link>
         </li>
-        <li><img src="../../../static/img/ic_fillter.png" alt=""></li>
+        <li @click='cbl'>
+        	<img src="../../../static/img/ic_fillter.png" alt="">
+        </li>
       </ul>
     </div>
+    <!--<div class="cbl">
+    	侧边栏
+    </div>-->
     <div>
       <router-view></router-view>
     </div>
@@ -32,19 +37,20 @@
     data() {
       return {
         check: true,
+        popupVisible:"abc"
       }
     },
     methods: {
       fn() {
-
         if(this.$router.path != '/home/freeclass/allClas') {
-
           this.check =false;
         }else{
           this.check =true;
         }
+      },
+      cbl(){
+      	console.log(123);
       }
-
     },
     mounted() {
       this.$router.push({
@@ -55,6 +61,11 @@
 </script>
 
 <style lang="less" scoped>
+	.cbl{
+		width:8rem;
+		height: 20rem;
+		border: 1px solid red;
+	}
   .header {
     .click {
       background: #ccc;

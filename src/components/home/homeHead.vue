@@ -2,7 +2,9 @@
 	<div class="homeHeader">
 		<div class="homgHeader-top">
 			<slot name='imgleft'></slot>
-			<input type="search" class='search' placeholder="ajax·php·android">
+			<router-link to='../../search'>
+				<input type="search" class='search' placeholder="ajax·php·android">
+			</router-link>
 			<slot name='imgright'></slot>
 		</div>
 		<div class="homgHeader-bottom">
@@ -31,7 +33,7 @@
 				status: true
 			}
 		},
-		mounted() {
+		mounted(){
 			if(this.status){
 				this.$router.push({
 					path: '/home/recommended'
@@ -42,10 +44,8 @@
 				})
 				this.status==true;
 			}
-			console.log(this.status);
 		}
 	}
-
 </script>
 
 <style scoped lang="less">

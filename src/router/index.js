@@ -16,6 +16,8 @@ import all from '../components/home/all.vue'
 import not from '../components/home/not.vue'
 import end from '../components/home/end.vue'
 
+import search from '../page/search.vue'
+
 import allClass from '../components/home/freeClass/allClass.vue'
 import javaEE from '../components/home/freeClass/javaEE.vue'
 import qianrushi from '../components/home/freeClass/qianrushi.vue'
@@ -26,6 +28,9 @@ import recommend from '../components/question/recommend.vue'
 import cream from '../components/question/cream.vue'
 import wait from '../components/question/wait.vue'
 import questionchilden from '../components/question/classify/child.vue'
+import crecommend from '../components/question/classify/crecommend.vue'
+import ccream from '../components/question/classify/ccream.vue'
+import cwait from '../components/question/classify/cwait.vue'
 
 
 import login from '../components/my/login.vue'
@@ -40,6 +45,11 @@ export default new Router({
       name: 'tabbar',
       component: tabbar
     },
+	{
+	  path: '/search',
+	  name: 'search',
+	  component: search
+	},
     {
       path: '/home',
       name: 'home',
@@ -148,7 +158,12 @@ export default new Router({
 	{
 		path: '/questionchilden',
 		name: 'questionchilden',
-		component: questionchilden
+		component: questionchilden,
+		children:[
+				{path:'crecommend',component:crecommend},
+      	{path:'ccream',component:ccream},
+      	{path:'cwait',component:cwait}
+		]
 	}
   ]
 })
