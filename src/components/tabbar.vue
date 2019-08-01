@@ -38,11 +38,10 @@
         this.currindex = value;
       },
       fn1() {
-        if ($router.path != '/home/recommended') {
-          this.$router.push({
-            path: '/home/recommended'
-          });
-        }
+        this.$router.push({
+					path:'/home/recommended',
+					query:{status: true}
+				})
       }
     },
     mounted() {

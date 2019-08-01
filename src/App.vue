@@ -2,7 +2,7 @@
   <div>
 
     <router-view />
-    <tabbar></tabbar>
+   <tabbar v-if="this.$route.path!=='/login'&&this.$route.path!=='/register'&&this.$route.path!=='/system'"></tabbar>
   </div>
 </template>
 

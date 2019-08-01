@@ -1,16 +1,16 @@
 <template>
-	<div>
+	<div class="box">
 		<div class="header">
 			 <div class="top">
-				 <router-link to='/login'><img src="../../../static/img/i_back.png" alt=""></router-link>
+				 <router-link to='/mine'><img src="../../../static/img/i_back.png" alt=""></router-link>
 				  <span>系统设置</span>
 			 </div>
 		</div>
 		<div class="list">
 			<ul>
 				<li>
-					 <span>仅在WiFi下观看和离线下载 </span> 
-					  
+					 <span>仅在WiFi下观看和离线下载</span> 
+					   <span class="switch"><mt-switch v-model="value"></mt-switch></span>
 				</li>
 				<li>
 					 <span>意见反馈 </span>
@@ -36,10 +36,16 @@
 </script>
 
 <style lang="less" scoped>
+	.box{
+		background:#f2f2f2;
+		height: 1500px;
+		width: 100%;
+	}
 		.header{
 			width: 100%;
 			height: 130/64rem;
-			 border-bottom: 1px solid #000;
+			 border-bottom: 1px solid #999;
+			 background: #fff;
 		}
 	.top{
 		font-size: 34/64rem;
@@ -87,6 +93,13 @@
 					position: absolute;
 					 right:30/64rem;
 				}
+				.switch{
+					display: inline-block;
+					position: absolute;
+					right:45/64rem;
+					top:20/64rem;
+				}
+				 
 			}
 		}
 		 
