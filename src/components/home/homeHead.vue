@@ -25,23 +25,13 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-  export default {
-    mounted() {
-      this.$router.push({
-        path: '/home/recommended'
-      })
-
-    }
-  }
-=======
 	export default {
 		data: function() {
 			return {
 				status: true
 			}
 		},
-		mounted() {
+		mounted(){
 			if(this.status){
 				this.$router.push({
 					path: '/home/recommended'
@@ -52,10 +42,8 @@
 				})
 				this.status==true;
 			}
-			console.log(this.status);
 		}
 	}
->>>>>>> a80e51b358e6835148ffb957824f104e48118bb1
 </script>
 
 <style scoped lang="less">
