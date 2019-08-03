@@ -1,0 +1,30 @@
+{
+	"code": "classData",
+	"toast": "",
+	"new_recommend_count_str": "",
+	"group": [
+			{
+				"title": "嵌入式"
+			},
+			{
+				"title": "物联网"
+			},{
+				"title": "javaEE"
+			},
+			{
+				"title": "WEB全栈"
+			},
+			{
+				"title": "VR/AR"
+			},
+			{
+				"title": "Android"
+			},
+			{
+				"title": "iOS"
+			},
+			{
+				"title": "UI/UE"
+			}
+	]
+}

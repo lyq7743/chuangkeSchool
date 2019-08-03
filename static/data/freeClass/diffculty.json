@@ -1,0 +1,15 @@
+{
+	"code": "classData",
+	"toast": "",
+	"new_recommend_count_str": "",
+	"group": [
+			{
+				"title": "初级"
+			},
+			{
+				"title": "中级"
+			},{
+				"title": "高级"
+			}
+	]
+}
