@@ -6,21 +6,21 @@
     </div>
     <div class="classDetails">
       <p class="classLabel">精品课程</p>
-      <p class="classtitle">Linux课程</p>
-      <p class='classIntroduce'>撒娇佛is回房间哈斯福建海事局快递费释放时间阿道夫很快就收到回复卡收到货</p>
+      <p class="classtitle">{{shuju.classTitle}}</p>
+      <p class='classIntroduce'>{{shuju.classIntroduction}}</p>
       <div class="classOverview">
         <ul>
           <li>
-            <p>26</p>
+            <p>{{shuju.classNum}}</p>
             <p>课程小结</p>
           </li>
           <li>
-            <p>26</p>
-            <p>课程小结</p>
+            <p>{{shuju.classHour|setHout}}</p>
+            <p>课程时长</p>
           </li>
           <li>
-            <p>26</p>
-            <p>课程小结</p>
+            <p>{{shuju.people}}</p>
+            <p>学习人数</p>
           </li>
         </ul>
       </div>
@@ -44,23 +44,19 @@
         <p class="teacher-title">主讲老师</p>
         <div class="teacher-Introduction">
           <div class="teacher-Introduction-top">
-            <img src="../../../static/img/teacher.png" alt="">
+            <img :src="shuju.teacherImg" alt="">
             <div class="teacher-name">
-              <p>小美老师</p>
-              <p>金牌讲师</p>
+              <p>{{shuju.teacherName}}</p>
+              <p>{{shuju.teacherLevel}}</p>
             </div>
             <div class="teacher-welcome">
               <img src="../../../static/img/mipmap/flower_live.png" alt="">
-              <p>859</p>
+              <p>{{shuju.studyPeople}}</p>
             </div>
           </div>
           <div class="teacher-Introduction-content">
             <p>
-              接口连接阿斯弗阿斯蒂芬解开了是否 士大夫看几分ls；<br>
-              接口连接阿斯弗阿斯蒂芬解开了是否 士大夫看几分ls；<br>
-              接口连接阿斯弗阿斯蒂芬解开了是否 士大夫看几分ls；<br>
-              接口连接阿斯弗阿斯蒂芬解开了是否 士大夫看几分ls；<br>
-              接口连接阿斯弗阿斯蒂芬解开了是否 士大夫看几分ls；<br>
+              {{shuju.teacherIntroduction}}
             </p>
           </div>
         </div>
@@ -109,8 +105,58 @@
           </ul>
         </div>
       </div>
+      <div class="classArrangements">
+          <p class="classArrangements-title">课程安排</p>
+          <ul v-for="(item,index) in shuju.kecheng" :key="index">
+            <p class="classTitle">{{item.classTitle}}</p>
+            <li v-for="(item,index) in item.classChapter" :key="index"><img src="../../../static/img/video_icon_play.png" alt=""><p>{{item.classtitle}}</p></li>
+          </ul>
+          <p class="seeMore">查看更多</p>
+      </div>
       <div class="classTalk">
-
+          <p class="classmateTalk">学员评价</p>
+          <div class="classScoring">
+              <ul>
+                  <li class="scoringAll">{{shuju.fengshu}}</li>
+                  <li><h4>课程内容</h4><p>5</p></li>
+                  <li><h4>辅导老师</h4><p>5</p></li>
+                  <li><h4>教学服务</h4><p>5</p></li>
+              </ul>
+          </div>
+          <div class="classTalkAbout">
+              <ul>
+                 <li v-for="item in shuju.classtalk" key="index" >
+                    <div class="talk-top">
+                      <div class="scoring-left">
+                        <img :src="item.user_img" alt="">
+                        <p class="classmateName">{{item.user_name}}</p>
+                      </div>
+                      <div class="scoring-right">
+                        <p><img src="../../../static/img/icon_star_yelo.png" alt=""><img src="../../../static/img/icon_star_yelo.png" alt=""><img src="../../../static/img/icon_star_yelo.png" alt=""><img src="../../../static/img/icon_star_yelo.png" alt=""><img src="../../../static/img/icon_star_yelo.png" alt=""></p>
+                        <p>{{item.time}}</p>
+                      </div>
+                    </div>
+                    <div class="talk-content">
+                      <p>{{item.talk}}</p>
+                    </div>
+                 </li>
+                 <!-- <li>
+                    <div class="talk-top">
+                      <div class="scoring-left">
+                        <img src="../../../static/img/mipmap/default_avatar_round.png" alt="">
+                        <p class="classmateName">小明</p>
+                      </div>
+                      <div class="scoring-right">
+                        <p><img src="../../../static/img/icon_star_yelo.png" alt=""><img src="../../../static/img/icon_star_yelo.png" alt=""><img src="../../../static/img/icon_star_yelo.png" alt=""><img src="../../../static/img/icon_star_yelo.png" alt=""><img src="../../../static/img/icon_star_yelo.png" alt=""></p>
+                        <p>07月25日</p>
+                      </div>
+                    </div>
+                    <div class="talk-content">
+                      <p>速度发货尽快释放很舒服是客服还是尽快发货看啥分行开设分行喀什饭卡是否士大夫手机开发和是否上课</p>
+                    </div>
+                 </li> -->
+              </ul>
+          </div>
       </div>
     </div>
 
@@ -130,20 +176,44 @@
 </template>
 
 <script>
-  export default {
+  export default{
+    data(){
+      return{
+          Plate:0,//判断是那个板块的数据
+          classId : 0,//板块的第几个数据
+          shuju:[]
+      }
+    },
+    mounted(){
+        this.$axios.get('../../../static/data/freeClass/freeClass.json')
+        .then(res=>{
+            console.log(res.data.class_list[this.Plate].list[this.classId].childList);
+            this.shuju = res.data.class_list[this.Plate].list[this.classId].childList;
 
+        })
+    },
+    filters:{
+      setHout(val){
+           return val +"H"
+      }
+    }
   }
 </script>
 
 <style lang="less" scoped>
   .content {
+    margin-top: 70/75rem;
     background-color: #f2f2f3;
-    margin-bottom: 100/75rem;
+    margin-bottom: 105/75rem;
     .header {
+      z-index: 999;
+      width: 100%;
+      background: #fff;
       height: 70/75rem;
       // display: flex;
       // align-items: center;
-      position: relative;
+      position: fixed;
+      top: 0;
       background-color: #fff;
 
       img {
@@ -159,7 +229,7 @@
       }
 
       .imgright {
-        right: 30/75rem;
+        right:36/75rem;
         width: 36/75rem;
         height: 32/75rem;
       }
@@ -241,12 +311,11 @@
 
       ul {
         display: flex;
-
+         // align-items: center;
         //
         li {
           line-height: 60/75rem;
           width: 106/75rem;
-
           &:first-child {
             font-size: 26/75rem;
             font-weight: bold;
@@ -257,7 +326,6 @@
             display: flex;
             flex-wrap: wrap;
             width: 600/75rem;
-
             &>p {
               padding: 0 20/75rem;
 
@@ -348,11 +416,12 @@
 
     .classBody {
       margin-top: 20/75rem;
-      padding: 0 38/75rem;
+
 
       background: #fff;
 
       .teacher {
+        padding: 0 38/75rem;
         .teacher-title {
           font-weight: bold;
           font-size: 28/75rem;
@@ -361,10 +430,10 @@
 
         .teacher-Introduction {
           background: #f8fbfb;
-          height: 478/75rem;
+          border-radius: 15/75rem;
           padding: 0 30/75rem;
           padding-top: 30/75rem;
-
+          padding-bottom: 50/75rem;
           .teacher-Introduction-top {
             position: relative;
             display: flex;
@@ -377,7 +446,13 @@
             }
 
             .teacher-name {
+              height: 50/75rem;
+              line-height: 50/75rem;
               padding-left: 20/75rem;
+              p:first-child{
+                  font-weight: 700;
+                  font-size: 25/75rem;
+              }
             }
 
             .teacher-welcome {
@@ -391,7 +466,7 @@
 
               p {
                 position: absolute;
-                right: -15/75rem;
+                right: -8/75rem;
                 text-align: center;
                 color: red;
               }
@@ -413,6 +488,7 @@
       }
 
       .classExperience {
+        padding: 0 38/75rem;
         height: 1078/75rem;
         .classExperience-top{
           padding: 60/75rem 0;
@@ -440,6 +516,7 @@
                   height:347/75rem;
                   background:#f4f7f9;
                   text-align: center;
+                  border-radius: 10/75rem;
                   img{
                     padding-top:72/75rem;
                     width: 89/75rem;
@@ -459,6 +536,114 @@
 
               }
             }
+        }
+      }
+    }
+    .classArrangements{
+      .classArrangements-title{
+        line-height: 100/75rem;
+        background: #f9fcfc;
+        padding-left: 44/75rem;
+        font-weight: bold;
+        font-size:25/75rem;
+      }
+      .seeMore{
+        text-align: center;
+         color: #5494ff;
+         height: 80/75rem;
+         line-height: 80/75rem;
+      }
+      ul{
+        padding:0 38/75rem;
+         .classTitle{
+            font-weight:bold;
+            padding-left:30/75rem;
+            font-weight: bold;
+            font-size:31/75rem;
+            line-height: 80/75rem;
+          }
+
+        li{
+          display: flex;
+          line-height: 60/75rem;
+          align-items: center;
+          padding-left: 60/75rem;
+            img{
+              width: 25/75rem;
+              height: 25/75rem;
+              margin-right: 12/75rem;
+            }
+            p{
+              font-size: 24/75rem;
+              color: gray;
+            }
+        }
+      }
+    }
+    .classTalk{
+      .classmateTalk{
+          font-size: 28/75rem;
+          font-weight: bold;
+          line-height: 70/75rem;
+          padding-left: 40/75rem;
+      }
+      .classScoring{
+        padding: 20/75rem 0;
+        ul{
+          display: flex;
+          li{
+            flex: auto;
+            height: 80/75rem;
+            font-size: 26/75rem;
+
+            p{
+              font-weight: bold;
+            }
+          }
+          .scoringAll{
+            font-size: 56/75rem;
+            text-align: center;
+            color: #f5a050;
+            font-weight: bold;
+          }
+        }
+      }
+      .classTalkAbout{
+        ul{
+          padding: 0 38/75rem;
+          li{
+            padding:45/75rem 34/75rem 55/75rem 44/75rem;
+            background:#f7fafa;
+            position: relative;
+            margin: 40/75rem 0;
+            border-radius: 10/75rem;
+            .talk-top{
+                 margin-bottom: 30/75rem;
+                .scoring-left{
+
+                  display: flex;
+                  align-items: center;
+                  img{
+                    widows: 68/75rem;
+                    height: 68/75rem;
+                  }
+                  .classmateName{
+                    padding-left:20/75rem;
+                    font-size:30/75rem;
+                    font-weight: bold;
+                  }
+                }
+                .scoring-right{
+                    position: absolute;
+                    right: 34/75rem;
+                    top: 45/75rem;
+                    img{
+                        width: 20/75rem;
+                    }
+                }
+            }
+
+          }
         }
       }
     }
