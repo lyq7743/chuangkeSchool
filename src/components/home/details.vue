@@ -1,0 +1,135 @@
+<template>
+  <div class="details">
+    <div class="course-details">
+      <ul>
+        <li>
+          <p>164</p>
+          <p>课程小节</p>
+        </li>
+        <li>
+          <p>57H</p>
+          <p>课程时长</p>
+        </li>
+        <li>
+          <p>2297</p>
+          <p>学习人数</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="teacher">
+      <h2>主讲老师</h2>
+      <div>
+        <div class="divbox">
+          <div class="img">
+            <img src="img/teacher.png" alt="" />
+          </div>
+          <div class="title">
+            <h2>小美老师</h2>
+            <p>金牌讲师</p>
+          </div>
+
+          <div class="flower">
+            <img src="img/f092.png" alt="" />
+            <p>848</p>
+          </div>
+        </div>
+
+        <ul>
+          <li>华清创客学院教学总监，美女讲师，人工智能工学硕士；</li>
+          <li>嵌入式、物联网技术领域专家；</li>
+          <li>ARM公司全球认证讲师；</li>
+          <li>8年嵌入式开发及教育培训经验；</li>
+          <li>参与编写过数十本专业图书；</li>
+          <li>丰富的嵌入式人才培养经验，培养过上万名学生进入企业工作；</li>
+          <li>授课风格轻松愉快，能够让学员学到扎实的理论和娴熟的技术，让学习不再是一件枯燥无味的事。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  export default {
+
+  }
+</script>
+
+<style lang="less">
+  .details {
+    position: fixed;
+    top: 40%;
+    width: 90%;
+  }
+
+  .course-details {
+    width: 90%;
+    text-align: center;
+    margin: 104/64rem auto 0;
+
+    ul {
+      display: flex;
+      align-items: center;
+
+      li {
+        list-style: none;
+        flex: 1;
+        background-color: #f8fcff;
+        border: 1px solid #e7ebef;
+        height: 124/64rem;
+      }
+    }
+  }
+
+  .teacher {
+    width: 90%;
+    margin: 0 auto;
+
+    .divbox {
+      display: flex;
+      padding: 38/64rem;
+      line-height: 19/64rem;
+
+      .img {
+        width: 107/64rem;
+        height: 107/64rem;
+
+        img {
+          width: 107/64rem;
+          height: 107/64rem;
+          border-radius: 50/64rem;
+        }
+      }
+
+      .title {
+        margin-left: 22/64rem;
+
+        p {
+          color: #8f9495;
+        }
+      }
+
+      .flower {
+        margin-left: 280/64rem;
+
+        p {
+          color: #bd5932;
+        }
+      }
+    }
+
+    ul {
+      padding: 38/64rem;
+      color: #8f929e;
+
+      li {
+        list-style: none;
+      }
+    }
+  }
+
+  .teacher>div {
+    width: 90%;
+    background-color: #f8fcff;
+  }
+</style>
