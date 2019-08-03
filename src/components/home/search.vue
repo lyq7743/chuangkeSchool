@@ -8,10 +8,10 @@
 			</div>
 
 			<ul class="list">
-				<li v-for="item in searchData ">
+				<li v-for="item in searchData">
 					<!-- v-for="(item,index) in list" :class="{active:index == xzindex}" -->
 					{{item.CareerName}}
-					
+
 				</li>
 			</ul>
 
@@ -34,7 +34,7 @@
 	export default {
 		data: function() {
 			return {
-				
+
 				search: '',
 				products: []
 			}
