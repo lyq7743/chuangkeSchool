@@ -1,7 +1,7 @@
 <template>
   <div class="directory">
     <div class="curriculum">
-      <h3>课程安排</h3>
+      <h2>课程安排</h2>
       <div class="chapter">
         <h3>第1张 必备Linux命令和c语言基础</h3>
         <ul>
@@ -74,15 +74,21 @@
 <style lang="less">
 
   .directory{
-    position: fixed;
-    top: 40%;
-    width: 90%;
+    position: relative;
+    top: 30%;
+    width: 100%;
   }
 
   .curriculum{
       width: 90%;
       margin: 0 auto;
       background-color: #f9fdfc;
+      h2{
+        line-height: 100/75rem;
+      }
+      h3{
+        line-height: 50/75rem;
+      }
       .chapter{
           margin-left: 20/64rem;
       }

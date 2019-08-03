@@ -18,11 +18,11 @@
     </div>
 
     <div class="teacher">
-      <h2>主讲老师</h2>
-      <div>
+      <h2 class="teacher-title">主讲老师</h2>
+      <div class="teacher-Details">
         <div class="divbox">
           <div class="img">
-            <img src="img/teacher.png" alt="" />
+            <img src="../../../static/img/teacher.png" alt="" />
           </div>
           <div class="title">
             <h2>小美老师</h2>
@@ -30,7 +30,7 @@
           </div>
 
           <div class="flower">
-            <img src="img/f092.png" alt="" />
+            <img src="../../../static/img/f092.png" alt="" />
             <p>848</p>
           </div>
         </div>
@@ -55,28 +55,31 @@
   }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
   .details {
     position: fixed;
-    top: 40%;
-    width: 90%;
-  }
+    top: 22%;
+    width: 100%;
 
-  .course-details {
-    width: 90%;
-    text-align: center;
-    margin: 104/64rem auto 0;
 
-    ul {
-      display: flex;
+    .course-details {
+      width: 100%;
+      text-align: center;
+      margin: 104/64rem auto 0;
       align-items: center;
+      line-height: 60/75rem;
 
-      li {
-        list-style: none;
-        flex: 1;
-        background-color: #f8fcff;
-        border: 1px solid #e7ebef;
-        height: 124/64rem;
+      ul {
+        display: flex;
+        align-items: center;
+
+        li {
+          list-style: none;
+          flex: 1;
+          background-color: #f8fcff;
+          border: 1px solid #e7ebef;
+          height: 124/64rem;
+        }
       }
     }
   }
@@ -85,10 +88,41 @@
     width: 90%;
     margin: 0 auto;
 
+    .teacher-title{
+      line-height: 100/75rem;
+    }
+
+    .teacher-Details {
+      width: 100%;
+
+      .img {
+        margin-top: 20/75rem;
+        margin-left: 20/75rem;
+      }
+
+      .title {
+        margin-top: 10/75rem;
+        padding-left: 30/75rem;
+
+        // margin-left: 22/64rem;
+        h2 {
+          padding-top: 20/75rem;
+          width: 250/75rem;
+          ;
+        }
+
+        p {
+          color: #8f9495;
+        }
+      }
+    }
+
     .divbox {
+      position: relative;
       display: flex;
-      padding: 38/64rem;
-      line-height: 19/64rem;
+      width: 100%;
+      // padding: 38/64rem;
+      // line-height: 19/64rem;
 
       .img {
         width: 107/64rem;
@@ -101,16 +135,19 @@
         }
       }
 
-      .title {
-        margin-left: 22/64rem;
 
-        p {
-          color: #8f9495;
-        }
-      }
 
       .flower {
-        margin-left: 280/64rem;
+        position: absolute;
+        right: 20/75rem;
+        ;
+        top: 25/75rem;
+
+        // margin-left: 280/64rem;
+        img {
+          width: 40/75rem;
+
+        }
 
         p {
           color: #bd5932;

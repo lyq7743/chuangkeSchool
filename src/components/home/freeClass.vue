@@ -24,7 +24,7 @@
     </div>
 	<div class="sshow" v-if="isShow">
 		<div class="leftshow" @click="yc">
-			
+
 		</div>
 		<div class="cblshow" >
 			<!-- 方向 -->
@@ -55,14 +55,14 @@
 					<li v-for="(item,index) in pxarr">{{item.title}}</li>
 				</ul>
 			</div>
-			
+
 			<div class="cblfooter">
 				<button class="cz">重置</button>
 				<button class="wc">完成</button>
 			</div>
 		</div>
 	</div>
-    
+
     <div>
       <router-view></router-view>
     </div>
@@ -92,10 +92,10 @@
         }
       },
       show(){
-		this.isShow = !this.isShow   
+		this.isShow = !this.isShow
       },
 	  yc(){
-			this.isShow = !this.isShow  
+			this.isShow = !this.isShow
 		},
 	  qh(index){
 		  console.log(index);
@@ -163,7 +163,7 @@
 				li{
 					margin-top: 0.3rem;
 					text-align: center;
-					padding: 5px 5px;
+					padding: 5/75rem;
 					width: 25%;
 					margin-left: 0.2rem;
 					border: 1px solid gray;
@@ -187,7 +187,7 @@
 				background-color: red;
 			}
 		}
-		
+
 	}
 	.cblyc{
 		position: absolute;

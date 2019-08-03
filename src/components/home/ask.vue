@@ -59,62 +59,35 @@
 <script>
 </script>
 
-<style lang="less">
-  .ask{
-    position: fixed;
-    top: 40%;
-    width: 90%;
-  }
-  .commentstitle {
-    display: flex;
-    margin: 50/64rem 0 0 0;
+<style lang="less" scoped>
+  .ask {
+    .commentslist {
+      padding: 20/75rem;
+      border-radius: 10/75rem;
+      position: relative;
+      margin:  30/75rem 30/75rem;
+      background: #f8fafc;
+      .commentsimg {
+        display: flex;
+         align-items: center;
+        img {
+          width: 120/75rem;
 
-    .num {
-      color: #f79e31;
-      font-size: 55/64rem;
-    }
-  }4
-
-  .commentslist {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 50/64rem 0 0 0;
-    background-color: #f8fafc;
-    padding: 30/64rem;
-    border-radius: 10/64rem;
-
-    .commentsimg {
-      display: flex;
-
-      img {
-        width: 80/64rem;
-        height: 80/64rem;
-        margin-left: 30/64rem;
+        }
+        p{
+          padding-left: 15/75rem;
+        }
       }
 
-      p {
-        margin-left: 40/64rem;
-        font-weight: bold;
-        font-size: 25/64rem;
+      .evaluation {
+        position: absolute;
+        top: 30/75rem;
+        right: 20/75rem;;
+        text-align: center;
+        img{
+          width:25/75rem;
+        }
       }
     }
-
-    .evaluation {
-      text-align: right;
-
-      p {
-        color: #9b9b9e;
-      }
-    }
-  }
-
-  .commentslist>div {
-    flex: 1;
-  }
-
-  .commentstitle>div {
-    flex: 1;
-    height: 100/64rem;
-    text-align: center;
   }
 </style>

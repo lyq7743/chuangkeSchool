@@ -125,7 +125,7 @@
           </div>
           <div class="classTalkAbout">
               <ul>
-                 <li v-for="item in shuju.classtalk" key="index" >
+                 <li v-for="item in shuju.classtalk" >
                     <div class="talk-top">
                       <div class="scoring-left">
                         <img :src="item.user_img" alt="">
@@ -187,6 +187,7 @@
       }
     },
     mounted(){
+       // this.$axios.get('https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/freeClass')
         this.$axios.get('../../../static/data/freeClass/freeClass.json')
         .then(res=>{
             console.log(res.data.class_list[this.Plate].list[this.classId].childList);
