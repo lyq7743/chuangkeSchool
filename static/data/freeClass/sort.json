@@ -1,0 +1,13 @@
+{
+	"code": "classData",
+	"toast": "",
+	"new_recommend_count_str": "",
+	"group": [
+			{
+				"title": "最新"
+			},
+			{
+				"title": "最热"
+			}
+	]
+}

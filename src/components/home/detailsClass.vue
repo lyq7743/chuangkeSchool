@@ -169,7 +169,9 @@
         <img src="../../../static/img/ic_home_title_right.png" alt=""><span>咨询</span>
       </div>
       <div class="buyClass-right">
-        <button>开始学习</button>
+        <router-link to='learning'>
+          <button>开始学习</button>
+        </router-link>
       </div>
     </div>
   </div>
