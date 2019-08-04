@@ -55,13 +55,13 @@
 				}
 			},
 			Login: function() {
-				console.log(this.user)
-				console.log(localStorage.getItem("user"))
+//				console.log(this.user)
+//				console.log(localStorage.getItem("user"))
 				if (this.pass === "" || this.user === "") {
 					alert("账号密码不能为空")
 				} else if (localStorage.getItem("user") == this.user&&localStorage.getItem("pass") == this.pass) {
-					//this.$store.commit('settk',this.user);
-					//this.$store.commit('setToken',this.pass);
+					this.$store.commit('setUsername',this.user);
+					this.$store.commit('setPass',this.pass);
 						this.$router.push("/mine")
 				} else {
 					alert("请输入正确账号、密码")

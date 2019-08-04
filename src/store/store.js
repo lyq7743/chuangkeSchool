@@ -8,13 +8,13 @@ export const store = new Vuex.Store({
 		 pass:''
 	},
 	mutations: {
-		setToken(state,use) { 
+		setUsername(state,use) { 
 			state.user=use; 
-			console.log(use)
+//			console.log(use)
 		},
-		setToken(state,pas) { 
-			state.user=pas; 
-			console.log(pas)
+		setPass(state,pas) { 
+			state.pass=pas; 
+//			console.log(pas)
 		}
 	},
 	

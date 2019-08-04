@@ -43,7 +43,13 @@ import login from '../components/my/login.vue'
 import register from '../components/my/register.vue'
 import system from '../components/my/system.vue'
 import study from '../components/my/study.vue'
- 
+import openclass from '../components/my/openclass.vue'
+import orderform from '../components/my/orderform.vue'
+import browse from '../components/my/browse.vue'
+import offline from '../components/my/offline.vue'
+import news from '../components/my/news.vue'
+import account from '../components/my/account.vue'
+  
 import detailsClass from '../components/home/detailsClass.vue'
 Vue.use(Router)
 
@@ -146,6 +152,36 @@ export default new Router({
       path: '/study',
       name: 'study',
       component: study
+    },
+    {
+      path: '/openclass',
+      name: 'openclass',
+      component: openclass
+    },
+    {
+      path: '/orderform',
+      name: 'orderform',
+      component: orderform
+    },
+    {
+      path: '/browse',
+      name: 'browse',
+      component: browse
+    },
+    {
+      path: '/offline',
+      name: 'offline',
+      component: offline
+    },
+    {
+      path: '/news',
+      name: 'news',
+      component: news
+    },
+    {
+      path: '/account',
+      name: 'account',
+      component: account
     },
     {
       path: '/className',

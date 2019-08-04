@@ -5,7 +5,9 @@
 			<div class="top">
 				<div class="main">
 					<p>我的班级</p>
+					<router-link to='/login'>
 					<span>登录</span>
+					</router-link>
 				</div>
 			</div>
 			<div class="main">

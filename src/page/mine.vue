@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import mine from '../components/my/mine.vue'
+   import mine from '../components/my/mine.vue';
   export default{
- components: {
+   components: {
       mine
    },
   }
