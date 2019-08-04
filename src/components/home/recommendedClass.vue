@@ -62,7 +62,7 @@
         // console.log(1, this.classData);
       this.newClassData = this.newlist;
       // console.log(1, this.newClassData);
-      this.oclassData = this.olist
+      this.oclassData = this.olistl;
     },
     filters:{
         setPrice(val){
