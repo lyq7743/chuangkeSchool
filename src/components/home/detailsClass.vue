@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="header">
-      <p><img class="imgleft" src="../../../static/img/i_back.png" alt=""></p>
+      <p><img class="imgleft" src="../../../static/img/i_back.png" alt="" @click="back"></p>
       <p><img class="imgright" src="../../../static/img/is_bshare.png" alt=""></p>
     </div>
     <div class="classDetails">
@@ -199,7 +199,12 @@
       setHout(val){
            return val +"H"
       }
-    }
+    },
+		methods:{
+			back(){
+				this.$router.push({path:'/home/freeClass'});
+			}
+		}
   }
 </script>
 
