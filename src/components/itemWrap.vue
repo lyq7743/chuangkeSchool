@@ -30,8 +30,22 @@
     },
     methods: {
       fn() {
+
         this.$emit('change', this.mark)
-        this.$router.push({path:'/'+this.mark})
+        if (this.title == '首页') {
+          this.$router.push({
+            path: '/' + this.mark + '/recommended'
+          })
+        } else if (this.title == '问答') {
+          this.$router.push({
+            path: '/' + this.mark + '/recommend',
+          })
+        } else {
+          this.$router.push({
+            path: '/' + this.mark
+          })
+        }
+
       }
     }
   }

@@ -11,6 +11,9 @@
   export default {
       components:{
         tabbar
+      },
+      mounted(){
+        this.$router.push({path:"/home/recommended"})
       }
   }
 </script>
