@@ -28,7 +28,11 @@
 			}
 		},
 		mounted:function(){
-			this.$axios.get('https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/questionsort')
+//			this.$axios.get('https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/questionsort')
+//				.then(res => {
+//					this.arr = res.data.group;
+//			})
+			this.$axios.get('../../static/data/question/questIonsort.json')
 				.then(res => {
 					this.arr = res.data.group;
 			})

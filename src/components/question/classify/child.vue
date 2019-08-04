@@ -74,30 +74,27 @@
 			}
 		}
 		.headertitle{
-			font-size: 16px;
+			font-size: 0.5rem;
 		}
 		.headerright{
 			position: absolute;
 			right: 0.2rem;
 			top: 0;
-			font-size: 14px;
+			font-size: 0.4rem;
 		}
 	}
 	.content {
 		.content-title {
 			text-align: center;
 			height: 120/75rem;
-
 			ul {
 				display: flex;
-
 				li {
 					overflow: hidden;
 					height: 100%;
 					padding-top: 66/75rem;
 					flex: 1;
 					position: relative;
-
 					a {
 						display: block;
 						width: 100%;
