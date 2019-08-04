@@ -188,86 +188,39 @@
 				}
 			}
 
-<<<<<<< HEAD
 		}
 	}
 </script>
-=======
-<style lang="less" scoped>
-*{
-margin: 0;
-padding: 0;
-}
-.login{
-	position: relative;
-}
-.mylogin {
-	position: relative;
-	top: 130/64rem;
-	left: 37/64rem
-}
-.login a{
-	color: #000;
-	font-size:28/64rem;
-}
-.login p{
-	margin-bottom: 15/64rem;
-}
-.login .color a{
-	color:#666;
-}
- .topbar {
-  position: absolute;
-  top:300/64rem;
-  display: flex;
-  width: 100%;
-}
-.topbar .item {
-  flex: 1;
-  text-align: center;
-}
-.topbar .item a{
-   color: #000;
-	 font-size: 25/64rem;
-}
-.topbar .item span {
-  color: #666;
-}
-.topbar .item img {
-  width: 65/64rem;
-  height: 65/64rem;
-}
->>>>>>> 3b08ca5afa67156d7bd3f9608af9ce98ef5e6b1c
 
 <style lang="less" scoped>
 	* {
 		margin: 0;
 		padding: 0;
 	}
-	
+
 	.login {
 		position: relative;
 	}
-	
+
 	.mylogin {
 		position: relative;
 		top: 130/64rem;
 		left: 37/64rem
 	}
-	
+
 	.login a {
 		color: #000;
 		font-size: 28/64rem;
 	}
-	
+
 	.login p {
 		margin-bottom: 15/64rem;
 	}
-	
+
 	.login .color a {
 		color: #666;
 	}
-	
+
 	.imgright {
 		width: 155/64rem;
 		height: 155/64rem;
@@ -275,40 +228,40 @@ padding: 0;
 		right: 35/64rem;
 		top: 90/64rem;
 	}
-	
+
 	.topbar {
 		position: absolute;
 		top: 300/64rem;
 		display: flex;
 		width: 100%;
 	}
-	
+
 	.topbar .item {
 		flex: 1;
 		text-align: center;
 	}
-	
+
 	.topbar .item a {
 		color: #000;
 		font-size: 25/64rem;
 	}
-	
+
 	.topbar .item span {
 		color: #666;
 	}
-	
+
 	.topbar .item img {
 		width: 65/64rem;
 		height: 65/64rem;
 	}
-	
+
 	.bg {
 		background: #f8f9fa;
 		width: 100%;
 		height: 30/64rem;
 		margin-top: 350/64rem;
 	}
-	
+
 	.content li {
 		height: 83/64rem;
 		line-height: 83/64rem;
@@ -347,7 +300,7 @@ padding: 0;
 			font-weight: 600;
 		}
 	}
-	
+
 	.content li:hover {
 		background: #F2F2F2;
 	}
