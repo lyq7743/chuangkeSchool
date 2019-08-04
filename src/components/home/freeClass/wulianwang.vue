@@ -21,8 +21,8 @@
       otherClass
     },
     created() {
-      this.$axios.get('https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/freeClass')
-         // this.$axios.get('../../../../static/data/freeClass/freeClass')
+      // this.$axios.get('https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/freeClass')
+         this.$axios.get('../../../../static/data/freeClass/freeClass.json')
         .then(res => {
           // console.log(res.data.class_list);
           this.shuju = res.data.class_list[1].list

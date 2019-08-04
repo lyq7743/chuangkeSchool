@@ -16,7 +16,7 @@ import mine from '../components/my/mine.vue'
   }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 
 	.imgright{
 		width: 155/64rem;
