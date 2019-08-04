@@ -270,7 +270,7 @@
 						text-align: left;
 						margin-top: 0.3rem;
 						display: inline-block;
-						line-height: 18px;
+						line-height: 0.4rem;
 						font-size: 0.28rem;
 						color: gray
 					}

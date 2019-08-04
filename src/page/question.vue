@@ -40,12 +40,10 @@
 							<p></p>
 						</li>
 						<li class="click">
-							<!--<a href="#">精华</a>-->
 							<router-link to="/question/cream">精华</router-link>
 							<p></p>
 						</li>
 						<li class="click" i>
-							<!--<a href="#/">等待回答</a>-->
 							<router-link to="/question/wait">等待回答</router-link>
 							<p></p>
 						</li>
@@ -87,11 +85,19 @@
 			}
 		},
 		mounted: function() {
-				this.$axios.get('https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/questionsort')
+//				this.$axios.get('https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/questionsort')
+//				.then(res => {
+//					this.arr = res.data.group;
+//				}),
+//				this.$axios.get('https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/question')
+//				.then(res => {
+//					this.arr2 = res.data.group;
+//				})
+				this.$axios.get('../../static/data/question/questIonsort.json')
 				.then(res => {
 					this.arr = res.data.group;
 				}),
-				this.$axios.get(' https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/question')
+				this.$axios.get('../../static/data/question/question.json')
 				.then(res => {
 					this.arr2 = res.data.group;
 				})
@@ -103,11 +109,8 @@
 				var day = date.getDate();
 				// console.log(day);
 				this.day = day;
-				//innerhtml会报错
 			}, 100);
-			
 		}
-
 	}
 </script>
 
