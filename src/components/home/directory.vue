@@ -71,7 +71,7 @@
   }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 
   .directory{
     position: relative;

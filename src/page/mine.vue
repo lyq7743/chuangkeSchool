@@ -16,7 +16,7 @@
   }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 
 	.imgright{
 		width: 155/64rem;

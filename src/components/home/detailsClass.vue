@@ -19,7 +19,7 @@
             <p>课程时长</p>
           </li>
           <li>
-            <p>{{shuju.people}}</p>
+            <p>{{shuju.studyPeople}}</p>
             <p>学习人数</p>
           </li>
         </ul>

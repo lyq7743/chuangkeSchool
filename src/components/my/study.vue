@@ -13,6 +13,7 @@
 </script>
 
 <style lang="less" scoped>
+<<<<<<< HEAD
 	 .btn{
 	 	width: 580/64rem;
 			height: 92/64rem;
@@ -24,4 +25,7 @@
 			line-height: 92/64rem;
 			text-align: center;
 	 }
+=======
+	 
+>>>>>>> 3b08ca5afa67156d7bd3f9608af9ce98ef5e6b1c
 </style>

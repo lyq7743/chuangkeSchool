@@ -13,7 +13,7 @@
 					<router-link to='/home/recommended'>推荐</router-link>
 				</li>
 				<li>
-					<router-link to='/home/freeclass'>免费课程</router-link>
+					<router-link to='/home/freeclass/allClass'>免费课程</router-link>
 				</li>
 				<li>
 					<router-link to='/home/jobpath'>职业路径</router-link>

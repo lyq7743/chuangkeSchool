@@ -58,14 +58,14 @@
 <style lang="less" scoped>
   .details {
     position: fixed;
-    top: 22%;
+    top: 20%;
     width: 100%;
 
 
     .course-details {
       width: 100%;
       text-align: center;
-      margin: 104/64rem auto 0;
+      margin: 70/64rem auto 0;
       align-items: center;
       line-height: 60/75rem;
 
