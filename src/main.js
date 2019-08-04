@@ -8,6 +8,7 @@ import MintUI from 'mint-ui'
 import Axios from 'axios'
 import 'mint-ui/lib/style.css'
 import $ from 'jquery'
+import {store} from './store/store.js'
 //import { Switch } from 'mint-ui';
 
 //Vue.component(Switch.name, Switch);
@@ -26,5 +27,6 @@ new Vue({
   el: '#app',
   router,
   components: { App },
+  store,
   template: '<App/>'
 })

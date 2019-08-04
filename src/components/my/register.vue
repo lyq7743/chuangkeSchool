@@ -60,7 +60,8 @@
 				} else if (this.pass === "" || this.user === "") {
 					alert("账号密码不能为空")
 				} else {
-					localStorage.setItem(this.user, this.pass)
+					localStorage.setItem('user', this.user)
+					localStorage.setItem('pass', this.pass)
 					alert("注册成功")
 					this.$router.push("/login")
 				}

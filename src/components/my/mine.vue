@@ -29,12 +29,10 @@
 				<div class="bg"></div>
 				<div class="content">
 				<ul>
-					<li>
-						<router-link to='/login'>
+					<li @click="studycard">
 							<img src="../../../static/img/ic_my_studycard.png" alt="" class="imgleft">
-						  <span>学习卡</span>
+						  	<span>学习卡</span>
 							<img src="../../../static/img/i_more.png" alt="" class="imgright">
-						</router-link>
 					</li>
 					<li>
 						<router-link to='/login'>
@@ -71,6 +69,13 @@
 							<img src="../../../static/img/i_more.png" alt="" class="imgright">
 						</router-link>
 					</li>
+					<li>
+						<router-link to=''>
+							<img src="../../../static/img/ic_my_setting.png" alt="" class="imgleft">
+						  <span>我的</span>
+							<img src="../../../static/img/i_more.png" alt="" class="imgright">
+						</router-link>
+					</li>
 				</ul>
 			</div>
   </div>
@@ -78,7 +83,19 @@
 
 <script>
   export default{
- 
+ methods: {
+			studycard: function() {
+				if(localStorage.getItem("user") == this.user&&localStorage.getItem("pass") == this.pass){
+						this.$router.push("/study")
+				}else{
+						this.$router.push("/login")
+					
+				}
+
+			},
+			 
+		
+ }
   }
 </script>
 
@@ -134,8 +151,8 @@ padding: 0;
   margin-top: 350/64rem;
  }
 .content li{
-	height:96/64rem;
-	line-height: 96/64rem;
+	height:83/64rem;
+	line-height: 83/64rem;
 	width: 100%;
 	border-bottom: 1px solid #ccc;
 	font-size: 27/64rem;
@@ -164,6 +181,8 @@ padding: 0;
 		font-weight: 600;
 	}
 }
-
+.content li:hover{
+	background: #F2F2F2;
+}
 
 </style>

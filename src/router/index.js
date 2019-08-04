@@ -42,7 +42,8 @@ import cwait from '../components/question/classify/cwait.vue'
 import login from '../components/my/login.vue'
 import register from '../components/my/register.vue'
 import system from '../components/my/system.vue'
-
+import study from '../components/my/study.vue'
+ 
 import detailsClass from '../components/home/detailsClass.vue'
 Vue.use(Router)
 
@@ -140,6 +141,11 @@ export default new Router({
       path: '/system',
       name: 'system',
       component: system,
+    },
+    {
+      path: '/study',
+      name: 'study',
+      component: study
     },
     {
       path: '/className',

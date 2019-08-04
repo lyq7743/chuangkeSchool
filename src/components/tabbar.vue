@@ -45,9 +45,9 @@
       }
     },
     mounted() {
-      this.$router.push({
-        path: '/home/recommended'
-      });
+//    this.$router.push({
+//      path: '/home/recommended'
+//    });
     }
   };
 </script>
