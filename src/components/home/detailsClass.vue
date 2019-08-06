@@ -182,7 +182,7 @@
     data(){
       return{
           Plate:0,//判断是那个板块的数据
-          classId : 0,//板块的第几个数据
+          classId : this.$route.query.clickIndex,//板块的第几个数据(接收路由传递过来的值)
           shuju:[]
       }
     },
@@ -190,7 +190,7 @@
        // this.$axios.get('https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/freeClass')
         this.$axios.get('../../../static/data/freeClass/freeClass.json')
         .then(res=>{
-            console.log(res.data.class_list[this.Plate].list[this.classId].childList);
+            // console.log(res.data.class_list[this.Plate].list[this.classId].childList);
             this.shuju = res.data.class_list[this.Plate].list[this.classId].childList;
 
         })

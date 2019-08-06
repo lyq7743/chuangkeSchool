@@ -1,5 +1,5 @@
 <template>
-  <div class="content" @click="toDetailsClass">
+  <div class="content"    ><!-- @click="toDetailsClass" -->
     <div class="img-content">
       <img v-lazy="classSrc" alt="">
       <div>
@@ -29,7 +29,8 @@
       }
     },
 	methods:{
-		toDetailsClass(){
+		toDetailsClass(e){
+      console.log(e)
 			this.$router.push({path:'/detailsClass'})
 		}
 	}
