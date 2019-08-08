@@ -9,6 +9,7 @@
           "class_level": "初级",
           "people": "242",
           "price": "免费",
+					"cid":"c001",
 
           "childList": {
             "classTitle": "嵌入式内核及驱动开发入门",
@@ -89,6 +90,7 @@
           "class_level": "中级",
           "people": "248",
           "price": "免费",
+					"cid":"c002",
            "childList": {
             "classTitle": "嵌入式内核及驱动开发入门",
             "classIntroduction": "嵌入式Linux C语言数据结构及经典算法编程",

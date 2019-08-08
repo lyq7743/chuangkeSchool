@@ -3,7 +3,7 @@
     <div  v-for="(item,index) in shuju" :key = "index" :id="index">
 		
        <other-class v-for="(citem,cindex) in item.list" :key = "cindex" :id="cindex"  :people='citem.people' :classprice="citem.price" :classSrc='citem.img_src'
-        :className="citem.class_title" :classlevel='citem.class_level' @click.native = 'fn(cindex)'>
+        :className="citem.class_title" :classlevel='citem.class_level' @click.native = 'fn(citem.cid)'>
       </other-class>
 
     </div>
