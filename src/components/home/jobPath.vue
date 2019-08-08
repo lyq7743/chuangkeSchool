@@ -68,6 +68,9 @@
   .banner {
     width: 90%;
     margin: 20/64rem auto;
+    img{
+      width: 100%;
+    }
   }
 
   .Careerlist {

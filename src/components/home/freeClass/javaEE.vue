@@ -1,7 +1,7 @@
 <template>
   <div>
     <other-class v-for="(item,index) in shuju" :key = 'index' :people='item.people' :classprice="item.price"
-     :classSrc = 'item.img_src'  :className="item.class_title" :classlevel='item.class_level'>
+     :classSrc = 'item.img_src'  :className="item.class_title" :classlevel='item.class_level' @click.native='fn(index)'>
     </other-class>
 
 
@@ -27,6 +27,12 @@
           // console.log(res.data.class_list);
           this.shuju = res.data.class_list[2].list;
         })
+    },
+    methods:{
+      fn(index){
+        console.log(index)
+        this.$router.push({path:'/detailsClass',query:{father:2,child:index}})//利用路由将值进行传输过去
+      }
     }
   }
 </script>

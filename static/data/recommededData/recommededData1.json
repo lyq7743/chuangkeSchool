@@ -4,12 +4,85 @@
 
     {
       "class_name": "新上好课",
+      "id":0,
       "newlist": [{
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20181101/1541042617074685837.jpg",
           "class_title": "5周年大数据特训班",
           "class_level": "中级",
           "people": "248",
-          "price": "4300"
+          "price": "4300",
+          "childList": {
+            "classTitle": "周年大数据特训班",
+            "classIntroduction": "驱动开发是嵌入式linux开发难度开发最高的。驱动开发既要熟悉相关硬件的操作又要深入理解内核中驱动架构和相关机制。本课程内容包括环境搭建、字符设备驱动编写等重要内容",
+            "classNum": "29",
+            "classHour": "7",
+            "studyPeople": "250",
+            "teacherName": "小美老师",
+            "teacherLevel": "金牌讲师",
+            "teacherImg": "../../../static/img/teacher.png",
+            "teacherIntroduction": "华清创客学院教学总监，美女讲师，人工智能工学硕士；嵌入式，物联网技术领域讲师；,ARM公司全球认证讲师，8年嵌入式开发及教育经验；参与编写过数十本专业图书",
+            "flower": "859",
+            "fengshu": "5",
+            "kecheng": [{
+                "classTitle": "第一章 软件包管理及shell命令",
+                "classChapter": [{
+                    "classtitle": "1.1 linux介绍"
+                  },
+                  {
+                    "classtitle": "1.2 deb软件包管理一"
+                  },
+                  {
+                    "classtitle": "1.3 deb软件包管理二"
+                  },
+                  {
+                    "classtitle": "1.4 shell基本命令"
+                  },
+                  {
+                    "classtitle": "1.5 shell中的特殊字符一"
+                  },
+                  {
+                    "classtitle": "1.6 shell中的特殊字符二"
+                  }
+                ]
+              },
+              {
+                "classTitle": "第二章 软件包管理及shell命令",
+                "classChapter": [{
+                    "classtitle": "2.1 linux介绍"
+                  },
+                  {
+                    "classtitle": "2.2 deb软件包管理一"
+                  },
+                  {
+                    "classtitle": "2.3 deb软件包管理二"
+                  },
+                  {
+                    "classtitle": "2.4 shell基本命令"
+                  },
+                  {
+                    "classtitle": "2.5 shell中的特殊字符一"
+                  },
+                  {
+                    "classtitle": "2.6 shell中的特殊字符二"
+                  }
+                ]
+              }
+            ],
+            "classtalk": [{
+                "user_name": "俞佳威",
+                "user_img": "../../../static/img/mipmap/default_avatar_round.png",
+                "time": "07月24日",
+                "talk": "视频质量很好，没有卡顿，老师讲的内容很清晰，很到位，并且每个课程时间设定很合理，不会让人觉得冗余，且有成就感"
+              },
+              {
+                "user_name": "YiWang",
+                "user_img": "../../../static/img/image_user.png",
+                "time": "07月22日",
+                "talk": "视频质量很好，没有卡顿，老师讲的内容很清晰，很到位，并且每个课程时间设定很合理，不会让人觉得冗余，且有成就感"
+
+              }
+            ]
+          }
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20181115/1542253529357636928.jpg",
@@ -41,7 +114,7 @@
           "price": "1900"
         }],
 
-       "olist": [ {
+       "olist": [{
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20180507/1525684035162217088.jpg",
           "class_title": "物联网智慧牧场项目实战开发（基于Service）",
           "class_level": "初级",
@@ -67,6 +140,7 @@
     },
     {
       "class_name": "嵌入式",
+      "id":1,
       "newlist": [{
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20181106/1541491969189977682.jpg",
           "class_title": "9天轻松掌握C语言",
@@ -128,6 +202,7 @@
     },
     {
       "class_name": "物联网",
+       "id":2,
       "newlist": [{
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20180222/1519263761415793083.jpg",
           "class_title": "STM32物联网开发训练营",
@@ -189,6 +264,7 @@
     },
     {
       "class_name": "Python",
+       "id":3,
       "newlist": [{
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20171222/1513923333679952545.jpg",
           "class_title": "零基础python入门教程",
@@ -250,6 +326,7 @@
     },
     {
       "class_name": "UI",
+       "id":4,
       "newlist": [{
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20190708/1562583322472077096.jpg",
           "class_title": "WUI界面设计",

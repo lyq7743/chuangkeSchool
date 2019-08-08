@@ -181,8 +181,8 @@
   export default{
     data(){
       return{
-          Plate:0,//判断是那个板块的数据
-          classId : this.$route.query.clickIndex,//板块的第几个数据(接收路由传递过来的值)
+          Plate:this.$route.query.father ,//判断是那个板块的数据
+          classId :this.$route.query.child ,//this.$route.query.clickIndex,板块的第几个数据(接收路由传递过来的值)
           shuju:[]
       }
     },

@@ -6,7 +6,7 @@
     </div>
     <div class="class-content">
       <div class="class-content-top">
-        <div v-for="item in newClassData" :key="item.id" class="class-content-top-header">
+        <div v-for="(item,index) in newClassData" :key="item.id" class="class-content-top-header" @click="fn(index)">
           <!-- 放置槽口的url -->
           <img v-lazy="item.img_src" alt="">
           <div class="class-Introduction">
@@ -22,7 +22,7 @@
       <div class="class-content-body">
         <mt-swipe  :auto="0" :continuous=false :showIndicators=true>
           <mt-swipe-item>
-            <div v-for="item in classData" :key='item.id' class="class-content-body-centent">
+            <div v-for="(item,index) in classData" :key='item.id' class="class-content-body-centent" @click="fn(index)">
               <img v-lazy="item.img_src" alt="">
               <div>
                 <p class="class-content-body-name">{{item.class_title}}</p>
@@ -32,7 +32,7 @@
             </div>
           </mt-swipe-item>
           <mt-swipe-item>
-            <div v-for="item in oclassData" :key='item.id' class="class-content-body-centent">
+            <div v-for="(item,index) in oclassData" :key='item.id' class="class-content-body-centent" @click="fn(index)">
               <img v-lazy="item.img_src" alt="">
               <div>
                 <p class="class-content-body-name">{{item.class_title}}</p>
@@ -62,7 +62,7 @@
         // console.log(1, this.classData);
       this.newClassData = this.newlist;
       // console.log(1, this.newClassData);
-      this.oclassData = this.olistl;
+      this.oclassData = this.olist;
     },
     filters:{
         setPrice(val){
@@ -74,6 +74,11 @@
         setPeople(val){
             return val+"人正在学习"
         }
+    },
+    methods:{
+      fn(index){
+        console.log(index);
+      }
     }
   }
 </script>

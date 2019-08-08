@@ -32,10 +32,14 @@
   .nav {
     display: flex;
     width: 100%;
-    height: 40/64rem;
+    height: 50/64rem;
+    line-height: 50/64rem;
+    margin-top:15/64rem;
     border-bottom: 1px solid #f2f2f2;
     text-align: center;
     margin-left: 25/64rem;
+    // top: 50%;
+    // transform: translateY(-50%);
   }
 
   .nav span {
