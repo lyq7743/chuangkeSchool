@@ -58,7 +58,7 @@
 <style lang="less" scoped>
   .details {
     position: fixed;
-    top: 20%;
+    top: 25%;
     width: 100%;
 
 
