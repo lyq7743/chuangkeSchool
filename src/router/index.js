@@ -46,9 +46,14 @@ import study from '../components/my/study.vue'
 import openclass from '../components/my/openclass.vue'
 import orderform from '../components/my/orderform.vue'
 import browse from '../components/my/browse.vue'
-import offline from '../components/my/offline.vue'
 import news from '../components/my/news.vue'
 import account from '../components/my/account.vue'
+import offline from '../components/my/offline.vue'
+
+import proceedcache from '../components/my/offline/proceedcache.vue'
+import finishcache from '../components/my/offline/finishcache.vue'
+
+import official from '../components/my/news/official.vue'
   
 import detailsClass from '../components/home/detailsClass.vue'
 Vue.use(Router)
@@ -168,11 +173,11 @@ export default new Router({
       name: 'browse',
       component: browse
     },
-    {
-      path: '/offline',
-      name: 'offline',
-      component: offline
-    },
+		{
+		  path: '/offline',
+		  name: 'offline',
+		  component: offline
+		},
     {
       path: '/news',
       name: 'news',
@@ -183,6 +188,21 @@ export default new Router({
       name: 'account',
       component: account
     },
+		{
+		path: '/proceedcache',
+		name: 'proceedcache',
+		component: proceedcache
+		},
+		{
+		path: '/finishcache',
+		name: 'finishcache',
+		component: finishcache
+		},
+		{
+		path: '/official',
+		name: 'official',
+		component: official
+		},
     {
       path: '/className',
       name: 'class1',

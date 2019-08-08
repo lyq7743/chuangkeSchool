@@ -6,11 +6,14 @@
 					<router-link to='/login'>登录/注册</router-link>
 				</p>
 				<p class="color">
-					<slot name='imgleft'></slot>
+					 <img src="../../../static/img/pen.png" alt="" class='imgleft img'>
 					<router-link to='/login'>成就更好未来</router-link>
 				</p>
 			</div>
-			<router-link to='/login'><slot name='imgright'></slot></router-link>
+			<router-link to='/login'>
+				<img src="../../../static/img/avatar_default.png" alt="" class='imgright img'>
+				<!-- <slot name='imgright'></slot> -->
+				</router-link>
 		</div>
 
 		<div class="topbar">
@@ -227,6 +230,10 @@
 		position: absolute;
 		right: 35/64rem;
 		top: 90/64rem;
+	}
+	.imgleft{
+			width: 25/64rem;
+	   height: 25/64rem;
 	}
 
 	.topbar {
