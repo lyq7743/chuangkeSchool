@@ -67,12 +67,12 @@
 					<span>浏览历史</span>
 					<img src="../../../static/img/i_more.png" alt="" class="imgright">
 				</li>
-				<li>
-					<router-link to='/system'>
+				<li @click="system">
+					<!-- <router-link to='/system'> -->
 						<img src="../../../static/img/ic_my_setting.png" alt="" class="imgleft">
 						<span>系统设置</span>
 						<img src="../../../static/img/i_more.png" alt="" class="imgright">
-					</router-link>
+					<!-- </router-link> -->
 				</li>
 				<!--<li>
 						<router-link to=''>
@@ -189,8 +189,18 @@
 						path: '/login'
 					})
 				}
-			}
-
+			},
+			system: function() {
+				if(localStorage.getItem("user") == this.$store.state.user && localStorage.getItem("pass") == this.$store.state.pass) {
+					this.$router.push({
+						path: '/system'
+					})
+				} else {
+					this.$router.push({
+						path: '/system'
+					})
+				}
+			},
 		}
 	}
 </script>

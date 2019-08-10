@@ -54,6 +54,10 @@ import proceedcache from '../components/my/offline/proceedcache.vue'
 import finishcache from '../components/my/offline/finishcache.vue'
 
 import official from '../components/my/news/official.vue'
+
+import feedback from '../components/my/system/feedback.vue'
+import regards from '../components/my/system/regards.vue'
+ 
   
 import detailsClass from '../components/home/detailsClass.vue'
 Vue.use(Router)
@@ -202,6 +206,16 @@ export default new Router({
 		path: '/official',
 		name: 'official',
 		component: official
+		},
+		{
+		path: '/feedback',
+		name: 'feedback',
+		component: feedback
+		},
+		{
+		path: '/regards',
+		name: 'regards',
+		component: regards
 		},
     {
       path: '/className',

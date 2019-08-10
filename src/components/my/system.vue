@@ -12,11 +12,11 @@
 					 <span>仅在WiFi下观看和离线下载</span> 
 					   <span class="switch"><mt-switch v-model="value"></mt-switch></span>
 				</li>
-				<li>
-					 <span>意见反馈 </span>
+				<li @click="feedback">
+					 <span>意见反馈</span>
 					 <img src="../../../static/img/i_more.png" alt="" class="imgright">
 				</li>
-				<li>
+				<li @click="regards">
 					 <span>关于创客学院</span> 
 					  <img src="../../../static/img/i_more.png" alt="" class="imgright">
 				</li>
@@ -27,12 +27,32 @@
 			
 		</div>
 		
-		
+		<div class="button" v-show="isShow">退出登录</div>
 		
 	</div>
 </template>
 
 <script>
+	export default {
+		data:function (){
+			return {
+					isShow:true 
+				}
+		    },
+		methods: {
+			feedback: function() {
+					this.$router.push({path: '/feedback'})
+			},
+			regards: function() {
+					this.$router.push({path: '/regards'})
+			},
+			 
+			   
+			}  
+			 
+			 
+	    }
+	
 </script>
 
 <style lang="less" scoped>
@@ -97,10 +117,20 @@
 					display: inline-block;
 					position: absolute;
 					right:45/64rem;
-					top:20/64rem;
+					top:28/64rem;
 				}
-				 
 			}
 		}
-		 
+		.button{
+			width: 550/64rem;
+			height:70/64rem;
+			color: #666;
+			font-size: 28/64rem;
+			background: #fff;
+			border-radius:50/64rem;
+			margin: 45/64rem 30/64rem;
+			line-height:70/64rem;
+			text-align: center;
+			border:none;
+		} 
 </style>
