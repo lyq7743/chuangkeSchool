@@ -6,7 +6,7 @@
     </div>
     <div class="class-content">
       <div class="class-content-top">
-        <div v-for="(item,index) in newClassData" :key="item.id" class="class-content-top-header" @click="fn(index)">
+        <div v-for="(item,index) in newClassData" :key="item.id" class="class-content-top-header" @click="fn(item.id)">
           <!-- 放置槽口的url -->
           <img v-lazy="item.img_src" alt="">
           <div class="class-Introduction">
@@ -22,7 +22,7 @@
       <div class="class-content-body">
         <mt-swipe  :auto="0" :continuous=false :showIndicators=true>
           <mt-swipe-item>
-            <div v-for="(item,index) in classData" :key='item.id' class="class-content-body-centent" @click="fn(index)">
+            <div v-for="(item,index) in classData" :key='item.id' class="class-content-body-centent" @click="fn(item.id)">
               <img v-lazy="item.img_src" alt="">
               <div>
                 <p class="class-content-body-name">{{item.class_title}}</p>
@@ -32,7 +32,7 @@
             </div>
           </mt-swipe-item>
           <mt-swipe-item>
-            <div v-for="(item,index) in oclassData" :key='item.id' class="class-content-body-centent" @click="fn(index)">
+            <div v-for="(item,index) in oclassData" :key='item.id' class="class-content-body-centent" @click="fn(item.id)">
               <img v-lazy="item.img_src" alt="">
               <div>
                 <p class="class-content-body-name">{{item.class_title}}</p>
@@ -56,7 +56,7 @@
         oclassData: []
       }
     },
-    props: ['className', 'classUrl', 'newlist', 'list', "olist"],
+    props: ['className', 'classUrl', 'newlist', 'list', "olist","id"],
     mounted() {
       this.classData = this.list,
         // console.log(1, this.classData);
@@ -76,8 +76,8 @@
         }
     },
     methods:{
-      fn(index){
-        console.log(index);
+      fn(index,id){
+        this.$router.push({path:"/detailsClass",query:{child:index,father:this.id,fromPath:1}})
       }
     }
   }

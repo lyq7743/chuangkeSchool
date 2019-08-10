@@ -106,41 +106,55 @@
         </div>
       </div>
       <div class="classArrangements">
-          <p class="classArrangements-title">课程安排</p>
-          <ul v-for="(item,index) in shuju.kecheng" :key="index">
-            <p class="classTitle">{{item.classTitle}}</p>
-            <li v-for="(item,index) in item.classChapter" :key="index"><img src="../../../static/img/video_icon_play.png" alt=""><p>{{item.classtitle}}</p></li>
-          </ul>
-          <p class="seeMore">查看更多</p>
+        <p class="classArrangements-title">课程安排</p>
+        <ul v-for="(item,index) in shuju.kecheng" :key="index">
+          <p class="classTitle">{{item.classTitle}}</p>
+          <li v-for="(item,index) in item.classChapter" :key="index"><img src="../../../static/img/video_icon_play.png"
+              alt="">
+            <p>{{item.classtitle}}</p>
+          </li>
+        </ul>
+        <p class="seeMore">查看更多</p>
       </div>
       <div class="classTalk">
-          <p class="classmateTalk">学员评价</p>
-          <div class="classScoring">
-              <ul>
-                  <li class="scoringAll">{{shuju.fengshu}}</li>
-                  <li><h4>课程内容</h4><p>5</p></li>
-                  <li><h4>辅导老师</h4><p>5</p></li>
-                  <li><h4>教学服务</h4><p>5</p></li>
-              </ul>
-          </div>
-          <div class="classTalkAbout">
-              <ul>
-                 <li v-for="item in shuju.classtalk" >
-                    <div class="talk-top">
-                      <div class="scoring-left">
-                        <img :src="item.user_img" alt="">
-                        <p class="classmateName">{{item.user_name}}</p>
-                      </div>
-                      <div class="scoring-right">
-                        <p><img src="../../../static/img/icon_star_yelo.png" alt=""><img src="../../../static/img/icon_star_yelo.png" alt=""><img src="../../../static/img/icon_star_yelo.png" alt=""><img src="../../../static/img/icon_star_yelo.png" alt=""><img src="../../../static/img/icon_star_yelo.png" alt=""></p>
-                        <p>{{item.time}}</p>
-                      </div>
-                    </div>
-                    <div class="talk-content">
-                      <p>{{item.talk}}</p>
-                    </div>
-                 </li>
-                 <!-- <li>
+        <p class="classmateTalk">学员评价</p>
+        <div class="classScoring">
+          <ul>
+            <li class="scoringAll">{{shuju.fengshu}}</li>
+            <li>
+              <h4>课程内容</h4>
+              <p>5</p>
+            </li>
+            <li>
+              <h4>辅导老师</h4>
+              <p>5</p>
+            </li>
+            <li>
+              <h4>教学服务</h4>
+              <p>5</p>
+            </li>
+          </ul>
+        </div>
+        <div class="classTalkAbout">
+          <ul>
+            <li v-for="(item,index) in shuju.classtalk" :key="index">
+              <div class="talk-top">
+                <div class="scoring-left">
+                  <img :src="item.user_img" alt="">
+                  <p class="classmateName">{{item.user_name}}</p>
+                </div>
+                <div class="scoring-right">
+                  <p><img src="../../../static/img/icon_star_yelo.png" alt=""><img src="../../../static/img/icon_star_yelo.png"
+                      alt=""><img src="../../../static/img/icon_star_yelo.png" alt=""><img src="../../../static/img/icon_star_yelo.png"
+                      alt=""><img src="../../../static/img/icon_star_yelo.png" alt=""></p>
+                  <p>{{item.time}}</p>
+                </div>
+              </div>
+              <div class="talk-content">
+                <p>{{item.talk}}</p>
+              </div>
+            </li>
+            <!-- <li>
                     <div class="talk-top">
                       <div class="scoring-left">
                         <img src="../../../static/img/mipmap/default_avatar_round.png" alt="">
@@ -155,8 +169,8 @@
                       <p>速度发货尽快释放很舒服是客服还是尽快发货看啥分行开设分行喀什饭卡是否士大夫手机开发和是否上课</p>
                     </div>
                  </li> -->
-              </ul>
-          </div>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -178,33 +192,49 @@
 </template>
 
 <script>
-  export default{
-    data(){
-      return{
-          Plate:this.$route.query.father ,//判断是那个板块的数据
-          classId :this.$route.query.child ,//this.$route.query.clickIndex,板块的第几个数据(接收路由传递过来的值)
-          shuju:[]
+  export default {
+    data() {
+      return {
+        Plate: this.$route.query.father, //判断是那个板块的数据
+        classId: this.$route.query.child, //this.$route.query.clickIndex,板块的第几个数据(接收路由传递过来的值)
+        shuju: [],
+        fromPath: this.$route.query.fromPath,
       }
     },
-    mounted(){
-       // this.$axios.get('https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/freeClass')
-        this.$axios.get('../../../static/data/freeClass/freeClass.json')
-        .then(res=>{
+    mounted() {
+      if(this.fromPath == 1){
+         this.$axios.get('../../../static/data/indexData/indexData.json')
+          .then(res => {
             // console.log(res.data.class_list[this.Plate].list[this.classId].childList);
             this.shuju = res.data.class_list[this.Plate].list[this.classId].childList;
 
-        })
+          })
+      }else{
+        // this.$axios.get('https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/freeClass')
+        this.$axios.get('../../../static/data/freeClass/freeClass.json')
+          .then(res => {
+            // console.log(res.data.class_list[this.Plate].list[this.classId].childList);
+            this.shuju = res.data.class_list[this.Plate].list[this.classId].childList;
+
+          })
+      }
+
+
+
     },
-    filters:{
-      setHout(val){
-           return val +"H"
+    filters: {
+      setHout(val) {
+        return val + "H"
       }
     },
-		methods:{
-			back(){
-				this.$router.push({path:'/home/freeClass'});
-			}
-		}
+    methods: {
+      back() {
+        this.$router.push({
+          path: '/home/freeClass'
+        });
+      }
+    },
+
   }
 </script>
 
@@ -213,6 +243,7 @@
     margin-top: 70/75rem;
     background-color: #f2f2f3;
     margin-bottom: 105/75rem;
+
     .header {
       z-index: 999;
       width: 100%;
@@ -237,7 +268,7 @@
       }
 
       .imgright {
-        right:36/75rem;
+        right: 36/75rem;
         width: 36/75rem;
         height: 32/75rem;
       }
@@ -319,11 +350,13 @@
 
       ul {
         display: flex;
-         // align-items: center;
+
+        // align-items: center;
         //
         li {
           line-height: 60/75rem;
           width: 106/75rem;
+
           &:first-child {
             font-size: 26/75rem;
             font-weight: bold;
@@ -334,6 +367,7 @@
             display: flex;
             flex-wrap: wrap;
             width: 600/75rem;
+
             &>p {
               padding: 0 20/75rem;
 
@@ -430,6 +464,7 @@
 
       .teacher {
         padding: 0 38/75rem;
+
         .teacher-title {
           font-weight: bold;
           font-size: 28/75rem;
@@ -442,6 +477,7 @@
           padding: 0 30/75rem;
           padding-top: 30/75rem;
           padding-bottom: 50/75rem;
+
           .teacher-Introduction-top {
             position: relative;
             display: flex;
@@ -457,9 +493,10 @@
               height: 50/75rem;
               line-height: 50/75rem;
               padding-left: 20/75rem;
-              p:first-child{
-                  font-weight: 700;
-                  font-size: 25/75rem;
+
+              p:first-child {
+                font-weight: 700;
+                font-size: 25/75rem;
               }
             }
 
@@ -498,117 +535,136 @@
       .classExperience {
         padding: 0 38/75rem;
         height: 1078/75rem;
-        .classExperience-top{
+
+        .classExperience-top {
           padding: 60/75rem 0;
           text-align: center;
+
           // height:230/75rem;
-            h1{
-              font-size:48/75rem;
-            }
-            p{
-              font-size:34/75rem;
-              color: gray;
-            }
+          h1 {
+            font-size: 48/75rem;
+          }
+
+          p {
+            font-size: 34/75rem;
+            color: gray;
+          }
         }
-        .classExperience-content{
-            ul{
-              display: flex;
-              flex-wrap: wrap;
-               box-sizing: border-box;
-              li{
-                position: relative;
-                width:45%;
-                box-sizing: border-box;
-                margin:12.5/75rem;
-                  // width:356/75rem;
-                  height:347/75rem;
-                  background:#f4f7f9;
-                  text-align: center;
-                  border-radius: 10/75rem;
-                  img{
-                    padding-top:72/75rem;
-                    width: 89/75rem;
 
-                    // height: 89/75rem;
-                    padding-bottom:30/75rem;
-                  }
-                   h2{
-                     font-size: 36/75rem;
-                      width: 100%;
-                   }
-                   div{
-                     transform: translateX(20%);
-                     top:190/75rem;
-                     position: absolute;
-                   }
+        .classExperience-content {
+          ul {
+            display: flex;
+            flex-wrap: wrap;
+            box-sizing: border-box;
 
+            li {
+              position: relative;
+              width: 45%;
+              box-sizing: border-box;
+              margin: 12.5/75rem;
+              // width:356/75rem;
+              height: 347/75rem;
+              background: #f4f7f9;
+              text-align: center;
+              border-radius: 10/75rem;
+
+              img {
+                padding-top: 72/75rem;
+                width: 89/75rem;
+
+                // height: 89/75rem;
+                padding-bottom: 30/75rem;
               }
+
+              h2 {
+                font-size: 36/75rem;
+                width: 100%;
+              }
+
+              div {
+                transform: translateX(20%);
+                top: 190/75rem;
+                position: absolute;
+              }
+
             }
+          }
         }
       }
     }
-    .classArrangements{
-      .classArrangements-title{
+
+    .classArrangements {
+      .classArrangements-title {
         line-height: 100/75rem;
         background: #f9fcfc;
         padding-left: 44/75rem;
         font-weight: bold;
-        font-size:25/75rem;
+        font-size: 25/75rem;
       }
-      .seeMore{
-        text-align: center;
-         color: #5494ff;
-         height: 80/75rem;
-         line-height: 80/75rem;
-      }
-      ul{
-        padding:0 38/75rem;
-         .classTitle{
-            font-weight:bold;
-            padding-left:30/75rem;
-            font-weight: bold;
-            font-size:31/75rem;
-            line-height: 80/75rem;
-          }
 
-        li{
+      .seeMore {
+        text-align: center;
+        color: #5494ff;
+        height: 80/75rem;
+        line-height: 80/75rem;
+      }
+
+      ul {
+        padding: 0 38/75rem;
+
+        .classTitle {
+          font-weight: bold;
+          padding-left: 30/75rem;
+          font-weight: bold;
+          font-size: 31/75rem;
+          line-height: 80/75rem;
+        }
+
+        li {
           display: flex;
           line-height: 60/75rem;
           align-items: center;
           padding-left: 60/75rem;
-            img{
-              width: 25/75rem;
-              height: 25/75rem;
-              margin-right: 12/75rem;
-            }
-            p{
-              font-size: 24/75rem;
-              color: gray;
-            }
+
+          img {
+            width: 25/75rem;
+            height: 25/75rem;
+            margin-right: 12/75rem;
+          }
+
+          p {
+            font-size: 24/75rem;
+            color: gray;
+          }
         }
       }
     }
-    .classTalk{
-      .classmateTalk{
-          font-size: 28/75rem;
-          font-weight: bold;
-          line-height: 70/75rem;
-          padding-left: 40/75rem;
+
+    .classTalk {
+      .classmateTalk {
+        font-size: 28/75rem;
+        font-weight: bold;
+        line-height: 70/75rem;
+        padding-left: 40/75rem;
       }
-      .classScoring{
+
+      .classScoring {
         padding: 20/75rem 0;
-        ul{
+
+        ul {
           display: flex;
-          li{
+
+          li {
             flex: auto;
             height: 80/75rem;
             font-size: 26/75rem;
 
-            p{
+            p {
               font-weight: bold;
             }
           }
-          .scoringAll{
+
+          .scoringAll {
             font-size: 56/75rem;
             text-align: center;
             color: #f5a050;
@@ -616,39 +672,47 @@
           }
         }
       }
-      .classTalkAbout{
-        ul{
+
+      .classTalkAbout {
+        ul {
           padding: 0 38/75rem;
-          li{
-            padding:45/75rem 34/75rem 55/75rem 44/75rem;
-            background:#f7fafa;
+
+          li {
+            padding: 45/75rem 34/75rem 55/75rem 44/75rem;
+            background: #f7fafa;
             position: relative;
             margin: 40/75rem 0;
             border-radius: 10/75rem;
-            .talk-top{
-                 margin-bottom: 30/75rem;
-                .scoring-left{
 
-                  display: flex;
-                  align-items: center;
-                  img{
-                    widows: 68/75rem;
-                    height: 68/75rem;
-                  }
-                  .classmateName{
-                    padding-left:20/75rem;
-                    font-size:30/75rem;
-                    font-weight: bold;
-                  }
+            .talk-top {
+              margin-bottom: 30/75rem;
+
+              .scoring-left {
+
+                display: flex;
+                align-items: center;
+
+                img {
+                  widows: 68/75rem;
+                  height: 68/75rem;
                 }
-                .scoring-right{
-                    position: absolute;
-                    right: 34/75rem;
-                    top: 45/75rem;
-                    img{
-                        width: 20/75rem;
-                    }
+
+                .classmateName {
+                  padding-left: 20/75rem;
+                  font-size: 30/75rem;
+                  font-weight: bold;
                 }
+              }
+
+              .scoring-right {
+                position: absolute;
+                right: 34/75rem;
+                top: 45/75rem;
+
+                img {
+                  width: 20/75rem;
+                }
+              }
             }
 
           }

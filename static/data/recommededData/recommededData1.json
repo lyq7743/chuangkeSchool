@@ -11,6 +11,7 @@
           "class_level": "中级",
           "people": "248",
           "price": "4300",
+          "id":0,
           "childList": {
             "classTitle": "周年大数据特训班",
             "classIntroduction": "驱动开发是嵌入式linux开发难度开发最高的。驱动开发既要熟悉相关硬件的操作又要深入理解内核中驱动架构和相关机制。本课程内容包括环境搭建、字符设备驱动编写等重要内容",
@@ -89,7 +90,88 @@
           "class_title": "Linux开发加强特训班",
          "class_level": "中级",
          "people": "500",
-         "price": "5300"
+         "price": "5300",
+         "id":1,
+         "childList": {
+           "classTitle": "嵌入式内核及驱动开发入门",
+           "classIntroduction": "嵌入式Linux C语言数据结构及经典算法编程",
+           "classNum": "20",
+           "classHour": "7",
+           "studyPeople": "1189",
+           "teacherName": "明旭老师",
+           "teacherLevel": "嵌入式/物联网金牌讲师",
+           "teacherImg": "http://static.makeru.com.cn/upload/mavendemo/teacher/20190318/1552880000359248230.png",
+           "teacherIntroduction": "华清创客学院金牌讲师，高校物联网课题组核心骨干成员，8年物联网研发及教学经验，ARM公司全球认证讲师，明旭老师在长期的教研工作中，多次深入百度，格力、华为等企业一线进行技术调研",
+           "flower": "1189",
+           "fengshu": "5",
+           "kecheng": [{
+               "classTitle": "第1章 数据结构",
+               "classChapter": [{
+                   "classtitle": "1.1 第4讲、单向链表的定义和操作"
+                 },
+                 {
+                   "classtitle": "1.2 第5讲、单项链表的代码实现（上）"
+                 },
+                 {
+                   "classtitle": "1.3 第6讲、单项链表的代码实现（下）"
+                 },
+                 {
+                   "classtitle": "1.4 第7讲、循环链表的定义和操作"
+                 },
+                 {
+                   "classtitle": "1.5 第8讲、栈的基本概念和特性"
+                 },
+                 {
+                   "classtitle": "1.6 第9讲、顺序栈的代码实现"
+                 },
+                 {
+                   "classtitle": "1.7 第10讲,链式队列的实现(上)"
+                 },
+                 {
+                   "classtitle": "1.8 第10讲,链式队列的实现(下)"
+                 },
+
+                 {
+                   "classtitle": "1.9 第11讲、树的基本概念和性质"
+                 },
+                 {
+                   "classtitle": "1.10 第12讲、树和图的面试题方向"
+                 },
+                 {
+                   "classtitle": "1.11第13讲、二叉树的概念和性质"
+                 },
+                 {
+                   "classtitle": "1.12第14讲、二叉树的存储"
+                 },
+
+                 {
+                   "classtitle": "1.13第15讲快速排序(B版)"
+                 },
+                 {
+                   "classtitle": "1.14第16讲,哈希查找(B版)"
+                 },
+                 {
+                   "classtitle": "1.15第17讲、线性表的定义"
+                 }
+               ]
+             }
+
+           ],
+           "classtalk": [{
+               "user_name": "俞佳威",
+               "user_img": "../../../static/img/mipmap/default_avatar_round.png",
+               "time": "07月24日",
+               "talk": "视频质量很好，没有卡顿，老师讲的内容很清晰，很到位，并且每个课程时间设定很合理，不会让人觉得冗余，且有成就感"
+             },
+             {
+               "user_name": "YiWang",
+               "user_img": "../../../static/img/image_user.png",
+               "time": "07月22日",
+               "talk": "视频质量很好，没有卡顿，老师讲的内容很清晰，很到位，并且每个课程时间设定很合理，不会让人觉得冗余，且有成就感"
+
+             }
+           ]
+         }
         }
       ],
       "list": [{
@@ -97,21 +179,24 @@
           "class_title": "ARM Cortex-A53开发",
           "class_level": "高级",
           "people": "4802",
-          "price": "1400"
+          "price": "1400",
+          "id":2
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20180523/1527067703343359301.jpg",
           "class_title": "NB-loT技术实战开发班",
           "class_level": "高级",
           "people": "2184",
-          "price": "700"
+          "price": "700",
+          "id":3
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20181129/1543473624201629614.jpg",
           "class_title": "零基础python入门教程",
           "class_level": "初级",
           "people": "0",
-          "price": "1900"
+          "price": "1900",
+          "id":4
         }],
 
        "olist": [{
@@ -119,21 +204,24 @@
           "class_title": "物联网智慧牧场项目实战开发（基于Service）",
           "class_level": "初级",
           "people": "6392",
-          "price": "1000"
+          "price": "1000",
+          "id":5
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20180202/1517540994210548801.jpg",
           "class_title": "0416期轻松学STM32名师体验班",
           "class_level": "初级",
           "people": "15527",
-          "price": "700"
+          "price": "700",
+          "id":6
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20190717/1563331587664655288.jpg",
           "class_title": "海报创意方法合集，帮你突破设计思路",
           "class_level": "初级",
           "people": "3424",
-          "price": "免费"
+          "price": "免费",
+          "id":7
         }
       ]
 
@@ -146,14 +234,16 @@
           "class_title": "9天轻松掌握C语言",
           "class_level": "中级",
           "people": "248",
-          "price": "100"
+          "price": "100",
+          "id":0
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20180202/1517540994210548801.jpg",
           "class_title": "Linux及C语言高级开发",
           "class_level": "中级",
           "people": "500",
-          "price": "免费"
+          "price": "免费",
+          "id":1
         }
       ],
       "list": [{
@@ -161,42 +251,48 @@
           "class_title": "嵌入式内核及驱动开发入门",
           "class_level": "初级",
           "people": "242",
-          "price": "1100"
+          "price": "1100",
+          "id":2
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20180507/1525684115834375037.jpg",
           "class_title": "NB-loT嵌入式内核及驱动开发高级",
           "class_level": "高级",
           "people": "570",
-          "price": "2000"
+          "price": "2000",
+          "id":3
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20180404/1522804779479389783.jpg",
           "class_title": "ARM Cortex-A53开发",
           "class_level": "高级",
           "people": "4802",
-          "price": "1400"
+          "price": "1400",
+          "id":4
         }],
         "olist": [ {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20180507/1525684086309207752.jpg",
           "class_title": "嵌入式内核及驱动开发中级",
           "class_level": "初级",
           "people": "352",
-          "price": "1300"
+          "price": "1300",
+          "id":5
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20181115/1542253529357636928.jpg",
           "class_title": "Linux开发工程师特训班",
           "class_level": "初级",
           "people": "2178",
-          "price": "5300"
+          "price": "5300",
+          "id":6
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20180417/1523927251548672033.jpg",
           "class_title": "C++开发基础教程",
           "class_level": "中级",
           "people": "3455",
-          "price": "1000"
+          "price": "1000",
+          "id":7
         }
       ]
     },
@@ -208,14 +304,16 @@
           "class_title": "STM32物联网开发训练营",
           "class_level": "中级",
           "people": "248",
-          "price": "900"
+          "price": "900",
+          "id":0
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20181101/1541042617074685837.jpg",
           "class_title": "5周物联网大数据特训班",
           "class_level": "中级",
           "people": "500",
-          "price": "4300"
+          "price": "4300",
+          "id":1
         }
       ],
       "list": [{
@@ -223,42 +321,48 @@
           "class_title": "物联网云平台实战开发",
           "class_level": "初级",
           "people": "2156",
-          "price": "900"
+          "price": "900",
+          "id":2
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20180523/1527067703343359301.jpg",
           "class_title": "NB-loT技术实战开发",
           "class_level": "高级",
           "people": "2184",
-          "price": "700"
+          "price": "700",
+          "id":3
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20180402/1522647667338696238.jpg",
           "class_title": "物联网智慧牧场项目实战开发（基于S......）",
           "class_level": "初级",
           "people": "6392",
-          "price": "1000"
+          "price": "1000",
+          "id":4
         }],
         "olist": [ {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20180723/1532330151794339085.jpg",
           "class_title": "WiFi开发于运用",
           "class_level": "初级",
           "people": "275",
-          "price": "900"
+          "price": "900",
+          "id":5
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20180403/1522748962630927512.jpg",
           "class_title": "蓝牙 BLE开发从入门到精通",
           "class_level": "高级",
           "people": "1287",
-          "price": "1000"
+          "price": "1000",
+          "id":6
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20181228/1545992125192948590.jpg",
           "class_title": "PCB电路设计从入门到精通",
           "class_level": "初级",
           "people": "2077",
-          "price": "1800"
+          "price": "1800",
+          "id":7
         }
       ]
     },
@@ -270,14 +374,16 @@
           "class_title": "零基础python入门教程",
           "class_level": "初级",
           "people": "248",
-          "price": "1900"
+          "price": "1900",
+          "id":0
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20171222/1513923112355023534.jpg",
           "class_title": "1周入门python人工智能",
           "class_level": "中级",
           "people": "500",
-          "price": "免费"
+          "price": "免费",
+          "id":1
         }
       ],
       "list": [{
@@ -285,42 +391,48 @@
           "class_title": "python数据库-MySQL",
           "class_level": "初级",
           "people": "1242",
-          "price": "700"
+          "price": "700",
+          "id":2
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20171230/1514616723243256110.jpg",
           "class_title": "HTML+CSS",
           "class_level": "初级",
           "people": "65",
-          "price": "免费"
+          "price": "免费",
+          "id":3
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20180103/1514942733736454981.jpg",
           "class_title": "jQuery入门精通之美图相册",
           "class_level": "初级",
           "people": "0",
-          "price": "200"
+          "price": "200",
+          "id":4
         }],
         "olist": [ {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20171009/1507516156455176729.jpg",
           "class_title": "linux系统认识和命令操作",
           "class_level": "初级",
           "people": "0",
-          "price": "900"
+          "price": "900",
+          "id":5
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20171222/1513923368388971065.jpg",
           "class_title": "Vue.js高级之实战移动APP商城开发",
           "class_level": "初级",
           "people": "8970",
-          "price": "1300"
+          "price": "1300",
+          "id":6
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20170517/1494992311564780844.jpg",
           "class_title": "0506期python爬虫训练营",
           "class_level": "初级",
           "people": "2240",
-          "price": "100"
+          "price": "100",
+          "id":7
         }
       ]
     },
@@ -332,14 +444,16 @@
           "class_title": "WUI界面设计",
           "class_level": "高级",
           "people": "248",
-          "price": "100"
+          "price": "100",
+          "id":0
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20190708/1562583440772414088.jpg",
           "class_title": "字体、logo设计",
           "class_level": "中级",
           "people": "100",
-          "price": "100"
+          "price": "100",
+          "id":1
         }
       ],
       "list": [{
@@ -347,42 +461,48 @@
           "class_title": "软件基础-PS",
           "class_level": "中级",
           "people": "345",
-          "price": "100"
+          "price": "100",
+          "id":2
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20170222/1487757665151703694.jpg",
           "class_title": "icon图标设计",
           "class_level": "高级",
           "people": "8",
-          "price": "100"
+          "price": "100",
+          "id":3
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20171009/1507518250996831231.jpg",
           "class_title": "UI编程入门",
           "class_level": "初级",
           "people": "4549",
-          "price": "免费"
+          "price": "免费",
+          "id":4
         }],
-        "olist": [ {
+       "olist": [ {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20171009/1507516039536814217.jpg",
           "class_title": "网站UI设计",
           "class_level": "初级",
           "people": "1322",
-          "price": "300"
+          "price": "300",
+          "id":5
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20170222/1487757665151703694.jpg",
           "class_title": "平面设计",
           "class_level": "高级",
           "people": "11",
-          "price": "100"
+          "price": "100",
+          "id":6
         },
         {
           "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20190717/1563331587664655288.jpg",
           "class_title": "海报创意方法合集，帮你突破设计思想",
           "class_level": "初级",
           "people": "3424",
-          "price": "免费"
+          "price": "免费",
+          "id":7
         }
       ]
     }
