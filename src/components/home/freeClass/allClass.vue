@@ -37,7 +37,8 @@
         // console.log(index,cindex)//显示第几个模块的第几个子元素
         this.$router.push({path:'/detailsClass',query:{father:index,child:cindex}})
       }
-    }
+    },
+
   }
 </script>
 
