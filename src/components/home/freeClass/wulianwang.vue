@@ -3,9 +3,6 @@
     <other-class v-for="(item,index) in shuju" :key = 'index' :people='item.people' :classprice="item.price"
      :classSrc = 'item.img_src'  :className="item.class_title" :classlevel='item.class_level' @click.native='fn(index)'>
     </other-class>
-
-
-
   </div>
 </template>
 

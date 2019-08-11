@@ -10,7 +10,6 @@ import 'mint-ui/lib/style.css'
 import $ from 'jquery'
 import {store} from './store/store.js'
 //import { Switch } from 'mint-ui';
-
 //Vue.component(Switch.name, Switch);
 Vue.config.productionTip = false
 
