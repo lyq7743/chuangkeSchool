@@ -81,6 +81,13 @@
 							<img src="../../../static/img/i_more.png" alt="" class="imgright">
 						</router-link>
 					</li>-->
+				<li @click="us">
+					<!-- <router-link to='/system'> -->
+						<img src="../../../static/img/ic_my_wechat.png" alt="" class="imgleft">
+						<span>关于我们</span>
+						<img src="../../../static/img/i_more.png" alt="" class="imgright">
+					<!-- </router-link> -->
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -201,6 +208,20 @@
 					})
 				}
 			},
+			us: function() {
+//				if(localStorage.getItem("user") == this.$store.state.user && localStorage.getItem("pass") == this.$store.state.pass) {
+//					this.$router.push({
+//						path: '/system'
+//					})
+//				} else {
+//					this.$router.push({
+//						path: '/login'
+//					})
+//				}
+				this.$router.push({
+					path:'/us'
+				})
+			}
 		}
 	}
 </script>

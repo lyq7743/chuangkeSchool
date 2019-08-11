@@ -9,6 +9,9 @@ import Axios from 'axios'
 import 'mint-ui/lib/style.css'
 import $ from 'jquery'
 import {store} from './store/store.js'
+
+import BaiduMap from 'vue-baidu-map'
+
 //import { Switch } from 'mint-ui';
 
 //Vue.component(Switch.name, Switch);
@@ -17,6 +20,10 @@ Vue.config.productionTip = false
 Vue.prototype.$axios = Axios
 
 Vue.use(MintUI)
+
+Vue.use(BaiduMap, {
+  ak: 'XnYmDA3Lcphl2dMFlDMs18PV0UrlnbNz'
+})
 
 import VueResource from 'vue-resource'
 
