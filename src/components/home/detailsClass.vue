@@ -233,12 +233,12 @@
 		},
 		beforeRouteEnter(to, from, next) {
 			next(vm=>{
-				console.log(from.fullPath)
+				// console.log(from.fullPath)
 				vm.brakPath = from.fullPath
-				console.log(vm.brakPath)
+				// console.log(vm.brakPath)
 			})
 		}
-		
+
 	}
 </script>
 
@@ -351,7 +351,7 @@
 			margin-top: 18/75rem;
 			height: 140/75rem;
 			background: #fff;
-			
+
 			ul {
 				display: flex;
 				margin-top: 75/75rem;

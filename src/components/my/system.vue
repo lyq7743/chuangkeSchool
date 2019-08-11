@@ -8,27 +8,27 @@
 		</div>
 		<div class="list">
 			<ul>
-				<li>
-					 <span>仅在WiFi下观看和离线下载</span> 
-					   <span class="switch"><mt-switch v-model="value"></mt-switch></span>
+				<li class="position">
+					 <span>仅在WiFi下观看和离线下载</span>
+					   <span><mt-switch  class="switch"></mt-switch></span>
 				</li>
 				<li @click="feedback">
 					 <span>意见反馈</span>
 					 <img src="../../../static/img/i_more.png" alt="" class="imgright">
 				</li>
 				<li @click="regards">
-					 <span>关于创客学院</span> 
+					 <span>关于创客学院</span>
 					  <img src="../../../static/img/i_more.png" alt="" class="imgright">
 				</li>
 				<li>
 				    <span>当前版本</span><span class="textright">V3.1.0</span>
 				</li>
 			</ul>
-			
+
 		</div>
-		
+
 		<div class="button" v-show="isShow">退出登录</div>
-		
+
 	</div>
 </template>
 
@@ -36,7 +36,7 @@
 	export default {
 		data:function (){
 			return {
-					isShow:true 
+					isShow:true
 				}
 		    },
 		methods: {
@@ -46,19 +46,27 @@
 			regards: function() {
 					this.$router.push({path: '/regards'})
 			},
-			 
-			   
-			}  
-			 
-			 
+
+
+			}
+
+
 	    }
-	
+
 </script>
 
 <style lang="less" scoped>
+  .position{
+    position:relative;
+    .switch{
+      position: absolute!important;
+      top: 10/64rem!important;
+      right: 0;
+    }
+  }
 	.box{
 		background:#f2f2f2;
-		height: 1500px;
+		height: 1350/64rem;
 		width: 100%;
 	}
 		.header{
@@ -75,7 +83,7 @@
 		 margin: 0 auto;
 		 line-height: 160/64rem;
 		 font-weight: 600;
-		 
+
 		img{
 			width: 20/64rem;
 			height: 30/64rem;
@@ -89,21 +97,21 @@
 		}
 		}
 		.list {
-			 
+
 			li{
 				position: relative;
-				margin-top: 30/64rem;
+				margin-top: 15/64rem;
 				width: 100%;
-				height: 90/64rem;
-				border: 1px solid #ccc;
-				line-height:90/64rem;
+				height: 80/64rem;
+				border: 1px solid transparent;
+				line-height:80/64rem;
 				font-size: 30/64rem;
 				text-indent: 1em;
 				color:#666;
 				background:#fff;
-				
+
 				img{
-					width:20/64rem;
+					width:10/64rem;
 					height:20/64rem;
 					position: absolute;
 					top:40/64rem;
@@ -132,5 +140,5 @@
 			line-height:70/64rem;
 			text-align: center;
 			border:none;
-		} 
+		}
 </style>

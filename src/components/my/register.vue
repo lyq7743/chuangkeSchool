@@ -11,8 +11,8 @@
 			<form action="#">
 				<div class="one"><img src="../../../static/img/sign_icon_phone01.png" alt="" class="img"><input type="text" v-model="user"
 					 placeholder="请输入注册手机号">
-					<span class="gainCode" @click='gainCode'>验证码</span></div>
-				<div class="tow"><img src="../../../static/img/safe42.png" alt="" class="img"><input type="text" placeholder="请输入验证码"></div>
+					<input type="button" class="gainCode"  @click='gainCode' :disabled="open" value="验证码"></input></div>
+				<div class="tow"><img src="../../../static/img/safe42.png" alt="" class="img"><input class="yzm" type="text" placeholder="请输入验证码"></div>
 				<div class="tow"><img src="../../../static/img/sign_icon_lock01.png" alt="" class="img"><input type="password"
 					 v-model="pass" placeholder="设置6位以上的密码"></div>
 				<div class="button" @click="Add">下一步</div>
@@ -31,22 +31,26 @@
 		data() {
 			return {
 				user: "",
-				pass: ""
+				pass: "",
+        open:null
 			}
 		},
 		methods: {
 			gainCode: function() {
+        this.open =true
 				var flag = true
 				var s = 60;
 				var time = null;
 				if (flag) {
 					flag = false;
 					clearInterval(time)
+          this.open = 'disabled'
 					time = setInterval(function() {
-						s >= 10 ? $(".gainCode").html(s + 's') : $(".gainCode").html('0' + s + 's')
+						s >= 10 ? $(".gainCode").val(s + 's') : $(".gainCode").val('0' + s + 's')
 						s--;
 						if (s < -1) {
-							$(".gainCode").html('重新发送')
+							$(".gainCode").val('重新发送')
+              this.open = null;
 							clearInterval(time)
 							flag = true;
 						}
@@ -116,7 +120,7 @@
 			width: 400/64rem;
 			position: relative;
 			left: 50/64rem;
-			top: 10/64rem;
+			top: 25/64rem;
 			font-size: 27/64rem;
 			border: none;
 		}
@@ -124,7 +128,9 @@
 		.one {
 			border: none;
 		}
-
+.yzm{
+  top: 20/64rem;
+}
 		div {
 			background: #fff;
 			position: relative;
@@ -136,7 +142,7 @@
 				height: 45/64rem;
 				position: relative;
 				left: 25/64rem;
-				top: 25/64rem;
+				top: 35/64rem;
 			}
 
 			.kan {
@@ -144,14 +150,11 @@
 				width: 40/64rem;
 				height: 26/64rem;
 				right: 30/64rem;
-				top: 50/64rem;
+				top: 60/64rem;
 			}
 
 			.gainCode {
 				display: inline-block;
-				position: absolute;
-				top: 20/64rem;
-				right: 10/64rem;
 				font-size: 25/64rem;
 				width: 130/64rem;
 				height: 60/64rem;

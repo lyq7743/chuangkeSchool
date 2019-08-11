@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="content">
 		<div class="header">
 			<div class="top">
 				<router-link to='/mine'><img src="../../../static/img/i_back.png" alt=""></router-link>
@@ -73,6 +73,9 @@
 </script>
 
 <style lang="less" scoped>
+  .content{
+    position: relative;
+  }
 	.header {
 		width: 100%;
 		height: 130/64rem;
@@ -117,7 +120,7 @@
 			width: 460/64rem;
 			position: relative;
 			left: 50/64rem;
-			top: 10/64rem;
+			top: 20/64rem;
 			font-size: 27/64rem;
 			border: none;
 		}
@@ -137,7 +140,7 @@
 				height: 45/64rem;
 				position: relative;
 				left: 25/64rem;
-				top: 25/64rem;
+				top: 35/64rem;
 			}
 
 			.showpass {
@@ -174,15 +177,17 @@
 	}
 
 	.box {
-		height: 100%;
+    position: relative;
+    // bottom: 0;
+		height: 11rem;
 		width: 100%;
 		background: #f2f2f2;
 	}
 
 	.foot {
-		position: relative;
-		top: 260/64rem;
-		height: 200/64rem;
+		position: absolute;
+    bottom: 0;
+		width: 100%;
 		height: 250/64rem;
 		background: #fff;
 

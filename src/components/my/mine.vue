@@ -278,44 +278,51 @@
 		height: 30/64rem;
 		margin-top: 350/64rem;
 	}
-
+  .content{
+    height: 800/64rem;
+  }
 	.content li {
 		height: 83/64rem;
 		line-height: 83/64rem;
 		width: 100%;
-		border-bottom: 1px solid #ccc;
+		border-bottom: 1px solid #EEE;
 		font-size: 27/64rem;
 		position: relative;
 		font-weight: 600;
 		.imgleft {
-			width: 67/64rem;
-			height: 67/64rem;
+			width: 40/64rem;
+			height: 40/64rem;
 			position: relative;
-			top: 20/64rem;
+			top: 15/64rem;
 			left: 30/64rem;
 		}
 		.imgright {
-			width: 20/64rem;
+			width: 10/64rem;
 			height: 20/64rem;
 			position: absolute;
-			top: 40/64rem;
+			top: 35/64rem;
 			right: 30/64rem;
 		}
 		.qu {
 			position: absolute;
-			top: 10/64rem;
+			top: 4/64rem;
 			right: 70/64rem;
 			font-size: 22/64rem;
 			color: #ccc;
 		}
 		span {
+     	position: absolute;
+      top: 4/64rem;
+
 			display: inline-block;
 			text-indent: 1.7em;
+      font-weight: 100;
+      font-size: 25/64rem;
 		}
-		a {
-			color: #000;
-			font-weight: 600;
-		}
+// 		a {
+// 			color: #000;
+// 			font-weight: 600;
+// 		}
 	}
 
 	.content li:hover {
