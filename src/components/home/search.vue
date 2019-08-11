@@ -2,19 +2,14 @@
 	<div class="SeacrhWarp">
 		<div class="seacrh">
 			<div id="searchbox">
-				<!-- <input type="text" placeholder="请输入要搜索的内容..." v-model='search'  @input="search" @keydown.down="down" @keydown.up="up"
-				 @blur="clear" /> -->
 				<input type="text" v-model='search' placeholder="请输入要搜索的内容..." />
 			</div>
 
-			<ul class="list">
+			<ul class="list" v-if="search.length>0">
 				<li v-for="item in searchData">
-					<!-- v-for="(item,index) in list" :class="{active:index == xzindex}" -->
 					{{item.CareerName}}
-
 				</li>
 			</ul>
-
 		</div>
 
 		<div class="hotseacrh">
@@ -34,7 +29,6 @@
 	export default {
 		data: function() {
 			return {
-
 				search: '',
 				products: []
 			}
@@ -54,16 +48,16 @@
 			}
 		},
 		mounted: function() {
-		  this.GetCareerData();
+			this.GetCareerData();
 		},
 		methods: {
-		  GetCareerData() {
-		    this.$axios.get("../../../static/data/CareerpathData/CareerpathData.json")
-		      .then(res => {
-		        //console.log(res.data);
-		        this.products = res.data.data;
-		      })
-		  }
+			GetCareerData() {
+				this.$axios.get("../../../static/data/CareerpathData/CareerpathData.json")
+					.then(res => {
+						//console.log(res.data);
+						this.products = res.data.data;
+					})
+			}
 		}
 	}
 </script>
@@ -80,7 +74,7 @@
 
 	.seacrh {
 		width: 90%;
-		margin: 20/64rem auto;
+		margin: 20/75rem auto;
 	}
 
 	#searchbox {
@@ -89,16 +83,16 @@
 
 	#searchbox input {
 		float: left;
-		line-height: 50/64rem;
+		line-height: 50/75rem;
 		border: none;
 		outline: none;
-		border-radius: 25/64rem;
+		border-radius: 25/75rem;
 	}
 
 	#searchbox input[type="text"] {
 		width: 100%;
-		padding-left: 10/64rem;
-		font-size: 23/64rem;
+		padding-left: 10/75rem;
+		font-size: 23/75rem;
 	}
 
 	.seacrh .list {
@@ -108,8 +102,8 @@
 	}
 
 	.seacrh .list li {
-		line-height: 40/64rem;
-		padding-left: 5/64rem;
+		line-height: 40/75rem;
+		padding-left: 5/75rem;
 	}
 
 	.seacrh .list li.active {
@@ -118,7 +112,7 @@
 
 	.hotseacrh {
 		width: 90%;
-		margin: 20/64rem auto;
+		margin: 20/75rem auto;
 	}
 
 	.hotseacrh h2 {
@@ -128,7 +122,7 @@
 	.hotseacrh ul {
 		li {
 			list-style: none;
-			line-height: 40/64rem;
+			line-height: 40/75rem;
 		}
 	}
 </style>
