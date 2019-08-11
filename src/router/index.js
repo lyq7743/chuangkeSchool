@@ -49,6 +49,7 @@ import browse from '../components/my/browse.vue'
 import news from '../components/my/news.vue'
 import account from '../components/my/account.vue'
 import offline from '../components/my/offline.vue'
+import us from '../components/my/map/map.vue'
 
 import proceedcache from '../components/my/offline/proceedcache.vue'
 import finishcache from '../components/my/offline/finishcache.vue'
@@ -288,6 +289,11 @@ export default new Router({
           component: ask
         }
       ]
+    },
+    {
+      path: '/us',
+      name: 'us',
+      component: us
     }
   ]
 })
