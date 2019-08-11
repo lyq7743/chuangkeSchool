@@ -1,4 +1,4 @@
-<template>
+	<template>
   <div>
     <div class="class-title">
       <h4>{{className}}</h4>

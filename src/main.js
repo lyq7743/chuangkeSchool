@@ -13,7 +13,6 @@ import {store} from './store/store.js'
 import BaiduMap from 'vue-baidu-map'
 
 //import { Switch } from 'mint-ui';
-
 //Vue.component(Switch.name, Switch);
 Vue.config.productionTip = false
 
