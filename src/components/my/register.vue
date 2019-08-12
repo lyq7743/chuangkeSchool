@@ -11,7 +11,8 @@
 			<form action="#">
 				<div class="one"><img src="../../../static/img/sign_icon_phone01.png" alt="" class="img"><input type="text" v-model="user"
 					 placeholder="请输入注册手机号">
-					<input type="button" class="gainCode"  @click='gainCode' :disabled="open" value="验证码"></input></div>
+					<input type="button" class="gainCode"  @click='gainCode' v-bind:disabled="open"  value="验证码"></input>
+        </div>
 				<div class="tow"><img src="../../../static/img/safe42.png" alt="" class="img"><input class="yzm" type="text" placeholder="请输入验证码"></div>
 				<div class="tow"><img src="../../../static/img/sign_icon_lock01.png" alt="" class="img"><input type="password"
 					 v-model="pass" placeholder="设置6位以上的密码"></div>
@@ -39,18 +40,19 @@
 			gainCode: function() {
         this.open =true
 				var flag = true
-				var s = 60;
+				var s = 5;
 				var time = null;
 				if (flag) {
 					flag = false;
 					clearInterval(time)
-          this.open = 'disabled'
+          // this.open = 'disabled'
 					time = setInterval(function() {
 						s >= 10 ? $(".gainCode").val(s + 's') : $(".gainCode").val('0' + s + 's')
 						s--;
 						if (s < -1) {
 							$(".gainCode").val('重新发送')
               this.open = null;
+              console.log(this.open)
 							clearInterval(time)
 							flag = true;
 						}

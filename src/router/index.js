@@ -58,8 +58,10 @@ import official from '../components/my/news/official.vue'
 
 import feedback from '../components/my/system/feedback.vue'
 import regards from '../components/my/system/regards.vue'
- 
-  
+
+import buyClass from '../components/home/buyClass.vue'
+
+
 import detailsClass from '../components/home/detailsClass.vue'
 Vue.use(Router)
 
@@ -294,6 +296,11 @@ export default new Router({
       path: '/us',
       name: 'us',
       component: us
+    },
+    {
+      path: '/buyClass',
+      name: 'buyClass',
+      component: buyClass
     }
   ]
 })
