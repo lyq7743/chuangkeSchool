@@ -2,7 +2,7 @@
 	<div class="Learning">
 
 		<div class="video-wrap">
-			<iframe :src="this.activeVideo.youtobeURL" frameborder='0' allow='autoplay;encrypted-media' allowfullscreen style='width:100%;height:300px'>
+			<iframe :src="this.activeVideo.youtobeURL" frameborder='0' allow='autoplay;encrypted-media' allowfullscreen style='width:100%;height:100%'>
 			</iframe>
 			<!-- <div style="height:50%;width:100%;position:absolute;z-index:999" @click="activeVideoShow(video.id)"></div> -->
 		</div>
@@ -64,7 +64,7 @@
 	#youku-playerBox{
 		height: 300px;
 	}
-	
+
 	.video-wrap {
 		width: 100%;
 		height: 300/75rem;

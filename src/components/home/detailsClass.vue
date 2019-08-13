@@ -175,16 +175,16 @@
 
 		<div class="buyClass">
 			<div class="buyClass-left">
-				<p>免费</p>
+				<p>￥{{shuju.nowPrice}}</p>
 				<p>已有212人报名</p>
 			</div>
 			<div class="buyClass-content">
 				<img src="../../../static/img/ic_home_title_right.png" alt=""><span>咨询</span>
 			</div>
 			<div class="buyClass-right">
-				<router-link to='learning'>
-					<button>开始学习</button>
-				</router-link>
+				<!-- <router-link to='learning'> -->
+					<button @click="beginStudy">开始学习</button>
+				<!-- </router-link> -->
 			</div>
 		</div>
 	</div>
@@ -198,16 +198,19 @@
 				classId: this.$route.query.child, //this.$route.query.clickIndex,板块的第几个数据(接收路由传递过来的值)
 				shuju: [],
 				fromPath: this.$route.query.fromPath,
-				brakPath: ''
+				brakPath: '',
+        toBuyClassData:null,
 			}
 		},
-		mounted() {
+		created() {
 			if (this.fromPath == 1) {
 				this.$axios.get('../../../static/data/indexData/indexData.json')
 					.then(res => {
-						// console.log(res.data.class_list[this.Plate].list[this.classId].childList);
+						console.log(res.data.class_list[this.Plate].list[this.classId].childList);
 						this.shuju = res.data.class_list[this.Plate].list[this.classId].childList;
-
+             // console.log(this.shuju.nowPrice)
+             this.toBuyClassData = res.data.class_list[this.Plate].list[this.classId].childList
+             console.log(this.toBuyClassData)
 					})
 			} else {
 				// this.$axios.get('https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/freeClass')
@@ -229,7 +232,21 @@
 				this.$router.push({
 					path: this.brakPath
 				});
-			}
+			},
+      beginStudy(){
+         // console.log(1)
+        if(this.$store.state.user != ''&&this.$store.state.pass != ''){//判断用户是否有登录账号密码
+            // console.log(2);
+            if(this.shuju.nowPrice!='免费'){
+              this.$router.push({path:'/buyClass',query:{shuju1:this.toBuyClassData}})
+            }else{
+              this.$router.push({path:'/learning'});
+            }
+
+        }else{
+          this.$router.push({path:'/login'});
+        }
+      }
 		},
 		beforeRouteEnter(to, from, next) {
 			next(vm=>{
