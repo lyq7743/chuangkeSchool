@@ -11,7 +11,7 @@
 			<form action="#">
 				<div class="one"><img src="../../../static/img/sign_icon_phone01.png" alt="" class="img"><input type="text" v-model="user"
 					 placeholder="请输入注册手机号">
-					<input type="button" class="gainCode"  @click='gainCode' v-bind:disabled="open"  value="验证码"></input>
+					<input type="button" class="gainCode"  @click='gainCode' :disabled="open"  :value="isValue"></input>
         </div>
 				<div class="tow"><img src="../../../static/img/safe42.png" alt="" class="img"><input class="yzm" type="text" placeholder="请输入验证码"></div>
 				<div class="tow"><img src="../../../static/img/sign_icon_lock01.png" alt="" class="img"><input type="password"
@@ -33,32 +33,25 @@
 			return {
 				user: "",
 				pass: "",
-        open:null
+				open:false,
+				isValue:"验证码"
 			}
 		},
 		methods: {
 			gainCode: function() {
-        this.open =true
-				var flag = true
-				var s = 5;
-				var time = null;
-				if (flag) {
-					flag = false;
-					clearInterval(time)
-          // this.open = 'disabled'
-					time = setInterval(function() {
-						s >= 10 ? $(".gainCode").val(s + 's') : $(".gainCode").val('0' + s + 's')
-						s--;
-						if (s < -1) {
-							$(".gainCode").val('重新发送')
-              this.open = null;
-              console.log(this.open)
+					let vNumber=60
+					var time=setInterval(()=>{
+						this.open=true
+						if(vNumber==0){
 							clearInterval(time)
-							flag = true;
+							this.open=false
+							this.isValue="重新获取"
+							return
 						}
-					}, 1000)
-				}
-
+						this.isValue=vNumber+"s"
+						vNumber--
+						 
+					},1000)
 			},
 			Add: function() {
 				if (localStorage.getItem(this.user)) {
@@ -165,6 +158,7 @@
 				background: #5f8cf7;
 				border-radius: 8/64rem;
 				color: #fff;
+				outline: none;
 			}
 		}
 
