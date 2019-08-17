@@ -238,7 +238,14 @@
         if(this.$store.state.user != ''&&this.$store.state.pass != ''){//判断用户是否有登录账号密码
             // console.log(2);
             if(this.shuju.nowPrice!='免费'){
-              this.$router.push({path:'/buyClass',query:{shuju1:this.toBuyClassData}})
+              // if(this.$store.state.money-this.toBuyClassData.nowPrice<0){
+              //     this.$router.push({path:'/account'})
+              // }else{
+                this.$router.push({path:'/buyClass'})/* ,query:{shuju1:this.toBuyClassData} */
+                 this.$store.commit('setClassData',this.toBuyClassData)
+              // }
+
+
             }else{
               this.$router.push({path:'/learning'});
             }

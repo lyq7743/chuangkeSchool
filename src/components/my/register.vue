@@ -53,7 +53,7 @@
 						}
 						this.isValue=vNumber+"s"
 						vNumber--
-						 
+
 					},1000)
 			},
 			Add: function() {
@@ -231,7 +231,7 @@
 	}
     to {
 		opacity: 0;
-        
+
     }
 }
 </style>

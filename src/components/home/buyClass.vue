@@ -24,7 +24,7 @@
     </div>
     <div class="footer">
       <div class="yue">
-        <p>余额：0(余额不足)</p>
+        <p>同学，你的余额：￥ {{this.$store.state.money}}</p>
       </div>
       <div class="buy">
         <p>实付<span>￥{{shuju.nowPrice}}</span></p>
@@ -35,12 +35,14 @@
 </template>
 
 <script>
-  import { Toast } from 'mint-ui';
+  import {
+    Toast
+  } from 'mint-ui';
   export default {
     data() {
       return {
         backPath: null,
-        shuju:this.$route.query.shuju1,
+        shuju: this.$store.state.classData /* this.$route.query.shuju1, */
       }
     },
 
@@ -51,12 +53,30 @@
         })
       },
       toClass() {
-        Toast('购买成功');
-        setTimeout(res=> {
-           this.$router.push({
-            path: '/learning/details'
-          })
-        }, 2000);
+        if (this.$store.state.money - this.shuju.nowPrice < 0) {
+          Toast({
+            message: '购买失败',
+            iconClass: 'bgimg',
+            duration: 1500
+          });
+          setTimeout(res => {
+            this.$router.push({
+              path: '/account'
+            })
+          }, 2000);
+        } else {
+          Toast({
+            message: '购买成功',
+            iconClass: 'bgimg',
+            duration: 1500
+          });
+          setTimeout(res => {
+            this.$router.push({
+              path: '/learning/details'
+            })
+          }, 2000);
+        }
+
 
       },
 
@@ -71,6 +91,9 @@
 </script>
 
 <style lang="less" scoped>
+  .bgimg{
+    background: url(../../../static/img/1.png) no-repeat;
+  }
   .content {
     height: 1400/75rem;
     width: 100%;
@@ -202,6 +225,7 @@
     bottom: 0;
 
     .yue {
+      padding-left: 20/75rem;
       height: 80/75rem;
       color: skyblue;
       line-height: 80/75rem;

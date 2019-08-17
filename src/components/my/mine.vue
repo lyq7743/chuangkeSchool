@@ -1,19 +1,20 @@
 <template>
 	<div class="mine">
-		<div class="login">
-			<div class="mylogin">
+		<div class="login"@click="islogin">
+			<div class="mylogin" >
 				<p>
-					<router-link to='/login'>登录/注册</router-link>
+					<p v-if="!status">登录/注册</p>
+          <p v-else>你好&nbsp;{{username}}&nbsp;用户</p>
 				</p>
 				<p class="color">
 					 <img src="../../../static/img/pen.png" alt="" class='imgleft img'>
-					<router-link to='/login'>成就更好未来</router-link>
+					<span>成就更好未来</span>
 				</p>
 			</div>
-			<router-link to='/login'>
+
 				<img src="../../../static/img/avatar_default.png" alt="" class='imgright img'>
 				<!-- <slot name='imgright'></slot> -->
-				</router-link>
+
 		</div>
 
 		<div class="topbar">
@@ -93,7 +94,28 @@
 
 <script>
 	export default {
+    data(){
+      return{
+        status:false,
+        username:this.$store.state.user,
+      }
+    },
+    mounted() {
+       if(localStorage.getItem("user") == this.$store.state.user && localStorage.getItem("pass") == this.$store.state.pass) {
+      	this.status = true
+        console.log(this.status)
+      }
+    },
 		methods: {
+      islogin(){
+        if(this.status ==false){
+          this.$router.push({
+          	path: '/login'
+          })
+        }
+
+
+      },
 			account: function() {
 				console.log('user', this.$store.state.user)
 				console.log('pass', this.$store.state.pass)
@@ -235,9 +257,12 @@
 	}
 
 	.mylogin {
+    box-sizing: border-box;
+    width: 100%;
 		position: relative;
 		top: 130/64rem;
-		left: 37/64rem
+    padding-left: 37/64rem;
+		// left: 37/64rem
 	}
 
 	.login a {

@@ -51,7 +51,7 @@
     methods: {
       back() {
         this.$router.push({
-          path: this.backPath
+          path: '/home/recommended'
         })
       },
       showpass: function() {
@@ -79,7 +79,7 @@
     },
     beforeRouteEnter(to, from, next) {
       next(vm => {
-        // console.log('form',from.fullPath);
+        console.log('form',from.fullPath);
         // console.log('to',to.fullPath);
         vm.backPath = from.fullPath
 
@@ -111,8 +111,11 @@
     margin: 0 auto;
     line-height: 160/64rem;
     font-weight: 600;
+    position: relative;
 
     img {
+      top: 70/75rem;
+      position: absolute;
       width: 20/64rem;
       height: 30/64rem;
     }
