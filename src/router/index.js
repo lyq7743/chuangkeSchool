@@ -50,6 +50,11 @@ import news from '../components/my/news.vue'
 import account from '../components/my/account.vue'
 import offline from '../components/my/offline.vue'
 import us from '../components/my/map/map.vue'
+import headerportrait from '../components/my/portrait/headerportrait.vue'
+import name from '../components/my/portrait/name.vue'
+import signature from '../components/my/portrait/signature.vue'
+import occupation from '../components/my/portrait/occupation.vue'
+import pass from '../components/my/portrait/pass.vue'
 
 import proceedcache from '../components/my/offline/proceedcache.vue'
 import finishcache from '../components/my/offline/finishcache.vue'
@@ -219,6 +224,31 @@ export default new Router({
 		path: '/regards',
 		name: 'regards',
 		component: regards
+		},
+		{
+		path: '/headerportrait',
+		name: 'headerportrait',
+		component: headerportrait
+		},
+		{
+		path: '/name',
+		name: 'name',
+		component: name
+		},
+		{
+		path: '/signature',
+		name: 'signature',
+		component: signature
+		},
+		{
+		path: '/occupation',
+		name: 'occupation',
+		component: occupation
+		},
+			{
+		path: '/pass',
+		name: 'pass',
+		component: pass
 		},
     {
       path: '/className',

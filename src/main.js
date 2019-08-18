@@ -9,11 +9,13 @@ import Axios from 'axios'
 import 'mint-ui/lib/style.css'
 import $ from 'jquery'
 import {store} from './store/store.js'
+import { Popup } from 'mint-ui'
 
 import BaiduMap from 'vue-baidu-map'
 
 //import { Switch } from 'mint-ui';
 //Vue.component(Switch.name, Switch);
+Vue.component(Popup.name, Popup);
 Vue.config.productionTip = false
 
 Vue.prototype.$axios = Axios

@@ -3,17 +3,21 @@
 		<div class="login">
 			<div class="mylogin">
 				<p>
-					<router-link to='/login'>登录/注册</router-link>
+					<!-- <router-link to='/login'>登录/注册</router-link> -->
+					{{userName|getName}}
+					
 				</p>
 				<p class="color">
 					 <img src="../../../static/img/pen.png" alt="" class='imgleft img'>
-					<router-link to='/login'>成就更好未来</router-link>
+					 <span v-show="myshow"><router-link to='/login'>成就更好未来</router-link></span>
 				</p>
 			</div>
-			<router-link to='/login'>
-				<img src="../../../static/img/avatar_default.png" alt="" class='imgright img'>
-				<!-- <slot name='imgright'></slot> -->
-				</router-link>
+			<span @click="avatar">
+				<!-- <router-link to='/login'> -->
+					<img src="../../../static/img/avatar_default.png" alt="" class='imgright img'>
+					<!-- </router-link> -->
+			</span>
+			 
 		</div>
 
 		<div class="topbar">
@@ -74,13 +78,6 @@
 						<img src="../../../static/img/i_more.png" alt="" class="imgright">
 					<!-- </router-link> -->
 				</li>
-				<!--<li>
-						<router-link to=''>
-							<img src="../../../static/img/ic_my_setting.png" alt="" class="imgleft">
-						  <span>我的</span>
-							<img src="../../../static/img/i_more.png" alt="" class="imgright">
-						</router-link>
-					</li>-->
 				<li @click="us">
 					<img src="../../../static/img/ic_my_wechat.png" alt="" class="imgleft">
 					<span>关于我们</span>
@@ -93,133 +90,137 @@
 
 <script>
 	export default {
+		data() {
+			return {
+				myshow:"" ,
+				userName:""
+			}
+		},
+		filters:{
+			getName(name){
+				return name==""?"登录/注册":name
+			}
+		},
+		mounted(){
+			console.log("进入加载")
+			this.$store.commit("getAccount")
+			this.userName=this.$store.state.user
+			if(this.$store.state.user!=""){
+				this.myshow=false
+			}else{
+				this.myshow=true
+			}
+		},
 		methods: {
 			account: function() {
-				console.log('user', this.$store.state.user)
-				console.log('pass', this.$store.state.pass)
-				if(localStorage.getItem("user") == this.$store.state.user && localStorage.getItem("pass") == this.$store.state.pass) {
-					this.$router.push({
-						path: '/account'
-					})
-				} else {
-					this.$router.push({
-						path: '/login'
-					})
+				this.$store.commit("getAccount")
+				if(this.$store.state.user!=""){
+					this.$router.push("/account")
+				}else{
+					this.$router.push("/login")
 				}
+				
 			},
 			studycard: function() {
-				if(localStorage.getItem("user") == this.$store.state.user && localStorage.getItem("pass") == this.$store.state.pass) {
-					this.$router.push({
-						path: '/study'
-					})
-				} else {
-					this.$router.push({
-						path: '/login'
-					})
+				this.$store.commit("getAccount")
+				if(this.$store.state.user!=""){
+					this.$router.push("/studycard")
+				}else{
+					this.$router.push("/login")
 				}
+				
 			},
-			openclass: function() {
-				if(localStorage.getItem("user") == this.$store.state.user && localStorage.getItem("pass") == this.$store.state.pass) {
-					this.$router.push({
-						path: '/openclass'
-					})
-				} else {
-					this.$router.push({
-						path: '/login'
-					})
+				openclass: function() {
+				this.$store.commit("getAccount")
+				if(this.$store.state.user!=""){
+					this.$router.push("/openclass")
+				}else{
+					this.$router.push("/login")
 				}
+				
 			},
 			questions: function() {
-				if(localStorage.getItem("user") == this.$store.state.user && localStorage.getItem("pass") == this.$store.state.pass) {
-					this.$router.push({
-							path: '/question'
-						}) //跳问答
-				} else {
-					this.$router.push({
-						path: '/login'
-					})
+				this.$store.commit("getAccount")
+				if(this.$store.state.user!=""){
+					this.$router.push("/questions")
+				}else{
+					this.$router.push("/login")
 				}
+				
 			},
-			orderform: function() {
-				if(localStorage.getItem("user") == this.$store.state.user && localStorage.getItem("pass") == this.$store.state.pass) {
-					this.$router.push({
-						path: '/orderform'
-					})
-				} else {
-					this.$router.push({
-						path: '/login'
-					})
+				orderform: function() {
+				this.$store.commit("getAccount")
+				if(this.$store.state.user!=""){
+					this.$router.push("/orderform")
+				}else{
+					this.$router.push("/login")
 				}
+				
 			},
 			browse: function() {
-				if(localStorage.getItem("user") == this.$store.state.user && localStorage.getItem("pass") == this.$store.state.pass) {
-					this.$router.push({
-						path: '/browse'
-					})
-				} else {
-					this.$router.push({
-						path: '/login'
-					})
-				}
-			},
-			grade: function() {
-				if(localStorage.getItem("user") == this.$store.state.user && localStorage.getItem("pass") == this.$store.state.pass) {
-					this.$router.push({
-							path: '/class'
-						}) //跳转班级
-				} else {
-					this.$router.push({
-						path: '/login'
-					})
-				}
-			},
-			offline: function() {
-				if(localStorage.getItem("user") == this.$store.state.user && localStorage.getItem("pass") == this.$store.state.pass) {
-					this.$router.push({
-						path: '/offline'
-					})
-				} else {
-					this.$router.push({
-						path: '/login'
-					})
-				}
-			},
-			news: function() {
-				if(localStorage.getItem("user") == this.$store.state.user && localStorage.getItem("pass") == this.$store.state.pass) {
-					this.$router.push({
-						path: '/news'
-					})
-				} else {
-					this.$router.push({
-						path: '/login'
-					})
-				}
-			},
-			system: function() {
-				if(localStorage.getItem("user") == this.$store.state.user && localStorage.getItem("pass") == this.$store.state.pass) {
-					this.$router.push({
-						path: '/system'
-					})
-				} else {
-					this.$router.push({
-						path: '/system'
-					})
-				}
-			},
-			us: function() {
-				if(localStorage.getItem("user") == this.$store.state.user && localStorage.getItem("pass") == this.$store.state.pass) {
-					this.$router.push({
-						path: '/us'
-					})
-				} else {
-					this.$router.push({
-						path: '/login'
-					})
-				}
-				// this.$router.push({
-				// 	path:'/us'
-				// })
+			this.$store.commit("getAccount")
+			if(this.$store.state.user!=""){
+				this.$router.push("/browse")
+			}else{
+				this.$router.push("/login")
 			}
+			
+		},
+		grade: function() {
+		this.$store.commit("getAccount")
+		if(this.$store.state.user!=""){
+			this.$router.push("/grade")
+		}else{
+			this.$router.push("/login")
+		}
+		
+	},
+			offline: function() {
+			this.$store.commit("getAccount")
+			if(this.$store.state.user!=""){
+				this.$router.push("/offline")
+			}else{
+				this.$router.push("/login")
+			}
+			
+		},
+			news: function() {
+			this.$store.commit("getAccount")
+			if(this.$store.state.user!=""){
+				this.$router.push("/news")
+			}else{
+				this.$router.push("/login")
+			}
+			
+		},
+			system: function() {
+			this.$store.commit("getAccount")
+			if(this.$store.state.user!=""){
+				this.$router.push("/system")
+			}else{
+				this.$router.push("/login")
+			}
+			
+		},
+		us: function() {
+		this.$store.commit("getAccount")
+		if(this.$store.state.user!=""){
+			this.$router.push("/us")
+		}else{
+			this.$router.push("/login")
+		}
+		
+	},
+			avatar: function() {
+				this.$store.commit("getAccount")
+				if(this.$store.state.user!=""){
+					this.$router.push("/headerportrait")
+				}else{
+					this.$router.push("/login")
+				}
+				
+			},
+			
 		}
 	}
 </script>
@@ -229,30 +230,25 @@
 		margin: 0;
 		padding: 0;
 	}
-
 	.login {
 		position: relative;
 	}
-
 	.mylogin {
 		position: relative;
 		top: 130/64rem;
-		left: 37/64rem
+		// left: 37/64rem
+		text-indent:2em;
 	}
-
-	.login a {
-		color: #000;
+	.login p {
+		color: #666;
 		font-size: 28/64rem;
 	}
-
 	.login p {
 		margin-bottom: 15/64rem;
 	}
-
 	.login .color a {
 		color: #666;
 	}
-
 	.imgright {
 		width: 155/64rem;
 		height: 155/64rem;
@@ -264,33 +260,27 @@
 			width: 25/64rem;
 	   height: 25/64rem;
 	}
-
 	.topbar {
 		position: absolute;
 		top: 300/64rem;
 		display: flex;
 		width: 100%;
 	}
-
 	.topbar .item {
 		flex: 1;
 		text-align: center;
 	}
-
 	.topbar .item a {
 		color: #000;
 		font-size: 25/64rem;
 	}
-
 	.topbar .item span {
 		color: #666;
 	}
-
 	.topbar .item img {
 		width: 65/64rem;
 		height: 65/64rem;
 	}
-
 	.bg {
 		background: #f8f9fa;
 		width: 100%;
@@ -331,19 +321,17 @@
 		}
 		span {
      	position: absolute;
-      top: 4/64rem;
-
-			display: inline-block;
-			text-indent: 1.7em;
-      font-weight: 100;
-      font-size: 25/64rem;
+        top: 4/64rem;
+		display: inline-block;
+		text-indent: 1.7em;
+	    font-weight: 100;
+	    font-size: 25/64rem;
 		}
 // 		a {
 // 			color: #000;
 // 			font-weight: 600;
 // 		}
 	}
-
 	.content li:hover {
 		background: #F2F2F2;
 	}

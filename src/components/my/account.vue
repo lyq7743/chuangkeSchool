@@ -9,14 +9,14 @@
 			</div>
 			<div class="touxiang">
 				<img src="../../../static/img/avatar_default.png" alt="">
-				<p>dzgbdfgbdfbf</p>
+				<p>{{this.$store.state.user}}</p>
 				<p>余额：0金币</p>
 			</div>
       <div class="section">
 				<p class="p">选择充值金币</p>
 				<ul>
 					<li v-for="item in all">
-						 <p><img src="../../../static/img/mipmap/icon_gold.png" alt="">
+						 <p><img src="../../../static/img/mipmap/icon_gold.png" alt="" class="img">
 						{{item}} <p>售价{{item}}元</p>
 						</p>
 					</li>
@@ -119,6 +119,10 @@
 					
 					p{
 						margin-top:28/64rem;
+					}
+					.img{
+						width: 35/64rem;
+						height: 35/64rem;
 					}
 				}
 			}

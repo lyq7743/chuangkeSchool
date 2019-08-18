@@ -11,11 +11,12 @@
 			<form action="#">
 				<div class="one"><img src="../../../static/img/sign_icon_phone01.png" alt="" class="img"><input type="text" v-model="user"
 					 placeholder="请输入注册手机号">
-					<input type="button" class="gainCode"  @click='gainCode' :disabled="open"  :value="isValue"></input>
-        </div>
-				<div class="tow"><img src="../../../static/img/safe42.png" alt="" class="img"><input class="yzm" type="text" placeholder="请输入验证码"></div>
+					<input type="button" class="gainCode" @click='gainCode' :disabled="open" :value="isValue"></input>
+				</div>
+				<div class="tow"><img src="../../../static/img/safe42.png" alt="" class="img"><input class="yzm" type="text"
+					 placeholder="请输入验证码"></div>
 				<div class="tow"><img src="../../../static/img/sign_icon_lock01.png" alt="" class="img"><input type="password"
-					 v-model="pass" placeholder="设置6位以上的密码"></div>
+					 v-model="pass" placeholder="设置8位以上的密码"></div>
 				<div class="button" @click="Add">下一步</div>
 			</form>
 			<div class="text">
@@ -28,43 +29,57 @@
 </template>
 
 <script>
+	import { Toast } from 'mint-ui';
 	export default {
 		data() {
 			return {
 				user: "",
 				pass: "",
-				open:false,
-				isValue:"验证码"
+				open: false,
+				isValue: "验证码"
 			}
 		},
 		methods: {
 			gainCode: function() {
-					let vNumber=60
-					var time=setInterval(()=>{
-						this.open=true
-						if(vNumber==0){
-							clearInterval(time)
-							this.open=false
-							this.isValue="重新获取"
-							return
-						}
-						this.isValue=vNumber+"s"
-						vNumber--
-						 
-					},1000)
+				let vNumber = 60
+				var time = setInterval(() => {
+					this.open = true
+					if (vNumber == 0) {
+						clearInterval(time)
+						this.open = false
+						this.isValue = "重新获取"
+						return
+					}
+					this.isValue = vNumber + "s"
+					vNumber--
+
+				}, 1000)
 			},
 			Add: function() {
-				if (localStorage.getItem(this.user)) {
-					alert("该用户已存在,请直接登录")
-				} else if (this.pass === "" || this.user === "") {
-					alert("账号密码不能为空")
-				} else {
-					localStorage.setItem('user', this.user)
-					localStorage.setItem('pass', this.pass)
-					alert("注册成功")
-					this.$router.push("/login")
+				var resUser = /^[1][3,4,5,7,8][0-9]{9}$/;
+				var regPass = /^(?![^a-zA-Z]+$)(?!\\D+$).{8,16}$/;
+				if (resUser.test(this.user) && regPass.test(this.pass)) {
+					this.$store.commit("addAccount",{
+						user:this.user,
+						pass:this.pass,
+						name:""
+					})
+					this.$router.push({
+						path: '/login'
+					})
+					console.log(this.user)
+				} else if(regPass.test(this.pass)==""){
+					Toast({
+						message: '请输入正确密码，首字母两位以上',
+						position: 'top'
+					});
+				}else{
+					Toast({
+						message: '请输入正确格式，请重试',
+						position: 'top'
+					});
 				}
-
+				 
 			}
 		}
 	}
@@ -123,9 +138,11 @@
 		.one {
 			border: none;
 		}
-.yzm{
-  top: 20/64rem;
-}
+
+		.yzm {
+			top: 20/64rem;
+		}
+
 		div {
 			background: #fff;
 			position: relative;

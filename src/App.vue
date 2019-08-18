@@ -6,7 +6,8 @@
 	 &&this.$route.path!=='/offline'&&this.$route.path!=='/finishcache'&&this.$route.path!=='/proceedcache'
 	 &&this.$route.path!=='/news'&&this.$route.path!=='/official'&&this.$route.path!=='/account'
 	 &&this.$route.path!=='/study'&&this.$route.path!=='/openclass'&&this.$route.path!=='/orderform'&&this.$route.path!=='/browse'
-	&&this.$route.path!=='/feedback'&&this.$route.path!=='/regards'
+	&&this.$route.path!=='/feedback'&&this.$route.path!=='/regards'&&this.$route.path!=='/headerportrait'&&this.$route.path!=='/name'
+	&&this.$route.path!=='/occupation'&&this.$route.path!=='/pass'&&this.$route.path!=='/signature'
 	 "></tabbar>
   </div>
 </template>

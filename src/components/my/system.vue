@@ -27,7 +27,7 @@
 
 		</div>
 
-		<div class="button" v-show="isShow">退出登录</div>
+		<div class="button" @click="outAccount" v-show="isShow">退出登录</div>
 
 	</div>
 </template>
@@ -39,13 +39,25 @@
 					isShow:true
 				}
 		    },
+			mounted() {
+				this.isAccount()
+			},
 		methods: {
+			outAccount(){
+				this.$store.commit("outAccount")
+				this.$router.push({path: '/mine'})
+			},
+			isAccount(){
+				this.$store.commit("getAccount")
+				this.isShow=this.$store.state.user==""?this.isShow=false:this.isShow=true,
+				console.log(this.isShow)
+			},
 			feedback: function() {
 					this.$router.push({path: '/feedback'})
 			},
 			regards: function() {
 					this.$router.push({path: '/regards'})
-			},
+			}
 
 
 			}

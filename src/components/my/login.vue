@@ -39,6 +39,7 @@
 </template>
 
 <script>
+	import { Toast } from 'mint-ui';
 	export default {
 		data() {
 			return {
@@ -55,16 +56,23 @@
 				}
 			},
 			Login: function() {
-//				console.log(this.user)
-//				console.log(localStorage.getItem("user"))
-				if (this.pass === "" || this.user === "") {
-					alert("账号密码不能为空")
-				} else if (localStorage.getItem("user") == this.user&&localStorage.getItem("pass") == this.pass) {
-					this.$store.commit('setUsername',this.user);
-					this.$store.commit('setPass',this.pass);
-						this.$router.push("/mine")
+				var resUser = /^[1][3,4,5,7,8][0-9]{9}$/;
+				var regPass = /^(?![^a-zA-Z]+$)(?!\\D+$).{8,16}$/;
+				if (resUser.test(this.user) && regPass.test(this.pass)) {
+					console.log("通过了登录测试")
+					this.$store.commit("loginAccount", {
+						user: this.user,
+						pass: this.pass,
+						name:""
+					})
+					this.$router.push({
+						path: '/mine'
+					})
 				} else {
-					alert("请输入正确账号、密码")
+					Toast({
+						message: '请输入正确格式，请重试',
+						position: 'top'
+					});
 				}
 			}
 		}
@@ -73,9 +81,10 @@
 </script>
 
 <style lang="less" scoped>
-  .content{
-    position: relative;
-  }
+	.content {
+		position: relative;
+	}
+
 	.header {
 		width: 100%;
 		height: 130/64rem;
@@ -177,8 +186,8 @@
 	}
 
 	.box {
-    position: relative;
-    // bottom: 0;
+		position: relative;
+		// bottom: 0;
 		height: 11rem;
 		width: 100%;
 		background: #f2f2f2;
@@ -186,7 +195,7 @@
 
 	.foot {
 		position: absolute;
-    bottom: 0;
+		bottom: 0;
 		width: 100%;
 		height: 250/64rem;
 		background: #fff;
