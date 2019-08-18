@@ -3,13 +3,42 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 export const store = new Vuex.Store({
 	//状态，想要存储的数据
-	state: {
-		 user:'',
-		 userStatus:false,
+
+	
+	
+	state:{
+		user: '',
+		pass: '',
+		money: 0,
+		classData: null,
+		historyClass: [],
+		userStatus:false,
 		 signature:'',
 		 occupation:''
 	},
 	mutations: {
+		setUsername(state, use) {
+			state.user = use;
+			//			console.log(use)
+		},
+		setPass(state, pas) {
+			state.pass = pas;
+			//			console.log(pas)
+		},
+		setMoney(state, num) {
+			state.money += num
+		},
+		setClassData(state, shuju) {
+			state.classData = shuju
+		},
+		setHistoryClass(state, data) {
+			// console.log(state.historyClass)
+			state.historyClass.push(data)
+			console.log(state.historyClass)
+		},
+		changeMoney(state,num){
+			state.money = state.money - num
+		},
 		setName(state,name){
 			var vUser=JSON.parse(localStorage.getItem("accout"))
 			vUser.name=name
@@ -55,8 +84,10 @@ export const store = new Vuex.Store({
 			}
 		},
 		getAccount(state){
+			
 			if(localStorage.getItem("accout")!=null&&state.user!=""){
 				var vUser=JSON.parse(localStorage.getItem("accout"))
+				console.log('vUser',vUser)
 				if(vUser.name!=""&&vUser.user!=""){
 					state.user=vUser.name
 				}else{
@@ -73,6 +104,6 @@ export const store = new Vuex.Store({
 			this.commit("getAccount")
 		}
 		
-	}
-	
+	},
+
 })

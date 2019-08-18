@@ -58,7 +58,7 @@
       // this.$axios.get(" https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/recommededData")
       this.$axios.get("../../../static/data/recommededData/recommededData.json")
         .then((shuju) => {
-          // console.log(shuju);
+          // console.log(shuju.data.class);
           this.livebroadcastClassData = shuju.data.class;
         }),
         // this.$axios.get('https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/recommededData1')

@@ -23,6 +23,7 @@
             "teacherIntroduction": "华清创客学院教学总监，美女讲师，人工智能工学硕士；嵌入式，物联网技术领域讲师；,ARM公司全球认证讲师，8年嵌入式开发及教育经验；参与编写过数十本专业图书",
             "flower": "859",
             "fengshu": "5",
+            "nowPrice": "免费",
             "kecheng": [{
                 "classTitle": "第一章 软件包管理及shell命令",
                 "classChapter": [{
@@ -103,6 +104,7 @@
             "teacherIntroduction": "华清创客学院金牌讲师，高校物联网课题组核心骨干成员，8年物联网研发及教学经验，ARM公司全球认证讲师，明旭老师在长期的教研工作中，多次深入百度，格力、华为等企业一线进行技术调研",
             "flower": "1189",
             "fengshu": "5",
+            "nowPrice": "免费",
             "kecheng": [{
                 "classTitle": "第1章 数据结构",
                 "classChapter": [{
@@ -192,6 +194,7 @@
             "teacherIntroduction": "华清创客学院教学总监，美女讲师，人工智能工学硕士；嵌入式，物联网技术领域讲师；ARM公司全球认证讲师，8年嵌入式开发及教育经验；参与编写过数十本专业图书",
             "flower": "859",
             "fengshu": "5",
+            "nowPrice": "免费",
             "kecheng": [{
                 "classTitle": "第一章 软件包管理及shell命令",
                 "classChapter": [{
@@ -273,6 +276,7 @@
             "teacherIntroduction": "华清创客学院教学总监，美女讲师，人工智能工学硕士；嵌入式，物联网技术领域讲师；,ARM公司全球认证讲师，8年嵌入式开发及教育经验；参与编写过数十本专业图书",
             "flower": "859",
             "fengshu": "5",
+            "nowPrice": "免费",
             "kecheng": [{
                 "classTitle": "第一章 软件包管理及shell命令",
                 "classChapter": [{
@@ -354,6 +358,7 @@
             "teacherIntroduction": "华清创客学院教学总监，美女讲师，人工智能工学硕士；嵌入式，物联网技术领域讲师；,ARM公司全球认证讲师，8年嵌入式开发及教育经验；参与编写过数十本专业图书",
             "flower": "859",
             "fengshu": "5",
+            "nowPrice": "免费",
             "kecheng": [{
                 "classTitle": "第一章 软件包管理及shell命令",
                 "classChapter": [{
@@ -435,6 +440,7 @@
             "teacherIntroduction": "华清创客学院教学总监，美女讲师，人工智能工学硕士；嵌入式，物联网技术领域讲师；,ARM公司全球认证讲师，8年嵌入式开发及教育经验；参与编写过数十本专业图书",
             "flower": "859",
             "fengshu": "5",
+            "nowPrice": "免费",
             "kecheng": [{
                 "classTitle": "第一章 软件包管理及shell命令",
                 "classChapter": [{
@@ -516,6 +522,7 @@
             "teacherIntroduction": "华清创客学院教学总监，美女讲师，人工智能工学硕士；嵌入式，物联网技术领域讲师；,ARM公司全球认证讲师，8年嵌入式开发及教育经验；参与编写过数十本专业图书",
             "flower": "859",
             "fengshu": "5",
+            "nowPrice": "免费",
             "kecheng": [{
                 "classTitle": "第一章 软件包管理及shell命令",
                 "classChapter": [{
@@ -597,6 +604,7 @@
             "teacherIntroduction": "华清创客学院教学总监，美女讲师，人工智能工学硕士；嵌入式，物联网技术领域讲师；,ARM公司全球认证讲师，8年嵌入式开发及教育经验；参与编写过数十本专业图书",
             "flower": "859",
             "fengshu": "5",
+            "nowPrice": "免费",
             "kecheng": [{
                 "classTitle": "第一章 软件包管理及shell命令",
                 "classChapter": [{
@@ -684,6 +692,7 @@
             "teacherIntroduction": "华清创客学院教学总监，美女讲师，人工智能工学硕士；嵌入式，物联网技术领域讲师；,ARM公司全球认证讲师，8年嵌入式开发及教育经验；参与编写过数十本专业图书",
             "flower": "859",
             "fengshu": "5",
+            "nowPrice": "免费",
             "kecheng": [{
                 "classTitle": "第一章 软件包管理及shell命令",
                 "classChapter": [{
@@ -764,6 +773,7 @@
             "teacherImg": "../../../static/img/teacher.png",
             "teacherIntroduction": "华清创客学院教学总监，美女讲师，人工智能工学硕士；嵌入式，物联网技术领域讲师；,ARM公司全球认证讲师，8年嵌入式开发及教育经验；参与编写过数十本专业图书",
             "flower": "859",
+            "nowPrice": "免费",
             "fengshu": "5",
             "kecheng": [{
                 "classTitle": "第一章 软件包管理及shell命令",

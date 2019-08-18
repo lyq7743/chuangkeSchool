@@ -10,11 +10,13 @@
 		<div class="form">
 			<form action="#">
 				<div class="one"><img src="../../../static/img/sign_icon_phone01.png" alt="" class="img"><input type="text" v-model="user"
+
 					 placeholder="请输入注册手机号">
 					<input type="button" class="gainCode" @click='gainCode' :disabled="open" :value="isValue"></input>
 				</div>
 				<div class="tow"><img src="../../../static/img/safe42.png" alt="" class="img"><input class="yzm" type="text"
 					 placeholder="请输入验证码"></div>
+
 				<div class="tow"><img src="../../../static/img/sign_icon_lock01.png" alt="" class="img"><input type="password"
 					 v-model="pass" placeholder="设置8位以上的密码"></div>
 				<div class="button" @click="Add">下一步</div>
@@ -24,7 +26,7 @@
 				<a href="">《网站用户注册及服务协议》</a>
 			</div>
 		</div>
-
+		<div v-if="popupshow" class="xiaoxi" >请输入正确的手机号码</div>
 	</div>
 </template>
 
@@ -36,7 +38,10 @@
 				user: "",
 				pass: "",
 				open: false,
-				isValue: "验证码"
+				isValue:"验证码",
+				popupval:"popupval",
+				popupshow:false,
+				reg : /^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])\d{8}$/
 			}
 		},
 		methods: {
@@ -79,7 +84,43 @@
 						position: 'top'
 					});
 				}
-				 
+					let vNumber=60
+					var time=setInterval(()=>{
+						this.open=true
+						if(vNumber==0){
+							clearInterval(time)
+							this.open=false
+							this.isValue="重新获取"
+							return
+						}
+						this.isValue=vNumber+"s"
+						vNumber--
+
+					},1000)
+			},
+			Add: function() {
+				if (localStorage.getItem(this.user)) {
+					alert("该用户已存在,请直接登录")
+				} else if (this.pass === "" || this.user === "") {
+					alert("账号密码不能为空")
+				} else if(this.user.length <= 10 || !this.reg.test(this.user)){
+					this.popupshow=true;
+					return;
+				}else {
+					localStorage.setItem('user', this.user)
+					localStorage.setItem('pass', this.pass)
+					alert("注册成功")
+					this.$router.push("/login")
+				}
+
+			},
+			validateTel:function(tel){
+				console.log("方法执行");
+				if(this.TEL_REGEXP.test(tel)){
+					console.log("判断成功！")
+					return true;
+				}
+				return false;
 			}
 		}
 	}
@@ -209,7 +250,32 @@
 	}
 
 	.form {
-		height: 1200px;
+		height: 800px;
 		background: #f2f2f2;
 	}
+
+.xiaoxi{
+	position: fixed;
+	top: 0;
+	text-align: center;
+	line-height: 80/64rem;
+	font-size: 0.5rem;
+	width: 100%;
+	height: 80/64rem;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	animation: slideInUp 5s forwards;
+}
+@keyframes slideInUp {
+    0% {
+		opacity: 0;
+    }
+	50%{
+		opacity: 1;
+	}
+    to {
+		opacity: 0;
+
+    }
+}
 </style>

@@ -1,41 +1,41 @@
 <template>
-	<div class="content">
-		<div class="header">
-			<div class="top">
-				<router-link to='/mine'><img src="../../../static/img/i_back.png" alt=""></router-link>
-				<span>登录</span>
-				<router-link to='/register'>注册</router-link>
-			</div>
-		</div>
-		<div class="beijing"></div>
-		<div class="form">
-			<form action="">
-				<div class="one"><img src="../../../static/img/sign_icon_phone01.png" alt="" class="img"><input type="text"
-					 placeholder="用户名/手机号" v-model="user"></div>
-				<div class="tow"><img src="../../../static/img/sign_icon_lock01.png" alt="" class="img"><input type="password"
-					 placeholder="请输入密码" v-model="pass">
-					<span><img src="../../../static/img/sign_icon_eye01.png" alt="" class="showpass" @click='showpass'></span></div>
-				<div class="button" @click="Login">登录</div>
-			</form>
-			<a href="">忘记密码</a>
-		</div>
-		<div class="box">
-			<div class="foot">
-				<h2>第三方登录</h2>
-				<div class="myfoot">
-					<div>
-						<img src="../../../static/img/weixin.png" alt="">
-						<p>微信</p>
-					</div>
-					<div>
-						<img src="../../../static/img/qq.png" alt="">
-						<p>QQ</p>
-					</div>
-				</div>
-			</div>
-		</div>
+  <div class="content">
+    <div class="header">
+      <div class="top">
+        <img src="../../../static/img/i_back.png" alt="" @click="back">
+        <span>登录</span>
+        <router-link to='/register'>注册</router-link>
+      </div>
+    </div>
+    <div class="beijing"></div>
+    <div class="form">
+      <form action="">
+        <div class="one"><img src="../../../static/img/sign_icon_phone01.png" alt="" class="img"><input type="text"
+            placeholder="用户名/手机号" v-model="user"></div>
+        <div class="tow"><img src="../../../static/img/sign_icon_lock01.png" alt="" class="img"><input type="password"
+            placeholder="请输入密码" v-model="pass">
+          <span><img src="../../../static/img/sign_icon_eye01.png" alt="" class="showpass" @click='showpass'></span></div>
+        <div class="button" @click="Login">登录</div>
+      </form>
+      <a href="">忘记密码</a>
+    </div>
+    <div class="box">
+      <div class="foot">
+        <h2>第三方登录</h2>
+        <div class="myfoot">
+          <div>
+            <img src="../../../static/img/weixin.png" alt="">
+            <p>微信</p>
+          </div>
+          <div>
+            <img src="../../../static/img/qq.png" alt="">
+            <p>QQ</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-	</div>
+  </div>
 </template>
 
 <script>
@@ -48,6 +48,9 @@
 			}
 		},
 		methods: {
+			back(){
+				this.$router.push({path:'/mine'})
+			},
 			showpass: function() {
 				if ($("form>.tow").find("input").attr("type") == "password") {
 					$("form>.tow").find("input").attr("type", "text")
@@ -100,9 +103,11 @@
 		line-height: 160/64rem;
 		font-weight: 600;
 
-		img {
+		img{
 			width: 20/64rem;
 			height: 30/64rem;
+			position: relative;
+			top:60/64rem;
 		}
 
 		span {
@@ -228,4 +233,5 @@
 			top: 25/64rem;
 		}
 	}
+
 </style>
