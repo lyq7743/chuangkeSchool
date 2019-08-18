@@ -66,11 +66,11 @@
         // console.log(this.all[this.num])
         this.$store.commit('setMoney', this.all[this.num])
         // console.log(this.$store.state.money)
-        setTimeout(res=> {
-          this.$router.push({
-            path: this.backPath
-          })
-        }, 2000);
+        // setTimeout(res=> {
+        //   this.$router.push({
+        //     path: this.backPath
+        //   })
+        // }, 2000);
 
       },
       back() {

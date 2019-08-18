@@ -1,14 +1,15 @@
 <template>
 	<div class="mine">
-		<div class="login" @click="islogin">
-			<div class="mylogin">
+		<div class="login">
+			<div class="mylogin" @click="toLogin">
 				<p>
 					<!-- <router-link to='/login'>登录/注册</router-link> -->
-					{{userName|getName}}
+					<span v-if="myshow">登录/注册</span>
+					<span v-else>{{this.$store.state.user|getName}}用户</span>
 				</p>
 				<p class="color">
 					<img src="../../../static/img/pen.png" alt="" class='imgleft img'>
-					<span v-show="myshow"><router-link to='/login'>成就更好未来</router-link></span>
+					<span>成就更好未来</span>
 				</p>
 			</div>
 			<span @click="avatar">
@@ -95,12 +96,12 @@
 			},
 			filters: {
 				getName(name) {
-					return name == "" ? "登录/注册" : name
+					return name.slice(7)
 				}
 			},
 			mounted() {
-				console.log("进入加载")
-				this.$store.commit("getAccount")
+				// console.log("进入加载")
+				// this.$store.commit("getAccount")
 				this.userName = this.$store.state.user
 				if(this.$store.state.user != "") {
 					this.myshow = false
@@ -110,16 +111,15 @@
 			},
 
 			methods: {
-				islogin() {
-					if(this.status == false) {
-						this.$router.push({
-							path: '/login'
-						})
+				toLogin(){
+					// console.log(1)
+					if(this.$store.state.user == ""){
+						this.$router.push({path:'/login'})
 					}
-
 				},
+				
 				account: function() {
-					this.$store.commit("getAccount")
+					// this.$store.commit("getAccount")
 					if(this.$store.state.user != "") {
 						this.$router.push("/account")
 					} else {

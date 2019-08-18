@@ -72,37 +72,38 @@ export const store = new Vuex.Store({
 			console.log(account)
 			localStorage.setItem("accout",JSON.stringify(account))
 		},
-		loginAccount(state,account){
-			var vUser=JSON.parse(localStorage.getItem("accout"))
-			if(vUser.user==account.user&&vUser.pass==account.pass){
-				if(vUser.name!=""){
-					state.user=vUser.name
-				}else{
-					state.user=vUser.user
-				}
-				state.userStatus=true
-			}
-		},
-		getAccount(state){
-			
-			if(localStorage.getItem("accout")!=null&&state.user!=""){
-				var vUser=JSON.parse(localStorage.getItem("accout"))
-				console.log('vUser',vUser)
-				if(vUser.name!=""&&vUser.user!=""){
-					state.user=vUser.name
-				}else{
-					state.user=vUser.user
-				}
-			}else{
-				state.user=""
-			}
-			
-		},
-		outAccount(state){
-			state.user=""
-			state.userStatus=false
-			this.commit("getAccount")
-		}
+		// loginAccount(state,account){
+		// 	var vUser=JSON.parse(localStorage.getItem("accout"))
+		// 	if(vUser.user==account.user&&vUser.pass==account.pass){
+		// 		if(vUser.name!=""){
+		// 			state.user=vUser.name
+		// 		}else{
+		// 			state.user=vUser.user
+		// 		}
+		// 		state.userStatus=true
+		// 	}
+		// },
+		
+		// getAccount(state){
+		// 	
+		// 	if(localStorage.getItem("accout")!=null&&state.user!=""){
+		// 		var vUser=JSON.parse(localStorage.getItem("accout"))
+		// 		console.log('vUser',vUser)
+		// 		if(vUser.name!=""&&vUser.user!=""){
+		// 			state.user=vUser.name
+		// 		}else{
+		// 			state.user=vUser.user
+		// 		}
+		// 	}else{
+		// 		state.user=""
+		// 	}
+		// 	
+		// },
+		// outAccount(state){
+		// 	state.user=""
+		// 	state.userStatus=false
+		// 	this.commit("getAccount")
+		// }
 		
 	},
 

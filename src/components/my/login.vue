@@ -63,11 +63,17 @@
 				var regPass = /^(?![^a-zA-Z]+$)(?!\\D+$).{8,16}$/;
 				if (resUser.test(this.user) && regPass.test(this.pass)) {
 					console.log("通过了登录测试")
-					this.$store.commit("loginAccount", {
-						user: this.user,
-						pass: this.pass,
-						name:""
-					})
+					console.log(this.user)
+					console.log(this.pass)
+					this.$store.commit('setUsername',this.user)
+					this.$store.commit('setPass',this.pass)
+					
+					
+					// this.$store.commit("loginAccount", {
+					// 	user: this.user,
+					// 	pass: this.pass,
+					// 	name:""
+					// })
 					this.$router.push({
 						path: '/mine'
 					})
