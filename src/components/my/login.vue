@@ -79,7 +79,7 @@
     },
     beforeRouteEnter(to, from, next) {
       next(vm => {
-        console.log('form',from.fullPath);
+        // console.log('form',from.fullPath);
         // console.log('to',to.fullPath);
         vm.backPath = from.fullPath
 

@@ -18,7 +18,7 @@
 		</div>
 
 		<div class="topbar">
-			<div class="item" @click="grade">
+			<div class="item" @click="grade" >
 				<img src="../../../static/img/ic_my_class.png" alt="">
 				<p>班级</p>
 			</div>
@@ -103,7 +103,7 @@
     mounted() {
        if(localStorage.getItem("user") == this.$store.state.user && localStorage.getItem("pass") == this.$store.state.pass) {
       	this.status = true
-        console.log(this.status)
+        // console.log(this.status)
       }
     },
 		methods: {
@@ -184,10 +184,11 @@
 					})
 				}
 			},
-			grade: function() {
+			grade() {
+        console.log(1)
 				if(localStorage.getItem("user") == this.$store.state.user && localStorage.getItem("pass") == this.$store.state.pass) {
 					this.$router.push({
-							path: '/class'
+							path: '/className'
 						}) //跳转班级
 				} else {
 					this.$router.push({

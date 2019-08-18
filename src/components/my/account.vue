@@ -10,7 +10,7 @@
     <div class="touxiang">
       <img src="../../../static/img/avatar_default.png" alt="">
       <p>{{this.$store.state.user}}</p>
-      <p>余额：0金币</p>
+      <p>余额：{{this.$store.state.money}}金币</p>
     </div>
     <div class="section">
       <p class="p">选择充值金币</p>
@@ -41,12 +41,15 @@
 </template>
 
 <script>
+  import {
+    Toast
+  } from 'mint-ui';
   export default {
     data: function() {
       return {
         num: 0,
         all: [6, 18, 50, 118, 218, 518, 1298, 2298, 6498],
-        backPath:null
+        backPath: null
       }
     },
     methods: {
@@ -54,18 +57,29 @@
         // console.log(index);
         this.num = index
       },
-      money(){
-        console.log(this.all[this.num])
-        this.$store.commit('setMoney',this.all[this.num])
-        console.log(this.$store.state.money)
-        this.$router.push({path:this.backPath})
+      money() {
+        Toast({
+          message: '充值成功',
+          duration: 1500
+        });
+        // console.log(this.all[this.num])
+        this.$store.commit('setMoney', this.all[this.num])
+        // console.log(this.$store.state.money)
+        setTimeout(res=> {
+          this.$router.push({
+            path: this.backPath
+          })
+        }, 2000);
+
       },
-      back(){
-        this.$router.push({path:this.backPath})
+      back() {
+        this.$router.push({
+          path: this.backPath
+        })
       }
     },
-    beforeRouteEnter(to,from,next){
-      next(vm=>{
+    beforeRouteEnter(to, from, next) {
+      next(vm => {
         console.log(from.fullPath)
         vm.backPath = from.fullPath
       })
@@ -110,6 +124,7 @@
     line-height: 160/64rem;
     font-weight: 600;
     position: relative;
+
     img {
       position: absolute;
       top: 75/75rem;
@@ -155,11 +170,12 @@
   }
 
   .section {
-    .chongzhi{
+    .chongzhi {
       display: flex;
       justify-content: center;
       align-items: center;
     }
+
     .p {
       margin: 10/64rem 15/64rem;
       font-size: 25/64rem;

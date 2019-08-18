@@ -208,6 +208,7 @@
 					.then(res => {
 						console.log(res.data.class_list[this.Plate].list[this.classId].childList);
 						this.shuju = res.data.class_list[this.Plate].list[this.classId].childList;
+            this.$store.commit('setHistoryClass',res.data.class_list[this.Plate].list[this.classId].childList)
              // console.log(this.shuju.nowPrice)
              this.toBuyClassData = res.data.class_list[this.Plate].list[this.classId].childList
              console.log(this.toBuyClassData)

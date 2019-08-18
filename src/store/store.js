@@ -8,6 +8,7 @@ export const store = new Vuex.Store({
 		 pass:'',
      money:0,
      classData:null,
+     historyClass:[],
 	},
 	mutations: {
 		setUsername(state,use) {
@@ -23,6 +24,11 @@ export const store = new Vuex.Store({
     },
     setClassData(state,shuju){
       state.classData = shuju
+    },
+    setHistoryClass(state,data){
+      // console.log(state.historyClass)
+      state.historyClass.push(data)
+      console.log(state.historyClass)
     }
 	},
 
