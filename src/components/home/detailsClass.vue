@@ -258,7 +258,7 @@
 		},
 		beforeRouteEnter(to, from, next) {
 			next(vm=>{
-				// console.log(from.fullPath)
+				console.log(from.fullPath)
 				vm.brakPath = from.fullPath
 				// console.log(vm.brakPath)
 			})

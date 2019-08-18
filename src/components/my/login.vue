@@ -147,6 +147,7 @@
       top: 20/64rem;
       font-size: 27/64rem;
       border: none;
+	  outline: none;
     }
 
     .one {

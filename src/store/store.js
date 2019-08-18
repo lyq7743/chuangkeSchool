@@ -4,32 +4,35 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
 	//状态，想要存储的数据
 	state: {
-		 user:'',
-		 pass:'',
-     money:0,
-     classData:null,
-     historyClass:[],
+		user: '',
+		pass: '',
+		money: 0,
+		classData: null,
+		historyClass: [],
 	},
 	mutations: {
-		setUsername(state,use) {
-			state.user=use;
-//			console.log(use)
+		setUsername(state, use) {
+			state.user = use;
+			//			console.log(use)
 		},
-		setPass(state,pas) {
-			state.pass=pas;
-//			console.log(pas)
+		setPass(state, pas) {
+			state.pass = pas;
+			//			console.log(pas)
 		},
-    setMoney(state,num){
-      state.money += num
-    },
-    setClassData(state,shuju){
-      state.classData = shuju
-    },
-    setHistoryClass(state,data){
-      // console.log(state.historyClass)
-      state.historyClass.push(data)
-      console.log(state.historyClass)
-    }
+		setMoney(state, num) {
+			state.money += num
+		},
+		setClassData(state, shuju) {
+			state.classData = shuju
+		},
+		setHistoryClass(state, data) {
+			// console.log(state.historyClass)
+			state.historyClass.push(data)
+			console.log(state.historyClass)
+		},
+		changeMoney(state,num){
+			state.money = state.money - num
+		}
 	},
 
 })

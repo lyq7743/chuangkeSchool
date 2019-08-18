@@ -70,6 +70,7 @@
             iconClass: 'bgimg',
             duration: 1500
           });
+		this.$store.commit('changeMoney',this.shuju.nowPrice)
           setTimeout(res => {
             this.$router.push({
               path: '/learning/details'

@@ -13,7 +13,7 @@
           "price": "4300",
           "id":0,
           "childList": {
-            "classTitle": "周年大数据特训班",
+            "classTitle": "5周年大数据特训班",
             "classIntroduction": "驱动开发是嵌入式linux开发难度开发最高的。驱动开发既要熟悉相关硬件的操作又要深入理解内核中驱动架构和相关机制。本课程内容包括环境搭建、字符设备驱动编写等重要内容",
             "classNum": "29",
             "classHour": "7",
