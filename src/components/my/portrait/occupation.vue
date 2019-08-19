@@ -9,7 +9,7 @@
 		  </div>
 		</div>
 		<div class="amend">
-			<input type="text" placeholder="请输入职业" v-model="occupation">
+			<input type="text" placeholder="请输入职业" v-model="occupation" >
 		</div>
 	</div>
 </template>

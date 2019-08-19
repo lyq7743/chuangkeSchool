@@ -4,21 +4,24 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
 	//状态，想要存储的数据
 
-	
-	
-	state:{
+
+
+	state: {
 		user: '',
 		pass: '',
 		money: 0,
 		classData: null,
 		historyClass: [],
-		userStatus:false,
-		 signature:'',
-		 occupation:''
+		userStatus: false,
+		signature: '成就更好未来',
+		occupation: '',
+		name: '',
+		// gxqm:'好好学习，天天向上'
 	},
 	mutations: {
 		setUsername(state, use) {
 			state.user = use;
+			state.name = use;
 			//			console.log(use)
 		},
 		setPass(state, pas) {
@@ -36,41 +39,44 @@ export const store = new Vuex.Store({
 			state.historyClass.push(data)
 			console.log(state.historyClass)
 		},
-		changeMoney(state,num){
+		changeMoney(state, num) {
 			state.money = state.money - num
 		},
-		setName(state,name){
-			var vUser=JSON.parse(localStorage.getItem("accout"))
-			vUser.name=name
-			localStorage.setItem("accout",JSON.stringify(vUser))
-			this.commit("getAccount")
+		setName(state, name) {
+			state.name = name
+			// var vUser=JSON.parse(localStorage.getItem("accout"))
+			// vUser.name=name
+			// localStorage.setItem("accout",JSON.stringify(vUser))
+			// this.commit("getAccount")
 		},
-		getsignature(state){
-			var vUser=JSON.parse(localStorage.getItem("accout"))
-			state.signature=vUser.signature
+		getsignature(state) {
+			var vUser = JSON.parse(localStorage.getItem("accout"))
+			state.signature = vUser.signature
 		},
-		setsignature(state,signature){
-			var vUser=JSON.parse(localStorage.getItem("accout"))
-			vUser.signature=signature
-			localStorage.setItem("accout",JSON.stringify(vUser))
-			this.commit("getAccount")
-			console.log(state.signature)
+		setsignature(state, signature) {
+			// var vUser=JSON.parse(localStorage.getItem("accout"))
+			// vUser.signature=signature
+			// localStorage.setItem("accout",JSON.stringify(vUser))
+			// this.commit("getAccount")
+			// console.log(state.signature)
+			state.signature = signature
 		},
-		getoccupation(state){
-			var vUser=JSON.parse(localStorage.getItem("accout"))
-			state.occupation=vUser.occupation
+		getoccupation(state) {
+			var vUser = JSON.parse(localStorage.getItem("accout"))
+			state.occupation = vUser.occupation
 		},
-		setoccupation(state,occupation){
-			var vUser=JSON.parse(localStorage.getItem("accout"))
-			vUser.occupation=occupation
-			localStorage.setItem("accout",JSON.stringify(vUser))
-			this.commit("getAccount")
-			console.log(state.occupation)
+		setoccupation(state, occupation) {
+			// var vUser=JSON.parse(localStorage.getItem("accout"))
+			// vUser.occupation=occupation
+			// localStorage.setItem("accout",JSON.stringify(vUser))
+			// this.commit("getAccount")
+			// console.log(state.occupation)
+			state.occupation = occupation
 		},
-		addAccount(state,account){
+		addAccount(state, account) {
 			// 设置用户
 			console.log(account)
-			localStorage.setItem("accout",JSON.stringify(account))
+			localStorage.setItem("accout", JSON.stringify(account))
 		},
 		// loginAccount(state,account){
 		// 	var vUser=JSON.parse(localStorage.getItem("accout"))
@@ -83,7 +89,7 @@ export const store = new Vuex.Store({
 		// 		state.userStatus=true
 		// 	}
 		// },
-		
+
 		// getAccount(state){
 		// 	
 		// 	if(localStorage.getItem("accout")!=null&&state.user!=""){
@@ -104,7 +110,11 @@ export const store = new Vuex.Store({
 		// 	state.userStatus=false
 		// 	this.commit("getAccount")
 		// }
-		
+		outAccount(state){
+			state.user=""
+			state.pass = ""
+		}
+
 	},
 
 })

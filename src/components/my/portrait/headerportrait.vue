@@ -16,7 +16,7 @@
 		<div class="content">
 			<ul>
 				<li @click="name">
-					<span>昵称</span><span class="qu">{{this.$store.state.user}}</span>
+					<span>昵称</span><span class="qu">{{this.$store.state.name}}</span>
 					<img src="../../../../static/img/i_more.png" alt="" class="imgright">
 				</li>
 				<li>
@@ -58,11 +58,11 @@
 		},
 		mounted() {
 			console.log("进入加载signature")
-			this.$store.commit("getAccount")
-			this.$store.commit("getsignature")
-			this.setsignature = this.$store.state.signature
-			this.$store.commit("getoccupation")
-			this.setoccupation = this.$store.state.occupation
+			// this.$store.commit("getAccount")
+			// this.$store.commit("getsignature")
+			// this.setsignature = this.$store.state.signature
+			// this.$store.commit("getoccupation")
+			// this.setoccupation = this.$store.state.occupation
 		},
 		methods: {
 			name: function() {

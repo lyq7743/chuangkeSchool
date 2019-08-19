@@ -5,11 +5,11 @@
 				<p>
 					<!-- <router-link to='/login'>登录/注册</router-link> -->
 					<span v-if="myshow">登录/注册</span>
-					<span v-else>{{this.$store.state.user|getName}}用户</span>
+					<span v-else>{{this.$store.state.name}} 用户</span>
 				</p>
 				<p class="color">
 					<img src="../../../static/img/pen.png" alt="" class='imgleft img'>
-					<span>成就更好未来</span>
+					<span @click="toSignature">{{this.$store.state.signature}}</span>
 				</p>
 			</div>
 			<span @click="avatar">
@@ -94,11 +94,7 @@
 					userName: ""
 				}
 			},
-			filters: {
-				getName(name) {
-					return name.slice(7)
-				}
-			},
+			
 			mounted() {
 				// console.log("进入加载")
 				// this.$store.commit("getAccount")
@@ -111,6 +107,11 @@
 			},
 
 			methods: {
+				toSignature(){
+					this.$router.push({
+						path: '/signature'
+					})
+				},
 				toLogin(){
 					// console.log(1)
 					if(this.$store.state.user == ""){
