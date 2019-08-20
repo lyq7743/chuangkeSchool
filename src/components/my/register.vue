@@ -18,7 +18,7 @@
 					 placeholder="请输入验证码"></div>
 
 				<div class="tow"><img src="../../../static/img/sign_icon_lock01.png" alt="" class="img"><input type="password"
-					 v-model="pass" placeholder="设置8位以上的密码"></div>
+					 v-model="pass" placeholder="设置6位以上的密码"></div>
 				<div class="button" @click="Add">下一步</div>
 			</form>
 			<div class="text">
@@ -61,8 +61,8 @@
 				}, 1000)
 			},
 			Add: function() {
-				var resUser = /^[1][3,4,5,7,8][0-9]{9}$/;
-				var regPass = /^(?![^a-zA-Z]+$)(?!\\D+$).{8,16}$/;
+				var resUser = /^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$/;
+				var regPass = /^(?![^a-zA-Z]+$)(?!\\D+$).{6,16}$/;
 				if (resUser.test(this.user) && regPass.test(this.pass)) {
 					this.$store.commit("addAccount",{
 						user:this.user,
@@ -127,6 +127,9 @@
 </script>
 
 <style lang="less" scoped>
+	input{
+		outline: none;
+	}
 	.header {
 		width: 100%;
 		height: 130/64rem;

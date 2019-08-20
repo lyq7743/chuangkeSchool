@@ -11,12 +11,13 @@
 					暂无数据
 				</div>
 				<ul v-else>
-					<li v-for="(item,index) in shuju" :key="index">
+					<li v-for="(item,index) in shuju" :key="index" @click="toClass(index)">
 						<img v-lazy="item.img_src" alt="">
 						<div>
 							<p class="class-content-body-name">{{item.classTitle}}</p>
 							<p class="class-content-body-level">已有{{item.studyPeople}}人在学</p>
 						</div>
+						
 					</li>
 				</ul>
 			</div>
@@ -34,8 +35,15 @@
 			}
 		},
 		mounted(){
+			console.log(this.$store.state.historyClass)
 			if(this.$store.state.historyClass.length !=0){
 				this.status = false
+			}
+		},
+		methods:{
+			toClass(index){
+				console.log(index)
+				this.$router.push({path:'/detailsClass',query:{browerPath:'/browse',browerIndex:index}})
 			}
 		}
 	}

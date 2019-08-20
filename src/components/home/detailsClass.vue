@@ -183,7 +183,7 @@
 			</div>
 			<div class="buyClass-right">
 				<!-- <router-link to='learning'> -->
-					<button @click="beginStudy">开始学习</button>
+				<button @click="beginStudy">开始学习</button>
 				<!-- </router-link> -->
 			</div>
 		</div>
@@ -199,19 +199,24 @@
 				shuju: [],
 				fromPath: this.$route.query.fromPath,
 				brakPath: '',
-        toBuyClassData:null,
+				toBuyClassData: null,
+				hisPath:this.$route.query.browerPath,
+				browerIndex:this.$route.query.browerIndex,
 			}
 		},
-		created() {
-			if (this.fromPath == 1) {
+		mounted() {
+			if(this.hisPath == '/browse'){
+				console.log(22222);
+				this.shuju = this.$store.state.historyClass[this.browerIndex]
+			}else if (this.fromPath == 1) {
 				this.$axios.get('../../../static/data/indexData/indexData.json')
 					.then(res => {
 						console.log(res.data.class_list[this.Plate].list[this.classId].childList);
 						this.shuju = res.data.class_list[this.Plate].list[this.classId].childList;
-            this.$store.commit('setHistoryClass',res.data.class_list[this.Plate].list[this.classId].childList)
-             // console.log(this.shuju.nowPrice)
-             this.toBuyClassData = res.data.class_list[this.Plate].list[this.classId].childList
-             console.log(this.toBuyClassData)
+						this.$store.commit('setHistoryClass', res.data.class_list[this.Plate].list[this.classId].childList)
+						// console.log(this.shuju.nowPrice)
+						this.toBuyClassData = res.data.class_list[this.Plate].list[this.classId].childList
+						// console.log(this.toBuyClassData)
 					})
 			} else {
 				// this.$axios.get('https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/freeClass')
@@ -234,30 +239,36 @@
 					path: this.brakPath
 				});
 			},
-      beginStudy(){
-         // console.log(1)
-        if(this.$store.state.user != ''&&this.$store.state.pass != ''){//判断用户是否有登录账号密码
-            // console.log(2);
-            if(this.shuju.nowPrice!='免费'){
-              // if(this.$store.state.money-this.toBuyClassData.nowPrice<0){
-              //     this.$router.push({path:'/account'})
-              // }else{
-                this.$router.push({path:'/buyClass'})/* ,query:{shuju1:this.toBuyClassData} */
-                 this.$store.commit('setClassData',this.toBuyClassData)
-              // }
+			beginStudy() {
+				// console.log(1)
+				if (this.$store.state.user != '' && this.$store.state.pass != '') { //判断用户是否有登录账号密码
+					// console.log(2);
+					if (this.shuju.nowPrice != '免费') {
+						// if(this.$store.state.money-this.toBuyClassData.nowPrice<0){
+						//     this.$router.push({path:'/account'})
+						// }else{
+						this.$router.push({
+							path: '/buyClass'
+						}) /* ,query:{shuju1:this.toBuyClassData} */
+						this.$store.commit('setClassData', this.toBuyClassData)
+						// }
 
 
-            }else{
-              this.$router.push({path:'/learning'});
-            }
+					} else {
+						this.$router.push({
+							path: '/learning'
+						});
+					}
 
-        }else{
-          this.$router.push({path:'/login'});
-        }
-      }
+				} else {
+					this.$router.push({
+						path: '/login'
+					});
+				}
+			}
 		},
 		beforeRouteEnter(to, from, next) {
-			next(vm=>{
+			next(vm => {
 				console.log(from.fullPath)
 				vm.brakPath = from.fullPath
 				// console.log(vm.brakPath)
@@ -273,6 +284,7 @@
 		background-color: #f2f2f3;
 		margin-bottom: 105/75rem;
 		position: relative;
+
 		.header {
 			z-index: 999;
 			width: 100%;
@@ -380,6 +392,7 @@
 			ul {
 				display: flex;
 				margin-top: 75/75rem;
+
 				// align-items: center;
 				//
 				li {

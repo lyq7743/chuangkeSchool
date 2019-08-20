@@ -92,8 +92,11 @@
 <style lang="less" scoped>
 	.content {
 		position: relative;
+		
 	}
-
+	input{
+		outline: none;
+	}
 	.header {
 		width: 100%;
 		height: 130/64rem;
