@@ -42,19 +42,11 @@
 		data() {
 			return {
 				backPath: null,
-				shuju: /* this.$route.query.shuju2 */this.$store.state.classData /* this.$route.query.shuju1, */
+				shuju: /* this.$route.query.shuju2 */this.$store.state.classData, /*, this.$route.query.shuju1, */
+        plate:this.$route.query.plate,
+        classId:this.$route.query.classId,
 			}
 		},
-		// created() {
-		// 	// console.log("buyClass.mounted:", this.shuju)
-		// 	if(this.backPath == '/detailsClass?child=0&father=0&fromPath=1'){
-		// 		console.log(88888)
-		// 		this.shuju = this.$store.state.classData
-		// 	}else if(this.backPath == '/browse'){
-		// 		console.log(99999)
-		// 		this.shuju = this.$store.state.historyClass
-		// 	}
-		// },
 		methods: {
 			back() {
 				this.$router.push({
@@ -74,6 +66,10 @@
 						})
 					}, 2000);
 				} else {
+          console.log(this.plate)
+          this.$store.commit('setPlate',this.plate)
+          console.log(this.classId)
+          this.$store.commit('setClassId',this.classId)
 					Toast({
 						message: '购买成功',
 						iconClass: 'bgimg',

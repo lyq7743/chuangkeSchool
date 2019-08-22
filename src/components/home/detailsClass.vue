@@ -218,6 +218,13 @@
 						// console.log(this.shuju.nowPrice)
 						this.toBuyClassData = res.data.class_list[this.Plate].list[this.classId].childList
 						// console.log(this.toBuyClassData)
+            if(this.$store.state.plate.length != 0 &&this.$store.state.plate.classId != 0 ){
+              for(var i = 0;i<this.$store.state.plate.length;i++){
+                console.log(this.$store.state.plate[i],this.$store.state.classId[i])
+                this.$set(res.data.class_list[this.$store.state.plate[i]].list[this.$store.state.classId[i]].childList,"buyStatus",true)
+                console.log(res.data.class_list[this.$store.state.plate[i]].list[this.$store.state.classId[i]].childList)
+              }
+            }
 					})
 			} else {
 				// this.$axios.get('https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/freeClass')
@@ -245,19 +252,27 @@
 				if (this.$store.state.user != '' && this.$store.state.pass != '') { //判断用户是否有登录账号密码
 					// console.log(2);
 					if (this.shuju.nowPrice != '免费') {
-						// if(this.$store.state.money-this.toBuyClassData.nowPrice<0){
-						//     this.$router.push({path:'/account'})
-						// }else{
+
+            if(this.shuju.buyStatus == true){     //判断购买状态
+                // console.log(66666)
+                 this.$router.push({
+                 	path: '/learning/details'
+                 })
+            }else{
+
+
+
+            console.log(this.shuju)
 						this.$router.push({
-							path: '/buyClass'
+							path: '/buyClass',query:{plate:this.Plate,classId:this.classId}
 						}) /* ,query:{shuju1:this.toBuyClassData} */
 						if(this.hisPath == '/browse'){
 							this.$store.commit('setClassData', this.$store.state.historyClass[this.browerIndex])
 						}else{
 							this.$store.commit('setClassData', this.toBuyClassData)
 						}
-						
-						// }
+
+						}
 
 
 					} else {
