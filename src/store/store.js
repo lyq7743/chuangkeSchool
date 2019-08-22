@@ -10,7 +10,7 @@ export const store = new Vuex.Store({
 		user: '',
 		pass: '',
 		money: 0,
-		classData: null,
+		classData: {img_src:''},
 		historyClass: [],
 		userStatus: false,
 		signature: '成就更好未来',

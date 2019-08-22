@@ -64,7 +64,7 @@
         // this.$axios.get('https://www.easy-mock.com/mock/5d40e999e63c672d5de1a35a/json/recommededData1')
         this.$axios.get("../../../static/data/recommededData/recommededData1.json")
         .then((shuju)=>{
-          // console.log(shuju.data.class_list);
+          console.log(shuju.data);
 
 
            this.classData = shuju.data.class_list;
