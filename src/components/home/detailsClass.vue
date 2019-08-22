@@ -208,6 +208,7 @@
 			if(this.hisPath == '/browse'){
 				console.log(22222);
 				this.shuju = this.$store.state.historyClass[this.browerIndex]
+				console.log(this.$store.state.historyClass[this.browerIndex]);
 			}else if (this.fromPath == 1) {
 				this.$axios.get('../../../static/data/indexData/indexData.json')
 					.then(res => {
@@ -250,13 +251,18 @@
 						this.$router.push({
 							path: '/buyClass'
 						}) /* ,query:{shuju1:this.toBuyClassData} */
-						this.$store.commit('setClassData', this.toBuyClassData)
+						if(this.hisPath == '/browse'){
+							this.$store.commit('setClassData', this.$store.state.historyClass[this.browerIndex])
+						}else{
+							this.$store.commit('setClassData', this.toBuyClassData)
+						}
+						
 						// }
 
 
 					} else {
 						this.$router.push({
-							path: '/learning'
+							path: '/learning',query:{shuju2:this.shuju}
 						});
 					}
 

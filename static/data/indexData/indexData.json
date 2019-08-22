@@ -11,7 +11,9 @@
           "price": "免费",
           "cid": "1",
 
+
           "childList": {
+            "buyStatus": false,
             "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20180507/1525684035162217088.jpg",
             "classTitle": "大数据特训班",
             "classIntroduction": "驱动开发是嵌入式linux开发难度开发最高的。驱动开发既要熟悉相关硬件的操作又要深入理解内核中驱动架构和相关机制。本课程内容包括环境搭建、字符设备驱动编写等重要内容",
@@ -24,7 +26,7 @@
             "teacherIntroduction": "华清创客学院教学总监，美女讲师，人工智能工学硕士；嵌入式，物联网技术领域讲师；,ARM公司全球认证讲师，8年嵌入式开发及教育经验；参与编写过数十本专业图书",
             "flower": "859",
             "fengshu": "5",
-            "outPrice":"8500",
+            "outPrice": "8500",
             "nowPrice": "4300",
             "kecheng": [{
                 "classTitle": "第一章 软件包管理及shell命令",
@@ -95,6 +97,7 @@
           "price": "免费",
           "cid": "  2",
           "childList": {
+            "buyStatus": false,
             "img_src": "http://static.makeru.com.cn/upload/mavendemo/course/20181106/1541491969189977682.jpg",
             "classTitle": "嵌入式内核及驱动开发入门",
             "classIntroduction": "嵌入式Linux C语言数据结构及经典算法编程",
@@ -107,7 +110,7 @@
             "teacherIntroduction": "华清创客学院金牌讲师，高校物联网课题组核心骨干成员，8年物联网研发及教学经验，ARM公司全球认证讲师，明旭老师在长期的教研工作中，多次深入百度，格力、华为等企业一线进行技术调研",
             "flower": "1189",
             "fengshu": "5",
-            "outPrice":"8500",
+            "outPrice": "8500",
             "nowPrice": "5300",
             "kecheng": [{
                 "classTitle": "第1章 数据结构",
@@ -199,7 +202,7 @@
             "teacherIntroduction": "华清创客学院教学总监，美女讲师，人工智能工学硕士；嵌入式，物联网技术领域讲师；ARM公司全球认证讲师，8年嵌入式开发及教育经验；参与编写过数十本专业图书",
             "flower": "859",
             "fengshu": "5",
-            "outPrice":"2500",
+            "outPrice": "2500",
             "nowPrice": "1300",
             "kecheng": [{
                 "classTitle": "第一章 软件包管理及shell命令",
@@ -283,7 +286,7 @@
             "teacherIntroduction": "华清创客学院教学总监，美女讲师，人工智能工学硕士；嵌入式，物联网技术领域讲师；,ARM公司全球认证讲师，8年嵌入式开发及教育经验；参与编写过数十本专业图书",
             "flower": "859",
             "fengshu": "5",
-            "outPrice":"2500",
+            "outPrice": "2500",
             "nowPrice": "1300",
             "kecheng": [{
                 "classTitle": "第一章 软件包管理及shell命令",
@@ -367,7 +370,7 @@
             "teacherIntroduction": "华清创客学院教学总监，美女讲师，人工智能工学硕士；嵌入式，物联网技术领域讲师；,ARM公司全球认证讲师，8年嵌入式开发及教育经验；参与编写过数十本专业图书",
             "flower": "859",
             "fengshu": "5",
-            "outPrice":"2500",
+            "outPrice": "2500",
             "nowPrice": "1300",
             "kecheng": [{
                 "classTitle": "第一章 软件包管理及shell命令",
@@ -450,7 +453,7 @@
             "teacherIntroduction": "华清创客学院教学总监，美女讲师，人工智能工学硕士；嵌入式，物联网技术领域讲师；,ARM公司全球认证讲师，8年嵌入式开发及教育经验；参与编写过数十本专业图书",
             "flower": "859",
             "fengshu": "5",
-            "outPrice":"2500",
+            "outPrice": "2500",
             "nowPrice": "1300",
             "kecheng": [{
                 "classTitle": "第一章 软件包管理及shell命令",
@@ -533,7 +536,7 @@
             "teacherIntroduction": "华清创客学院教学总监，美女讲师，人工智能工学硕士；嵌入式，物联网技术领域讲师；,ARM公司全球认证讲师，8年嵌入式开发及教育经验；参与编写过数十本专业图书",
             "flower": "859",
             "fengshu": "5",
-            "outPrice":"2500",
+            "outPrice": "2500",
             "nowPrice": "1300",
             "kecheng": [{
                 "classTitle": "第一章 软件包管理及shell命令",
