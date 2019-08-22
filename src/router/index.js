@@ -37,6 +37,7 @@ import questionchilden from '../components/question/classify/child.vue'
 import crecommend from '../components/question/classify/crecommend.vue'
 import ccream from '../components/question/classify/ccream.vue'
 import cwait from '../components/question/classify/cwait.vue'
+import calendar from '../components/question/calendar/calendar.vue'
 
 
 import login from '../components/my/login.vue'
@@ -295,6 +296,10 @@ export default new Router({
           component: cwait
         }
       ]
+    },
+    {
+          path: '/calendar',
+          component: calendar
     },
     {
       path: '/detailsClass',
