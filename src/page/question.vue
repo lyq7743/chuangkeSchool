@@ -5,7 +5,9 @@
 				<p>技术问答</p>
 				<div class="date">
 					<p class="month">Jul</p>
-					<p class="day">{{day}}</p>
+					<!--<router to class="day">{{day}}</p>-->
+					<!--<router-link class="day" to="/question/calendar">{{day}}</router-link>-->
+					<router-link class="day" to="/calendar">{{day}}</router-link>
 				</div>
 			</div>
 		</header>
@@ -20,9 +22,7 @@
 				<div class="fenlei-bottom">
 					<ul>
 						<li v-for="(item,index) in arr2" @click="tiaozhuan(index)">
-							<div>
 								<img :src="item.imgsrc" />
-							</div>
 							<div>
 								<p>{{item.title}}</p>
 								<p>{{item.main}}</p>
@@ -240,25 +240,21 @@
 					display: flex;
 					flex-wrap: nowrap;
 					overflow: scroll;
-					width: 750/75rem;
-
-					&::after {
-						content: "";
-						display: block;
-						clear: both;
-					}
 				}
 
 				li {
 					float: left;
 					margin: 40/75rem 10/75rem;
 					font-size: 20/75rem;
-					width: 300/75rem;
+					width: 400/75rem;
 					height: 110/75rem;
+					line-height: 110/75rem;
 					color: white;
 					border-radius: 10/75rem;
 					display: flex;
 					flex-wrap: nowrap;
+					overflow:hhidden; 
+					
 
 					&::after {
 						content: "";
@@ -271,13 +267,16 @@
 						margin-top: 35/75rem;
 						width: 40/75rem;
 						height: 40/75rem;
+						line-height: 110/75rem;
 					}
-
 					&>div:last-child {
 						width: 130/75rem;
-						margin-left: 20/75rem;
+						height: 110/75rem;
+						text-align: center;
+						line-height: 110/75rem;
 						margin-top: 25/75rem;
-
+						box-sizing: border-box;
+						margin: 25/75rem 10/75rem ;
 						p {
 							line-height: 30/75rem;
 						}
