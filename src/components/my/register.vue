@@ -10,7 +10,6 @@
 		<div class="form">
 			<form action="#">
 				<div class="one"><img src="../../../static/img/sign_icon_phone01.png" alt="" class="img"><input type="text" v-model="user"
-
 					 placeholder="请输入注册手机号">
 					<input type="button" class="gainCode" @click='gainCode' :disabled="open" :value="isValue"></input>
 				</div>
@@ -26,11 +25,12 @@
 				<a href="">《网站用户注册及服务协议》</a>
 			</div>
 		</div>
-		<div v-if="popupshow" class="xiaoxi" >请输入正确的手机号码</div>
+		<div v-if="popupshow" class="xiaoxi">请输入正确的手机号码</div>
 	</div>
 </template>
 
 <script>
+
 	import { Toast } from 'mint-ui';
 	export default {
 		data() {
@@ -38,14 +38,53 @@
 				user: "",
 				pass: "",
 				open: false,
-				isValue:"验证码",
-				popupval:"popupval",
-				popupshow:false,
-				reg : /^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])\d{8}$/
+				isValue: "验证码",
+				popupval: "popupval",
+				popupshow: false,
+				reg: /^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])\d{8}$/
+
 			}
 		},
 		methods: {
 			gainCode: function() {
+
+				var resUser = /^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$/;
+				if(resUser.test(this.user)){
+					Toast({
+						message: '验证码已发送到您的手机上',
+						position: 'top',
+						duration: 1500
+					});
+					let vNumber = 60
+					var time = setInterval(() => {
+						this.open = true
+						if (vNumber == 0) {
+							clearInterval(time)
+							this.open = false
+							this.isValue = "重新获取"
+							return
+						}
+						this.isValue = vNumber + "s"
+						vNumber--
+
+					}, 1000);
+					setTimeout(res =>{
+						Toast({
+							message: '【创客学院】您的手机账号登录验证码是 123456（若非本人操作，请删除本短信）',
+							position: 'top',
+							duration: 3000,
+							className:'toast1'
+						});
+					},2000)
+				}else{
+					Toast({
+						message: '请输入正确的手机号',
+						position: 'top',
+						duration: 1500
+					});
+				}
+
+
 				let vNumber = 60
 				var time = setInterval(() => {
 					this.open = true
@@ -59,31 +98,38 @@
 					vNumber--
 
 				}, 1000)
+
 			},
 			Add: function() {
 				var resUser = /^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$/;
 				var regPass = /^(?![^a-zA-Z]+$)(?!\\D+$).{6,16}$/;
 				if (resUser.test(this.user) && regPass.test(this.pass)) {
+
 					this.$store.commit("addAccount",{
 						user:this.user,
 						pass:this.pass,
 						name:""
+
 					})
 					this.$router.push({
 						path: '/login'
 					})
 					console.log(this.user)
-				} else if(regPass.test(this.pass)==""){
+				} else if (regPass.test(this.pass) == "") {
+
 					Toast({
 						message: '请输入正确密码，首字母两位以上',
 						position: 'top'
 					});
+
 				}else{
+
 					Toast({
 						message: '请输入正确格式，请重试',
 						position: 'top'
 					});
 				}
+
 					let vNumber=60
 					var time=setInterval(()=>{
 						this.open=true
@@ -97,26 +143,28 @@
 						vNumber--
 
 					},1000)
+          if (localStorage.getItem(this.user)) {
+          	alert("该用户已存在,请直接登录")
+          } else if (this.pass === "" || this.user === "") {
+          	alert("账号密码不能为空")
+          } else if(this.user.length <= 10 || !this.reg.test(this.user)){
+          	this.popupshow=true;
+          	return;
+          }else {
+          	localStorage.setItem('user', this.user)
+          	localStorage.setItem('pass', this.pass)
+          	Toast("注册成功")
+          	this.$router.push("/login")
+          }
 			},
-			Add: function() {
-				if (localStorage.getItem(this.user)) {
-					alert("该用户已存在,请直接登录")
-				} else if (this.pass === "" || this.user === "") {
-					alert("账号密码不能为空")
-				} else if(this.user.length <= 10 || !this.reg.test(this.user)){
-					this.popupshow=true;
-					return;
-				}else {
-					localStorage.setItem('user', this.user)
-					localStorage.setItem('pass', this.pass)
-					alert("注册成功")
-					this.$router.push("/login")
-				}
-
-			},
+// 			Add: function() {
+//
+//
+// 			},
 			validateTel:function(tel){
 				console.log("方法执行");
 				if(this.TEL_REGEXP.test(tel)){
+
 					console.log("判断成功！")
 					return true;
 				}
@@ -127,9 +175,15 @@
 </script>
 
 <style lang="less" scoped>
-	input{
+
+	.toast1{
+		background-color: #5f8cf7!important;
+	}
+	input {
 		outline: none;
 	}
+
+
 	.header {
 		width: 100%;
 		height: 130/64rem;
@@ -257,28 +311,32 @@
 		background: #f2f2f2;
 	}
 
-.xiaoxi{
-	position: fixed;
-	top: 0;
-	text-align: center;
-	line-height: 80/64rem;
-	font-size: 0.5rem;
-	width: 100%;
-	height: 80/64rem;
-	background-color: rgba(0, 0, 0, 0.5);
-	color: white;
-	animation: slideInUp 5s forwards;
-}
-@keyframes slideInUp {
-    0% {
-		opacity: 0;
-    }
-	50%{
-		opacity: 1;
+	.xiaoxi {
+		position: fixed;
+		top: 0;
+		text-align: center;
+		line-height: 80/64rem;
+		font-size: 0.5rem;
+		width: 100%;
+		height: 80/64rem;
+		background-color: rgba(0, 0, 0, 0.5);
+		color: white;
+		animation: slideInUp 5s forwards;
 	}
-    to {
-		opacity: 0;
 
-    }
-}
+	@keyframes slideInUp {
+		0% {
+			opacity: 0;
+		}
+
+		50% {
+			opacity: 1;
+		}
+
+		to {
+			opacity: 0;
+
+		}
+	}
+
 </style>
