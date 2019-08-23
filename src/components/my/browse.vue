@@ -17,7 +17,7 @@
 							<p class="class-content-body-name">{{item.classTitle}}</p>
 							<p class="class-content-body-level">已有{{item.studyPeople}}人在学</p>
 						</div>
-						
+
 					</li>
 				</ul>
 			</div>
