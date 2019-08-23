@@ -65,6 +65,12 @@
         });
         // console.log(this.all[this.num])
         this.$store.commit('setMoney', this.all[this.num])
+        this.$store.commit('setchongqian', this.all[this.num])
+        var time = new Date()
+        var data =
+          `${time.getFullYear()}/${time.getMonth()+1}/${time.getDate()} ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`
+        // console.log(data);
+        this.$store.commit('setchongqianDate', data)
         // console.log(this.$store.state.money)
         // setTimeout(res=> {
         //   this.$router.push({

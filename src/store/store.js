@@ -18,12 +18,22 @@ export const store = new Vuex.Store({
     signature: '成就更好未来',
     occupation: '',
     name: '',
-    plate:[],
-    classId:[],
-    date:[],
+    plate: [],
+    classId: [],
+    date: [],
+    chongqian: [],
+    chongqianDate: [],
     // gxqm:'好好学习，天天向上'
   },
   mutations: {
+    setchongqian(state, val) {
+      state.chongqian.push(val)
+      console.log(state.chongqian)
+    },
+    setchongqianDate(state, val) {
+      state.chongqianDate.push(val)
+      console.log(state.chongqianDate)
+    },
     setUsername(state, use) {
       state.user = use;
       state.name = use;
@@ -35,6 +45,7 @@ export const store = new Vuex.Store({
     },
     setMoney(state, num) {
       state.money += num
+      // console.log(state.money )
     },
     setClassData(state, shuju) {
       state.classData = shuju
@@ -119,15 +130,15 @@ export const store = new Vuex.Store({
       state.user = ""
       state.pass = ""
     },
-    setPlate(state,val){
+    setPlate(state, val) {
       state.plate.push(val)
       console.log(state.plate)
     },
-    setClassId(state,val){
+    setClassId(state, val) {
       state.classId.push(val)
       console.log(state.classId)
     },
-    setDate(state,val){
+    setDate(state, val) {
       state.date.push(val)
       console.log(state.date)
     }
