@@ -20,6 +20,7 @@ export const store = new Vuex.Store({
     name: '',
     plate:[],
     classId:[],
+    date:[],
     // gxqm:'好好学习，天天向上'
   },
   mutations: {
@@ -126,7 +127,10 @@ export const store = new Vuex.Store({
       state.classId.push(val)
       console.log(state.classId)
     },
-
+    setDate(state,val){
+      state.date.push(val)
+      console.log(state.date)
+    }
   },
 
 })
