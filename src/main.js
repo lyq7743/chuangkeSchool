@@ -12,6 +12,8 @@ import {store} from './store/store.js'
 import { Popup } from 'mint-ui'
 
 import BaiduMap from 'vue-baidu-map'
+import axios from 'axios'
+
 
 //日历控件
 import 'vue-event-calendar/dist/style.css' //1.1.10之后的版本，css被放在了单独的文件中，方便替换
@@ -26,6 +28,7 @@ Vue.component(Popup.name, Popup);
 Vue.config.productionTip = false
 
 Vue.prototype.$axios = Axios
+Vue.prototype.$http=axios
 
 Vue.use(MintUI)
 
