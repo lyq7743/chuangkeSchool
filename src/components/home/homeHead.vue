@@ -34,6 +34,7 @@
 			}
 		},
 		mounted(){
+			console.log(this.status);
 			if(this.status){
 				this.$router.push({
 					path: '/home/recommended'
