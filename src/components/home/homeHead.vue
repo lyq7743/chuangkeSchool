@@ -61,10 +61,10 @@
 		justify-content: center;
 		align-items: center;
 
-		.img {
+		/*.img {
 			width: 35/75rem;
 			height: 35/75rem;
-		}
+		}*/
 
 		.search {
 			border: none;
