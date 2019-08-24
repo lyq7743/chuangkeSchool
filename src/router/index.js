@@ -6,6 +6,7 @@ import home from '../page/home.vue'
 import question from '../page/question.vue'
 import class1 from '../page/class.vue'
 import mine from '../page/mine.vue'
+import game from '@/page/game'
 
 import freeClass from '../components/home/freeClass.vue'
 import recommended from '../components/home/recommended.vue'
@@ -81,6 +82,11 @@ export default new Router({
       path: '/search',
       name: 'search',
       component: search
+    },
+    {
+      path: '/game',
+      name: 'game',
+      component: game
     },
     {
       path: '/home',

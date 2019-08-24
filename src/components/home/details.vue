@@ -29,6 +29,11 @@
             <p>金牌讲师</p>
           </div>
 
+          <div class="game">
+            <img src="../../../static/img/mipmap/f060.png" alt="" @click="gogame">
+            <p>小游戏</p>
+          </div>
+
           <div class="flower">
             <img src="../../../static/img/f092.png" alt="" />
             <p>848</p>
@@ -51,7 +56,11 @@
 
 <script>
   export default {
-
+    methods:{
+      gogame(){
+        this.$router.push({'path':'/game'})
+      }
+    }
   }
 </script>
 
@@ -88,7 +97,7 @@
     width: 90%;
     margin: 0 auto;
 
-    .teacher-title{
+    .teacher-title {
       line-height: 100/75rem;
     }
 
@@ -135,12 +144,23 @@
         }
       }
 
-
+      .game {
+        position:absolute;
+        top:20/75rem;
+        right: 105/75rem;
+        img {
+          width: 60/75rem;
+        }
+        p {
+          color: #bd5932;
+          font-size: 12/75rem;
+          margin-top: -13/75rem;
+        }
+      }
 
       .flower {
         position: absolute;
         right: 20/75rem;
-        ;
         top: 25/75rem;
 
         // margin-left: 280/64rem;
