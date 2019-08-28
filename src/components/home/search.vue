@@ -48,11 +48,11 @@
 				var search = this.search;
 // 
 				if (search) {			//过滤找到的符合条件的数据
-					console.log(this.products)
+//					console.log(this.products)
 					this.newList= this.products.filter(res=>{//filter的对象必须是数组
 						return res.className.indexOf(search)!=-1
 					})
-					console.log(this.newList)
+//					console.log(this.newList)
 				}
 			},
 			back() {
@@ -64,7 +64,7 @@
 		mounted() {
 				this.$axios.get("../../../static/data/recommededData/searchClass.json")
 					.then(res => {
-						console.log(res.data.search);
+//						console.log(res.data.search);
 						this.products = res.data.search;
 					})
 		},

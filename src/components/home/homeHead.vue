@@ -34,7 +34,7 @@
 			}
 		},
 		mounted(){
-			console.log(this.status);
+//			console.log(this.status);
 			if(this.status){
 				this.$router.push({
 					path: '/home/recommended'
@@ -61,10 +61,10 @@
 		justify-content: center;
 		align-items: center;
 
-		/*.img {
+		.img {
 			width: 35/75rem;
 			height: 35/75rem;
-		}*/
+		}
 
 		.search {
 			border: none;

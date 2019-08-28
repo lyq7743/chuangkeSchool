@@ -62,9 +62,9 @@
 				var resUser = /^[1][3,4,5,7,8][0-9]{9}$/;
 				var regPass = /^(?![^a-zA-Z]+$)(?!\\D+$).{8,16}$/;
 				if (resUser.test(this.user) && regPass.test(this.pass)) {
-					console.log("通过了登录测试")
-					console.log(this.user)
-					console.log(this.pass)
+//					console.log("通过了登录测试")
+//					console.log(this.user)
+//					console.log(this.pass)
 					this.$store.commit('setUsername',this.user)
 					this.$store.commit('setPass',this.pass)
 					

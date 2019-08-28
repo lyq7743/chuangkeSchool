@@ -70,15 +70,15 @@
 		},
 		methods: {
 			clickDay(data) {
-				console.log("选中了", data); //选中某天
+//				console.log("选中了", data); //选中某天
 				this.$toast("选中了" + data);
 			},
 			clickToday(data) {
-				console.log("跳到了本月今天", data); //跳到了本月
+//				console.log("跳到了本月今天", data); //跳到了本月
 			},
 			changeDate(data) {
 				this.$toast("切换到的月份为" + data);
-				console.log("左右点击切换月份", data); //左右点击切换月份
+//				console.log("左右点击切换月份", data); //左右点击切换月份
 			},
 			demo() {
 				this.$refs.Calendar.ChoseMonth("2019-8-" + this.day); //跳到12月12日选中12月12日
@@ -127,7 +127,7 @@
 			setTimeout(() => { //页面加载时要执行的方法
 				var date = new Date();
 				var day = date.getDate();
-				console.log(day);
+//				console.log(day);
 				this.day = day;
 			}, 100);
 

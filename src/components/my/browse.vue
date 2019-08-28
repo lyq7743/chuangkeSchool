@@ -41,14 +41,14 @@
 			}
 		},
 		mounted(){
-			console.log(this.$store.state.historyClass)
+//			console.log(this.$store.state.historyClass)
 			if(this.$store.state.historyClass.length !=0){
 				this.status = false
 			}
 		},
 		methods:{
 			toClass(index){
-				console.log(index)
+//				console.log(index)
 				this.$router.push({path:'/detailsClass',query:{browerPath:'/browse',browerIndex:index}})
 			}
 		}

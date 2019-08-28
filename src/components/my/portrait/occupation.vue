@@ -24,7 +24,7 @@ export default {
 	},
 	methods:{
 		setoccupation(){
-			console.log("触发修改occupation")
+//			console.log("触发修改occupation")
 				this.$store.commit("setoccupation",this.occupation)
 				this.$router.push("/headerportrait")
 		}

@@ -38,7 +38,7 @@
 				this.currindex = value;
 			},
 			fn1() {
-        console.log(e.target.id)
+//      console.log(e.target.id)
 				this.$router.push({
 					path: '/home/recommended',
 					query: {

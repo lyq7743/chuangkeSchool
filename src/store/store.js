@@ -28,11 +28,11 @@ export const store = new Vuex.Store({
   mutations: {
     setchongqian(state, val) {
       state.chongqian.push(val)
-      console.log(state.chongqian)
+//    console.log(state.chongqian)
     },
     setchongqianDate(state, val) {
       state.chongqianDate.push(val)
-      console.log(state.chongqianDate)
+//    console.log(state.chongqianDate)
     },
     setUsername(state, use) {
       state.user = use;
@@ -53,7 +53,7 @@ export const store = new Vuex.Store({
     setHistoryClass(state, data) {
       // console.log(state.historyClass)
       state.historyClass.push(data)
-      console.log(state.historyClass)
+//    console.log(state.historyClass)
     },
     changeMoney(state, num) {
       state.money = state.money - num
@@ -91,7 +91,7 @@ export const store = new Vuex.Store({
     },
     addAccount(state, account) {
       // 设置用户
-      console.log(account)
+//    console.log(account)
       localStorage.setItem("accout", JSON.stringify(account))
     },
     // loginAccount(state,account){
@@ -132,15 +132,15 @@ export const store = new Vuex.Store({
     },
     setPlate(state, val) {
       state.plate.push(val)
-      console.log(state.plate)
+//    console.log(state.plate)
     },
     setClassId(state, val) {
       state.classId.push(val)
-      console.log(state.classId)
+//    console.log(state.classId)
     },
     setDate(state, val) {
       state.date.push(val)
-      console.log(state.date)
+//    console.log(state.date)
     }
   },
 

@@ -57,7 +57,7 @@
 			}
 		},
 		mounted() {
-			console.log("进入加载signature")
+//			console.log("进入加载signature")
 			// this.$store.commit("getAccount")
 			// this.$store.commit("getsignature")
 			// this.setsignature = this.$store.state.signature

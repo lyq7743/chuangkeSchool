@@ -59,7 +59,7 @@
           }
 
           this.randomNum = arr.join("")
-           console.log(this.randomNum);
+//         console.log(this.randomNum);
           Toast({
             message: '验证码已发送到您的手机上',
             position: 'top',
@@ -82,7 +82,7 @@
             Toast({
               message: '【创客学院】您的手机账号登录验证码是 '+this.randomNum+'（若非本人操作，请删除本短信）',
               position: 'top',
-              duration: 3000,
+              duration: 4000,
               className: 'toast1'
             });
           }, 2000)
@@ -118,7 +118,7 @@
             });
           }
 
-          console.log(this.user)
+//        console.log(this.user)
         } /* else if (regPass.test(this.pass) == "") {
 
           Toast({

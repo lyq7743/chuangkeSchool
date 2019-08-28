@@ -207,20 +207,20 @@
     },
     mounted() {
       if (this.hisPath == '/browse') {
-        console.log(22222);
+//      console.log(22222);
         this.shuju = this.$store.state.historyClass[this.browerIndex]
-        console.log(this.$store.state.historyClass[this.browerIndex]);
+//      console.log(this.$store.state.historyClass[this.browerIndex]);
       } else if (this.fromPath == 1) {
         this.$axios.get('../../../static/data/indexData/indexData.json')
           .then(res => {
-            console.log(res.data.class_list[this.Plate].list[this.classId].childList);
+//          console.log(res.data.class_list[this.Plate].list[this.classId].childList);
             this.shuju = res.data.class_list[this.Plate].list[this.classId].childList;
             this.$store.commit('setHistoryClass', res.data.class_list[this.Plate].list[this.classId].childList)
             var time = new Date()
-            console.log(time.getFullYear());
+//          console.log(time.getFullYear());
             var data =
               `${time.getFullYear()}/${time.getMonth()+1}/${time.getDate()} ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`
-            console.log(data);
+//          console.log(data);
             this.$store.commit('setDate',data)
 
             // console.log(this.shuju.nowPrice)
@@ -228,10 +228,10 @@
             // console.log(this.toBuyClassData)
             if (this.$store.state.plate.length != 0 && this.$store.state.plate.classId != 0) {
               for (var i = 0; i < this.$store.state.plate.length; i++) {
-                console.log(this.$store.state.plate[i], this.$store.state.classId[i])
+//              console.log(this.$store.state.plate[i], this.$store.state.classId[i])
                 this.$set(res.data.class_list[this.$store.state.plate[i]].list[this.$store.state.classId[i]].childList,
                   "buyStatus", true)
-                console.log(res.data.class_list[this.$store.state.plate[i]].list[this.$store.state.classId[i]].childList)
+//              console.log(res.data.class_list[this.$store.state.plate[i]].list[this.$store.state.classId[i]].childList)
               }
             }
           })
@@ -271,7 +271,7 @@
 
 
 
-              console.log(this.shuju)
+//            console.log(this.shuju)
               this.$router.push({
                 path: '/buyClass',
                 query: {
@@ -306,7 +306,7 @@
     },
     beforeRouteEnter(to, from, next) {
       next(vm => {
-        console.log(from.fullPath)
+//      console.log(from.fullPath)
         vm.brakPath = from.fullPath
         // console.log(vm.brakPath)
       })

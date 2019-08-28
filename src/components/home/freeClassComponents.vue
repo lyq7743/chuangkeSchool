@@ -30,7 +30,7 @@
     },
 	methods:{
 		toDetailsClass(e){
-      console.log(e)
+//    console.log(e)
 			this.$router.push({path:'/detailsClass'})
 		}
 	}

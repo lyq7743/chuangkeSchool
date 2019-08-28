@@ -30,7 +30,7 @@
     },
     methods:{
       fn(index){
-        console.log(index)
+//      console.log(index)
         this.$router.push({path:'/detailsClass',query:{father:2,child:index}})//利用路由将值进行传输过去
       }
     }

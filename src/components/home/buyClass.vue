@@ -66,9 +66,9 @@
 						})
 					}, 2000);
 				} else {
-          console.log(this.plate)
+//        console.log(this.plate)
           this.$store.commit('setPlate',this.plate)
-          console.log(this.classId)
+//        console.log(this.classId)
           this.$store.commit('setClassId',this.classId)
 					Toast({
 						message: '购买成功',
@@ -89,7 +89,7 @@
 		},
 		beforeRouteEnter(to, from, next) {
 			next(vm => {
-				console.log(from.fullPath);
+//				console.log(from.fullPath);
 				vm.backPath = from.fullPath
 			})
 		}

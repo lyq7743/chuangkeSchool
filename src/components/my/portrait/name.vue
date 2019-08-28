@@ -24,7 +24,7 @@ export default{
 	},
 	methods:{
 		setName(){
-			console.log("触发修改")
+//			console.log("触发修改")
 				this.$store.commit("setName",this.name)
 				this.$router.push("/headerportrait")
 		}

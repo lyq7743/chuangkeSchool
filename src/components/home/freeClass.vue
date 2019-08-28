@@ -98,7 +98,7 @@
 			this.isShow = !this.isShow
 		},
 	  qh(index){
-		  console.log(index);
+//		  console.log(index);
 		  this.$axios.get('../../../../static/data/freeClass/classify.json')
 		  .then(res => {
 			this.flarr = res.data.group[index].group_list;

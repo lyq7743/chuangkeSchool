@@ -29,7 +29,7 @@
       GetallData() {
         this.$axios.get("../../../static/data/livebroadcastClass/all.json")
           .then(res => {
-            console.log(res.data);
+//          console.log(res.data);
             this.alldata = res.data.data
           })
       }

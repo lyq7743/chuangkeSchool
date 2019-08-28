@@ -51,7 +51,7 @@
       GetCareerData() {
         this.$axios.get("../../../static/data/CareerpathData/CareerpathData.json")
           .then(res => {
-            console.log(res.data);
+//          console.log(res.data);
             this.Careerdata = res.data.data
           })
       }

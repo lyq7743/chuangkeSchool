@@ -69,7 +69,7 @@
 	
 			},
 			validateTel:function(tel){
-				console.log("方法执行");
+//				console.log("方法执行");
 				if(this.TEL_REGEXP.test(tel)){
 					console.log("判断成功！")
 					return true;

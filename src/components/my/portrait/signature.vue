@@ -24,7 +24,7 @@
 		},
 		methods: {
 			setsignature() {
-				console.log("触发修改signature")
+//				console.log("触发修改signature")
 				this.$store.commit("setsignature", this.signature)
 				this.$router.push("/headerportrait")
 			},
@@ -34,7 +34,7 @@
 		},
 		beforeRouteEnter(to, from, next) {
 			next(vm=>{
-				console.log(from.fullPath)//from来之前所在的路径
+//				console.log(from.fullPath)//from来之前所在的路径
 				vm.brakPath = from.fullPath//vm在这里相当于this
 				// console.log(vm.brakPath)
 			})
